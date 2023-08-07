@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mdigits/common/constants.dart';
 
 /// Custom app bar that shows that can show predefined action buttons

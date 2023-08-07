@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/instance_manager.dart';
 import 'package:mdigits/common/centeredbox.dart';
 import 'package:mdigits/common/default_appbar.dart';
 import 'package:mdigits/common/default_text.dart';
 import 'package:mdigits/common/spacing_holder.dart';
-import 'package:mdigits/mdigits.dart';
 
 /// Screen that allows participants to indicate when to start task.
 class BeginView extends StatelessWidget {
