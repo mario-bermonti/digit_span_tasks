@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
-                List<String> stimList = ['1', '2'];
+                List<String> stimList = ['111', '222'];
                 Get.put(MDigits(stimList: stimList));
               },
               child: Text(
