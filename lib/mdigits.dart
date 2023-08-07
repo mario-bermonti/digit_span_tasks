@@ -39,12 +39,6 @@ class MDigits extends GetxController {
     run();
   }
 
-  /// Helper method to get the participant's session number from the db
-  // Future<void> _getSessionNumberParticipant() async {
-  //   _sessionNumber =
-  //       await _database.getCurrentParticipantSessionNumber(_participantId);
-  // }
-
   /// Add trial data to the db
   // void addTrialData({required String result}) {
   //   _database.addTrialData(
@@ -98,18 +92,8 @@ class MDigits extends GetxController {
 
   /// Setup everything needed to start the task sequence
   Future<void> _setup() async {
-    // _participantId = _loginController.participantID;
-    // String? workspace = await _setupController.workspace;
-    // // if (workspace == null) {
-    // //   throw WorkspaceAccessException();
-
-    //   /// TODO check if this else is necessary
-    // } else {
     _stimuli = Get.put(StimController(stimList: stimList));
     await _stimuli.prepareStim();
-    // _database = await getDB(path: '$workspace/mdigits_data.sqlite3');
-    // }
-    // await _getSessionNumberParticipant();
   }
 
   /// Controls the task sequence based on the curren step
