@@ -98,7 +98,6 @@ class MDigits extends GetxController {
 
   /// Controls the task sequence based on the curren step
   void run() {
-    print('run');
     switch (_status) {
       case Step.stim:
         Get.to(TrialStimView());

@@ -12,7 +12,6 @@ Future<Stimuli> createStimFromFile(String filePath) async {
   // File file = File(filePath);
   // await validateStimFileExists(file, filePath);
   // List<String> stimList = await file.readAsLines();
-  print(file);
   Stimuli stim = Stimuli(stimuli: ['1', '2']);
 
   return stim;
