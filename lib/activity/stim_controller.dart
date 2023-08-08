@@ -9,6 +9,7 @@ class StimController extends GetxController {
   late Stimuli stim;
   // final AudioController _audioController = AudioController();
   final List<String> stimList;
+  String currentDigit = '';
 
   StimController({required this.stimList});
 
@@ -40,8 +41,19 @@ class StimController extends GetxController {
     MDigits mdigits = Get.find();
     //  /
     Future.delayed(
+  /// Present individual digits to participant
+  /// Includes and 1s ISI
+  Future<void> presentIndividualStim(String stimSet) async {
+    if (stimSet.isEmpty) {
+      return;
+    }
+
+    currentDigit = stimSet[0];
+    stimSet = stimSet.substring(1);
+
+    await Future.delayed(
       const Duration(seconds: 1),
-      () => mdigits.run(),
+      () => presentIndividualStim(stimSet),
     );
   }
 }
