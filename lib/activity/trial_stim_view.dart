@@ -15,6 +15,7 @@ class TrialStimView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    _stimController.prepareStim();
     _stimController.presentStim();
     return WillPopScope(
         onWillPop: () async {

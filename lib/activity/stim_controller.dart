@@ -31,9 +31,12 @@ class StimController extends GetxController {
     }
   }
 
+  void prepareStim() {
+    stim.next();
+  }
+
   /// Present the stim once to the participant and go back after 1s ISI
   Future<void> presentStim() async {
-    stim.next();
     MDigits mdigits = Get.find();
     //  /
     Future.delayed(
