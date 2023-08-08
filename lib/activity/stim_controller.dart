@@ -20,7 +20,7 @@ class StimController extends GetxController {
 
   /// Prepare stim to be used
   /// Includes building from file, create object, and randomize stim
-  Future<void> prepareStim() async {
+  Future<void> prepareStimPool() async {
     try {
       // Stimuli stimuli = await createStimFromFile(path);
       Stimuli stimuli = Stimuli(stimuli: stimList);
