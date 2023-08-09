@@ -54,9 +54,9 @@ class StimController extends GetxController {
     if (stimSet.isEmpty) {
       return;
     }
-
     currentDigit(stimSet[0]);
     stimSet = stimSet.substring(1);
+    // presentIndividualStim(stimSet);
     presentISI(stimSet);
   }
 
