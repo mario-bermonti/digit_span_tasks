@@ -50,7 +50,6 @@ class StimController extends GetxController {
   }
 
   /// Present individual digits to participant
-  /// Includes and 1s ISI
   void presentIndividualStim(String stimSet) {
     if (stimSet.isEmpty) {
       return;
