@@ -22,16 +22,24 @@ class TrialStimView extends StatelessWidget {
           return false;
         },
         child: Scaffold(
-            appBar: createAppBar(context: context),
-            body: CenteredBox(
-              column: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  DefaultText(
-                    text: _stimController.stim.currentStim,
-                  )
-                ],
-              ),
-            )));
+          appBar: createAppBar(context: context),
+          body: Center(
+            child: Obx(() => Text(_stimController.currentDigit.value)),
+          ),
+        ));
+
+    /// TODO use default text
+    // CenteredBox(
+    //   column: Column(
+    //     mainAxisAlignment: MainAxisAlignment.center,
+    //     children: <Widget>[
+    // Obx(() => Text('$_stimController.currentDigit')),
+    // DefaultText(
+    //   text: _stimController.stim.currentStim,
+    // )
+    // ],
+    // ),
+    // );
+    // )));
   }
 }
