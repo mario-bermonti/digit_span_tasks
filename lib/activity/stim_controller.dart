@@ -40,8 +40,9 @@ class StimController extends GetxController {
   void presentStim() {
     // TODO check if there is enough time before first stim digit
     presentIndividualStim(stim.currentStim);
-    MDigits mdigits = Get.find();
-    mdigits.run();
+
+    // mdigits mdigits = get.find();
+    // mdigits.run();
     //  /
     // Future.delayed(
     //   const Duration(seconds: 1),
