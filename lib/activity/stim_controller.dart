@@ -9,7 +9,7 @@ class StimController extends GetxController {
   late Stimuli stim;
   // final AudioController _audioController = AudioController();
   final List<String> stimList;
-  String currentDigit = '';
+  RxString currentDigit = ''.obs;
 
   StimController({required this.stimList});
 
