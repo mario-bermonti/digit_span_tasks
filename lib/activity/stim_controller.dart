@@ -58,7 +58,11 @@ class StimController extends GetxController {
 
     currentDigit = stimSet[0];
     stimSet = stimSet.substring(1);
+    presentISI(stimSet);
+  }
 
+  /// Present 1s ISI
+  Future<void> presentISI(String stimSet) async {
     await Future.delayed(
       const Duration(seconds: 1),
       () => presentIndividualStim(stimSet),
