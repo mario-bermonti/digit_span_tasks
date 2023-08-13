@@ -38,7 +38,7 @@ class StimController extends GetxController {
   }
 
   /// Present the stim once to the participant and go back after 1s ISI
-  void presentStim() {
+  Future<void> presentStim() async {
     prepareStim();
     Get.to(() => TrialStimView());
     // TODO check if there is enough time before first stim digit
