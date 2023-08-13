@@ -18,28 +18,20 @@ class TrialStimView extends StatelessWidget {
     _stimController.prepareStim();
     _stimController.presentStim();
     return WillPopScope(
-        onWillPop: () async {
-          return false;
-        },
-        child: Scaffold(
-          appBar: createAppBar(context: context),
-          body: Center(
-            child: Obx(() => Text(_stimController.currentDigit.value)),
+      onWillPop: () async {
+        return false;
+      },
+      child: Scaffold(
+        appBar: createAppBar(context: context),
+        body: CenteredBox(
+          column: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Obx(() => DefaultText(text: _stimController.currentDigit.value)),
+            ],
           ),
-        ));
-
-    /// TODO use default text
-    // CenteredBox(
-    //   column: Column(
-    //     mainAxisAlignment: MainAxisAlignment.center,
-    //     children: <Widget>[
-    // Obx(() => Text('$_stimController.currentDigit')),
-    // DefaultText(
-    //   text: _stimController.stim.currentStim,
-    // )
-    // ],
-    // ),
-    // );
-    // )));
+        ),
+      ),
+    );
   }
 }
