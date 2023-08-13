@@ -63,7 +63,7 @@ class StimController extends GetxController {
       stimSet = stimSet.substring(1);
       // presentIndividualStim(stimSet);
       await Future.delayed(const Duration(seconds: 1));
-      presentIndividualStim(stimSet);
+      await presentIndividualStim(stimSet);
       // await presentISI(stimSet);
     }
   }
