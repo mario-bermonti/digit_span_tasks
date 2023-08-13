@@ -47,10 +47,10 @@ class StimController extends GetxController {
     MDigits mdigits = Get.find();
     // mdigits.run();
     //  /
-    // Future.delayed(
-    //   const Duration(seconds: 1),
-    //   () => mdigits.run(),
-    // );
+    await Future.delayed(
+      const Duration(seconds: 1),
+      () => mdigits.run(),
+    );
   }
 
   /// Present individual digits to participant
