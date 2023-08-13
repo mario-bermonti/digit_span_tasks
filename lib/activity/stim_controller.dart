@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:mdigits/activity/trial_stim_view.dart';
 import 'package:mdigits/mdigits.dart';
 import 'package:mdigits/errors/errors.dart';
 import 'package:stimuli/errors.dart';
@@ -38,10 +39,12 @@ class StimController extends GetxController {
 
   /// Present the stim once to the participant and go back after 1s ISI
   void presentStim() {
+    prepareStim();
+    Get.to(() => TrialStimView());
     // TODO check if there is enough time before first stim digit
-    presentIndividualStim(stim.currentStim);
+    await presentIndividualStim(stim.currentStim);
 
-    // mdigits mdigits = get.find();
+    MDigits mdigits = Get.find();
     // mdigits.run();
     //  /
     // Future.delayed(
