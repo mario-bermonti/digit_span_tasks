@@ -101,7 +101,7 @@ class MDigits extends GetxController {
     switch (_status) {
       case Step.stim:
         _stimuli.prepareStim();
-        // Get.to(() => TrialStimView());
+        Get.to(() => TrialStimView());
         _stimuli.presentStim();
         _updateStep();
         break;
