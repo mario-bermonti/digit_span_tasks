@@ -12,7 +12,8 @@
 <!-- Mark with an `x` all the checkboxes that apply (like `[x]`) -->
 
 - [ ] 📚 Examples / docs / tutorials / dependencies update
-- [ ] 🔧 Bug fix (non-breaking change that fixes an issue)
+- [ ] 🐞 Bug fix (non-breaking change that fixes an issue)
+- [ ] 🔧 Maintenance (non-breaking change that improves code)
 - [ ] 🥂 Improvement (non-breaking change which improves an existing feature)
 - [ ] 🚀 New feature (non-breaking change which adds functionality)
 - [ ] 💥 Breaking change (fix or feature that would cause existing functionality to change)
