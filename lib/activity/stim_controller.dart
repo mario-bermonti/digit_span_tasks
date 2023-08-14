@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:mdigits/activity/trial_stim_view.dart';
 import 'package:mdigits/mdigits.dart';
 import 'package:mdigits/errors/errors.dart';
 import 'package:stimuli/errors.dart';
@@ -9,6 +10,7 @@ class StimController extends GetxController {
   late Stimuli stim;
   // final AudioController _audioController = AudioController();
   final List<String> stimList;
+  RxString currentDigit = ''.obs;
 
   StimController({required this.stimList});
 
@@ -20,7 +22,7 @@ class StimController extends GetxController {
 
   /// Prepare stim to be used
   /// Includes building from file, create object, and randomize stim
-  Future<void> prepareStim() async {
+  Future<void> prepareStimPool() async {
     try {
       // Stimuli stimuli = await createStimFromFile(path);
       Stimuli stimuli = Stimuli(stimuli: stimList);
@@ -31,14 +33,34 @@ class StimController extends GetxController {
     }
   }
 
+  void prepareStim() {
+    stim.next();
+  }
+
   /// Present the stim once to the participant and go back after 1s ISI
   Future<void> presentStim() async {
-    stim.next();
+    // TODO check if there is enough time before first stim digit
+    await presentIndividualStim(stim.currentStim);
+
     MDigits mdigits = Get.find();
-    //  /
-    Future.delayed(
-      const Duration(seconds: 1),
-      () => mdigits.run(),
-    );
+    mdigits.run();
+  }
+  //  /
+
+  /// Present individual digits to participant
+  Future<void> presentIndividualStim(String stimSet) async {
+    if (stimSet.isEmpty) {
+      return;
+    } else {
+      currentDigit(stimSet[0]);
+      stimSet = stimSet.substring(1);
+      await presentISI();
+      await presentIndividualStim(stimSet);
+    }
+  }
+
+  /// Present 1s ISI
+  Future<void> presentISI() async {
+    await Future.delayed(const Duration(seconds: 1));
   }
 }
