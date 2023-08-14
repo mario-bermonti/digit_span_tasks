@@ -43,13 +43,9 @@ class StimController extends GetxController {
     await presentIndividualStim(stim.currentStim);
 
     MDigits mdigits = Get.find();
-    // mdigits.run();
-    //  /
-    await Future.delayed(
-      const Duration(seconds: 1),
-      () => mdigits.run(),
-    );
+    mdigits.run();
   }
+  //  /
 
   /// Present individual digits to participant
   Future<void> presentIndividualStim(String stimSet) async {
