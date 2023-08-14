@@ -40,6 +40,7 @@ class StimController extends GetxController {
   /// Present the stim once to the participant and go back after 1s ISI
   Future<void> presentStim() async {
     // TODO check if there is enough time before first stim digit
+    await presentISI();
     await presentIndividualStim(stim.currentStim);
 
     MDigits mdigits = Get.find();
