@@ -51,6 +51,7 @@ class StimController extends GetxController {
   /// Present individual digits to participant
   Future<void> presentIndividualStim(String stimSet) async {
     if (stimSet.isEmpty) {
+      currentDigit('');
       return;
     } else {
       currentDigit(stimSet[0]);
