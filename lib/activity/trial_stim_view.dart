@@ -27,7 +27,10 @@ class TrialStimView extends StatelessWidget {
           column: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Obx(() => DefaultText(text: _stimController.currentDigit.value)),
+              Obx(() => Text(
+                    _stimController.currentDigit.value,
+                    style: Theme.of(context).textTheme.displayLarge,
+                  )),
             ],
           ),
         ),
