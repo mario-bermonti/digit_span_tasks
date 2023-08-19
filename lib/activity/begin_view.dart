@@ -23,15 +23,11 @@ class BeginView extends StatelessWidget {
           column: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const DefaultText(
-                'Comenzar',
-              ),
-              const BetweenWidgetsSpace(),
               ElevatedButton(
                 onPressed: () {
                   beginFunction();
                 },
-                child: const DefaultText('Seguir'),
+                child: const DefaultText('Comenzar'),
               ),
             ],
           ),
