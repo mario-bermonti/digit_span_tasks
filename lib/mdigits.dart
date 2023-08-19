@@ -36,7 +36,7 @@ class MDigits extends GetxController {
 
   @override
   onReady() {
-    run();
+    Get.to(() => BeginView(beginFunction: run));
   }
 
   /// Add trial data to the db
