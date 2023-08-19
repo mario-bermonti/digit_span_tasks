@@ -22,27 +22,44 @@ class TrialResponseView extends StatelessWidget {
       },
       child: Scaffold(
         appBar: createAppBar(context: context),
-        body: CenteredBox(
-          column: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const DefaultText(
-                text: 'Escribe la palabra:',
-              ),
-              const BetweenWidgetsSpace(),
-              DefaultTextField(
-                  controller: _trialResponseController.textController),
-              const BetweenWidgetsSpace(),
-              ElevatedButton(
-                onPressed: () {
-                  _trialResponseController.submit();
-                  _trialResponseController.toNextScreen();
-                },
-                child: const DefaultText(text: 'Seguir'),
-              ),
-            ],
+        body: ResponseWidget(trialResponseController: _trialResponseController),
+      ),
+    );
+  }
+}
+
+class ResponseWidget extends StatelessWidget {
+  const ResponseWidget({
+    Key? key,
+    required TrialResponseController trialResponseController,
+  })  : _trialResponseController = trialResponseController,
+        super(key: key);
+
+  final TrialResponseController _trialResponseController;
+
+  @override
+  Widget build(BuildContext context) {
+    return CenteredBox(
+      column: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const DefaultText(
+            '¿Números?',
           ),
-        ),
+          const BetweenWidgetsSpace(),
+          DefaultTextField(controller: _trialResponseController.textController),
+          const BetweenWidgetsSpace(),
+          ElevatedButton(
+            onPressed: () {
+              _trialResponseController.submit();
+              _trialResponseController.toNextScreen();
+            },
+            child: Text(
+              'Seguir',
+              style: Theme.of(context).textTheme.button,
+            ),
+          ),
+        ],
       ),
     );
   }
