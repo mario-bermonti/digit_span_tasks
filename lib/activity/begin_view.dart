@@ -3,10 +3,13 @@ import 'package:mdigits/common/centeredbox.dart';
 import 'package:mdigits/common/default_appbar.dart';
 import 'package:mdigits/common/default_text.dart';
 import 'package:mdigits/common/spacing_holder.dart';
+import 'package:mdigits/mdigits.dart';
 
 /// Screen that allows participants to indicate when to start task.
 class BeginView extends StatelessWidget {
-  const BeginView({Key? key}) : super(key: key);
+  final Function beginFunction;
+
+  const BeginView({Key? key, required this.beginFunction}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +29,7 @@ class BeginView extends StatelessWidget {
               const BetweenWidgetsSpace(),
               ElevatedButton(
                 onPressed: () {
-                  // Get.put(MDigits());
+                  beginFunction();
                 },
                 child: const DefaultText('Seguir'),
               ),
