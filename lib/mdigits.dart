@@ -7,6 +7,8 @@ import 'package:mdigits/end/end_view.dart';
 import 'package:mdigits/errors/errors.dart';
 import 'package:mdigits/rest/rest_view.dart';
 
+import 'activity/begin_view.dart';
+
 /// Controls the task sequence
 /// The sequence includes stim presentation, response, rest, end
 class MDigits extends GetxController {
