@@ -21,14 +21,14 @@ class BeginView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const DefaultText(
-                text: 'Comencemos',
+                'Comencemos',
               ),
               const BetweenWidgetsSpace(),
               ElevatedButton(
                 onPressed: () {
                   // Get.put(MDigits());
                 },
-                child: const DefaultText(text: 'Seguir'),
+                child: const DefaultText('Seguir'),
               ),
             ],
           ),

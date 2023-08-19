@@ -24,7 +24,7 @@ class ErrorView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               DefaultText(
-                text: message.userMessage(),
+                message.userMessage(),
               ),
             ],
           ),

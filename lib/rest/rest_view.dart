@@ -24,12 +24,15 @@ class RestView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const DefaultText(
-                text: 'Descansa',
+                'Descansa',
               ),
               const BetweenWidgetsSpace(),
               ElevatedButton(
                 onPressed: () => _restController.toNextScreen(),
-                child: const DefaultText(text: 'Comenzar'),
+                child: Text(
+                  'Comenzar',
+                  style: Theme.of(context).textTheme.button,
+                ),
               ),
             ],
           ),
