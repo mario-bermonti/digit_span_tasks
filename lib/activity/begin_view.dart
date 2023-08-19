@@ -21,7 +21,7 @@ class BeginView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const DefaultText(
-                'Comencemos',
+                'Comenzar',
               ),
               const BetweenWidgetsSpace(),
               ElevatedButton(
