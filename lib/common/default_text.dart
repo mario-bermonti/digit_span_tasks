@@ -15,7 +15,7 @@ class DefaultText extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Text(
         text,
-        style: Theme.of(context).textTheme.button,
+        style: Theme.of(context).textTheme.headlineSmall,
       ),
     );
   }
