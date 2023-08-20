@@ -13,12 +13,6 @@ class StimController extends GetxController {
 
   StimController({required this.stimList});
 
-  @override
-  void onInit() async {
-    // await prepareStim();
-    super.onInit();
-  }
-
   /// Prepare stim to be used
   /// Includes building from file, create object, and randomize stim
   Future<void> prepareStimPool() async {
