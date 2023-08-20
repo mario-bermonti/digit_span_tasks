@@ -10,7 +10,6 @@ class Stimuli {
   /// Size of original stim list.
   late int stimCountOriginal;
 
-  /// TODO Test this
   /// Default constructor requires a list of stimuli.
   Stimuli({required this.stimuli}) {
     stimCountOriginal = stimuli.length;
