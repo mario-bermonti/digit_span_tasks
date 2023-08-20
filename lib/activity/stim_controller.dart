@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:mdigits/activity/trial_stim_view.dart';
 import 'package:mdigits/mdigits.dart';
 import 'package:mdigits/errors/errors.dart';
 import 'package:stimuli/errors.dart';
@@ -13,12 +12,6 @@ class StimController extends GetxController {
   RxString currentDigit = ''.obs;
 
   StimController({required this.stimList});
-
-  @override
-  void onInit() async {
-    // await prepareStim();
-    super.onInit();
-  }
 
   /// Prepare stim to be used
   /// Includes building from file, create object, and randomize stim
@@ -39,7 +32,6 @@ class StimController extends GetxController {
 
   /// Present the stim once to the participant and go back after 1s ISI
   Future<void> presentStim() async {
-    // TODO check if there is enough time before first stim digit
     await presentISI();
     await presentIndividualStim(stim.currentStim);
 

@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:mdigits/common/default_appbar.dart';
 import 'package:mdigits/common/centeredbox.dart';
 import 'package:mdigits/activity/stim_controller.dart';
-import 'package:mdigits/common/default_text.dart';
 
 /// Screen to present stim to participants
 class TrialStimView extends StatelessWidget {
