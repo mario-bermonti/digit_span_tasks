@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:mdigits/activity/trial_stim_view.dart';
 import 'package:mdigits/mdigits.dart';
 import 'package:mdigits/errors/errors.dart';
 import 'package:stimuli/errors.dart';
