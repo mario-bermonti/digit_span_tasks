@@ -5,7 +5,7 @@ import 'package:mdigits/common/default_appbar.dart';
 import 'package:mdigits/common/default_text.dart';
 import 'package:mdigits/common/default_textfield.dart';
 import 'package:mdigits/common/spacing_holder.dart';
-import 'package:mdigits/activity/trial_response_controller.dart';
+import 'package:mdigits/activity/trial_response/trial_response_controller.dart';
 
 /// Screen for collecting response from participant
 class TrialResponseView extends StatelessWidget {
