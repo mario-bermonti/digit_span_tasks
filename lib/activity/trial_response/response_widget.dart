@@ -4,6 +4,7 @@ import 'package:mdigits/activity/trial_response/trial_response_controller.dart';
 import 'package:mdigits/common/centeredbox.dart';
 import 'package:mdigits/common/default_text.dart';
 import 'package:mdigits/common/spacing_holder.dart';
+import 'package:mdigits/common/styles.dart';
 
 class ResponseWidget extends StatelessWidget {
   const ResponseWidget({
@@ -28,6 +29,7 @@ class ResponseWidget extends StatelessWidget {
             controller: _trialResponseController.textController,
             keyboardType: TextInputType.number,
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            decoration: textFieldStyle,
             autofocus: true,
           ),
           const BetweenWidgetsSpace(),
