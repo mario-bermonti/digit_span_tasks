@@ -28,6 +28,7 @@ class ResponseWidget extends StatelessWidget {
             controller: _trialResponseController.textController,
             keyboardType: TextInputType.number,
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            autofocus: true,
           ),
           const BetweenWidgetsSpace(),
           ElevatedButton(
