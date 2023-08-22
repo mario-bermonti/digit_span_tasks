@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/common/centeredbox.dart';
 import 'package:mdigits/common/default_appbar.dart';
 import 'package:mdigits/common/default_text.dart';
-import 'package:mdigits/common/default_textfield.dart';
 import 'package:mdigits/common/spacing_holder.dart';
 import 'package:mdigits/activity/trial_response/trial_response_controller.dart';
 
@@ -47,7 +47,9 @@ class ResponseWidget extends StatelessWidget {
             '¿Números?',
           ),
           const BetweenWidgetsSpace(),
-          DefaultTextField(controller: _trialResponseController.textController),
+          TextField(
+            controller: _trialResponseController.textController,
+          ),
           const BetweenWidgetsSpace(),
           ElevatedButton(
             onPressed: () {
