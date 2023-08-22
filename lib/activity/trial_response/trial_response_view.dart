@@ -49,6 +49,8 @@ class ResponseWidget extends StatelessWidget {
           const BetweenWidgetsSpace(),
           TextField(
             controller: _trialResponseController.textController,
+            keyboardType: TextInputType.number,
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
           ),
           const BetweenWidgetsSpace(),
           ElevatedButton(
