@@ -30,13 +30,13 @@ class ResponseWidget extends StatelessWidget {
             keyboardType: TextInputType.number,
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             decoration: textFieldStyle,
+            onSubmitted: (_) => submitResponse(),
             autofocus: true,
           ),
           const BetweenWidgetsSpace(),
           ElevatedButton(
             onPressed: () {
-              _trialResponseController.submit();
-              _trialResponseController.toNextScreen();
+              submitResponse();
             },
             child: Text(
               'Seguir',
@@ -46,5 +46,10 @@ class ResponseWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void submitResponse() {
+    _trialResponseController.submit();
+    _trialResponseController.toNextScreen();
   }
 }
