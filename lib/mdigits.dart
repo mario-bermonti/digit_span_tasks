@@ -101,20 +101,20 @@ class MDigits extends GetxController {
   void run() {
     switch (_status) {
       case Step.stim:
-        Get.to(() => TrialStimView());
+        Get.off(() => TrialStimView());
         _updateStep();
         break;
       case Step.response:
-        Get.to(TrialResponseView());
+        Get.off(TrialResponseView());
         _updateStep();
         break;
       case Step.rest:
-        Get.to(RestView());
+        Get.off(RestView());
         _updateStep();
         break;
       case Step.completed:
         // _saveData();
-        Get.to(const EndView());
+        Get.off(const EndView());
         return;
       default:
         run();
