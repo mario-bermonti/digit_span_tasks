@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () {
                 List<String> stimList = ['012', '9876', '567890'];
-                Get.put(MDigits(stimList: stimList));
+                Get.put(MDigits(stimList: stimList, participantID: '000'));
               },
               child: Text(
                 'Comenzar mDigits',
