@@ -115,6 +115,7 @@ class MDigits extends GetxController {
       case Step.completed:
         // _saveData();
         Get.off(const EndView());
+        Get.back();
         return;
       default:
         run();
