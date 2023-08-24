@@ -26,8 +26,9 @@ class MDigits extends GetxController {
   Step _status = Step.stim;
 
   final List<String> stimList;
+  final String participantID;
 
-  MDigits({required this.stimList});
+  MDigits({required this.stimList, required this.participantID});
 
   @override
   onInit() async {
