@@ -71,7 +71,7 @@ class MDigits extends GetxController {
   bool _responseStatusFollows() => _status == Step.stim;
   bool _stimStatusFollows() => _status == Step.rest;
   bool _restStatusFollows() =>
-      _stimuli.stim.stimCountUsed != 0 && _stimuli.stim.stimCountUsed % 5 == 0;
+      _stimuli.stim.stimCountUsed != 0 && _stimuli.stim.stimCountUsed % 2 == 0;
   bool _completedStatusFollows() => _stimuli.stim.stimCountRemaining == 0;
 
   /// Save session and device data
