@@ -4,6 +4,7 @@ import 'package:mdigits/activity/trial_stim/stim_controller.dart';
 import 'package:mdigits/activity/trial_response/trial_response_view.dart';
 import 'package:mdigits/activity/trial_stim/trial_stim_view.dart';
 import 'package:mdigits/end/end_view.dart';
+import 'package:mdigits/models/trial_data.dart';
 import 'package:mdigits/rest/rest_view.dart';
 
 import 'activity/begin_view.dart';
@@ -13,6 +14,10 @@ import 'activity/begin_view.dart';
 class MDigits extends GetxController {
   /// Provides access and manages the stimuli
   late final StimController _stimuli;
+
+  /// Data for all trials
+  /// Used to provide data to app
+  final List<TrialData> data = <TrialData>[];
 
   /// Global task start time
   final DateTime _timeStart = DateTime.now();
@@ -41,15 +46,14 @@ class MDigits extends GetxController {
     Get.to(() => BeginView(beginFunction: run));
   }
 
-  /// Add trial data to the db
-  // void addTrialData({required String result}) {
-  //   _database.addTrialData(
-  //     participantId: _participantId,
-  //     stim: _stimuli.stim.currentStim,
-  //     resp: result,
-  //     sessionNumber: _sessionNumber,
-  //   );
-  // }
+  void addTrialData({required String resp}) {
+    TrialData trialData = TrialData(
+      participantID: participantID,
+      stim: _stimuli.stim.currentStim,
+      response: resp,
+    );
+    data.add(trialData);
+  }
 
   // TODO improve name of conditions checks?
   /// TODO can presenting stim next be improved? Current implementation seems
