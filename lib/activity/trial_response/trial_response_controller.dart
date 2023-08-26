@@ -14,11 +14,9 @@ class TrialResponseController extends GetxController {
   }
 
   void submit() {
-    // spaces are meaningless as in paper and pencil measures
     String response = textController.text.trim();
-
+    _mDigits.addTrialData(resp: response);
     textController.clear();
-    // _mDigits.addTrialData(result: response);
   }
 
   void toNextScreen() {
