@@ -3,8 +3,9 @@ class TrialData {
   final String stim;
   final String response;
 
-  TrialData(
-      {required this.stim,
-      required this.response,
-      required this.participantID});
+  TrialData({
+    required this.participantID,
+    required this.stim,
+    required this.response,
+  });
 }
