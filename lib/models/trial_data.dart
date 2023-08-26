@@ -8,4 +8,9 @@ class TrialData {
     required this.stim,
     required this.response,
   });
+
+  @override
+  String toString() {
+    return "Participant $participantID, stim: $stim, resp: $response";
+  }
 }
