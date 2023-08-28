@@ -32,14 +32,19 @@ class MDigits extends GetxController {
 
   final List<String> stimList;
   final String participantID;
-
-  MDigits({required this.stimList, required this.participantID});
-
   @override
   onInit() async {
     await _setup();
     super.onInit();
   }
+
+  Function(List<TrialData> value) processData;
+
+  MDigits({
+    required this.stimList,
+    required this.participantID,
+    required this.processData,
+  });
 
   @override
   onReady() {
@@ -120,6 +125,7 @@ class MDigits extends GetxController {
       case Step.completed:
         // _saveData();
         Get.off(const EndView());
+        processData(data);
         Get.back();
         return;
       default:
