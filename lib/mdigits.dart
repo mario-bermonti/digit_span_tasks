@@ -38,12 +38,12 @@ class MDigits extends GetxController {
     super.onInit();
   }
 
-  Function(List<TrialData> value) processData;
+  Function(List<TrialData> value)? processData;
 
   MDigits({
     required this.stimList,
     required this.participantID,
-    required this.processData,
+    this.processData,
   });
 
   @override
@@ -125,7 +125,10 @@ class MDigits extends GetxController {
       case Step.completed:
         // _saveData();
         Get.off(const EndView());
-        processData(data);
+        if (processData != null) {
+          processData!(data);
+        }
+        ;
         Get.back();
         return;
       default:
