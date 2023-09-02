@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ));
               },
               child: Text(
-                'Comenzar mDigits',
+                'mDigits',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
