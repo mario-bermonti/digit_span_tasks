@@ -18,19 +18,25 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         brightness: Brightness.dark,
       ),
-      home: const MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final MDigits mDigits = Get.put(MDigits(
+    stimList: ['01', '234', '56789'],
+    participantID: '000',
+    randomizeDigits: true,
+    processData: print,
+  ));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,15 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () {
-                List<String> stimList = ['01', '234', '56789'];
-                MDigits mDigits = Get.put(MDigits(
-                  stimList: stimList,
-                  participantID: '000',
-                  randomizeDigits: true,
-                  processData: print,
-                ));
-              },
+              onPressed: () {},
               child: Text(
                 'mDigits',
                 style: Theme.of(context).textTheme.titleLarge,
