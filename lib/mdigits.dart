@@ -44,9 +44,14 @@ class MDigits extends GetxController {
   MDigits({
     required stimList,
     required this.participantID,
+    randomizeDigits = false,
     this.processData,
   }) {
-    this.stimList = randomizeDigitsInSets(stimList);
+    if (randomizeDigits) {
+      this.stimList = randomizeDigitsInSets(stimList);
+    } else {
+      this.stimList = stimList;
+    }
   }
 
   @override
