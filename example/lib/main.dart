@@ -44,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 MDigits mDigits = Get.put(MDigits(
                   stimList: stimList,
                   participantID: '000',
+                  randomizeDigits: true,
                   processData: print,
                 ));
               },
