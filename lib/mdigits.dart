@@ -5,6 +5,7 @@ import 'package:mdigits/activity/trial_response/trial_response_view.dart';
 import 'package:mdigits/activity/trial_stim/trial_stim_view.dart';
 import 'package:mdigits/end/end_view.dart';
 import 'package:mdigits/models/trial_data.dart';
+import 'package:mdigits/randomize.dart';
 import 'package:mdigits/rest/rest_view.dart';
 
 import 'activity/begin_view.dart';
@@ -30,7 +31,7 @@ class MDigits extends GetxController {
   /// Identifies the step the task currently is in
   Step _status = Step.stim;
 
-  final List<String> stimList;
+  late final List<String> stimList;
   final String participantID;
   @override
   onInit() async {
@@ -41,10 +42,17 @@ class MDigits extends GetxController {
   Function(List<TrialData> value)? processData;
 
   MDigits({
-    required this.stimList,
+    required List<String> stimList,
     required this.participantID,
+    randomizeDigits = false,
     this.processData,
-  });
+  }) {
+    if (randomizeDigits) {
+      this.stimList = randomizeDigitsInSets(stimList);
+    } else {
+      this.stimList = stimList;
+    }
+  }
 
   @override
   onReady() {
