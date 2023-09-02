@@ -35,7 +35,7 @@ class MDigits extends GetxController {
   final String participantID;
   @override
   onInit() async {
-    await _setup();
+    await setup();
     super.onInit();
   }
 
@@ -110,7 +110,7 @@ class MDigits extends GetxController {
   // }
 
   /// Setup everything needed to start the task sequence
-  Future<void> _setup() async {
+  Future<void> setup() async {
     _stimuli = Get.put(StimController(stimList: stimList));
     await _stimuli.prepareStimPool();
   }
