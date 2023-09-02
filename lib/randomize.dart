@@ -3,8 +3,8 @@
 /// Returns a list of the same length as the original
 List<String> randomizeDigitsInSets(List<String> stim) {
   List<String> stimRandomized = <String>[];
-  for (String digitSet in stim) {
-    String setString = randomizeSet(digitSet);
+  for (String set in stim) {
+    String setString = randomizeSet(set);
     stimRandomized.add(setString);
   }
   return stimRandomized;
