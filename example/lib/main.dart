@@ -45,7 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () async {
+                await mDigits.setup();
+              },
               child: Text(
                 'mDigits',
                 style: Theme.of(context).textTheme.titleLarge,
