@@ -42,7 +42,7 @@ class MDigits extends GetxController {
   Function(List<TrialData> value)? processData;
 
   MDigits({
-    required stimList,
+    required List<String> stimList,
     required this.participantID,
     randomizeDigits = false,
     this.processData,
