@@ -54,11 +54,6 @@ class MDigits extends GetxController {
     }
   }
 
-  @override
-  onReady() {
-    Get.to(() => BeginView(beginFunction: run));
-  }
-
   void addTrialData({required String resp}) {
     TrialData trialData = TrialData(
       participantID: participantID,

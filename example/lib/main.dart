@@ -47,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () async {
                 await mDigits.setup();
+                mDigits.run();
               },
               child: Text(
                 'mDigits',
