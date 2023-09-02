@@ -4,8 +4,8 @@
 List<String> randomizeDigitsInSets(List<String> stim) {
   List<String> stimRandomized = <String>[];
   for (String set in stim) {
-    String setString = randomizeSet(set);
-    stimRandomized.add(setString);
+    String setRandomized = randomizeSet(set);
+    stimRandomized.add(setRandomized);
   }
   return stimRandomized;
 }
