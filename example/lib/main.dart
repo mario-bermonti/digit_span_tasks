@@ -18,25 +18,20 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         brightness: Brightness.dark,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({super.key});
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final MDigits mDigits = Get.put(MDigits(
-    stimList: ['01', '234', '56789'],
-    participantID: '000',
-    randomizeDigits: true,
-    processData: print,
-  ));
+  final MDigits mDigits = Get.put(MDigits());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
