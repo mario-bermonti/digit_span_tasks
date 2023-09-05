@@ -32,26 +32,31 @@ class MDigits extends GetxController {
   Step _status = Step.stim;
 
   late final List<String> stimList;
-  final String participantID;
+  late final String participantID;
   // @override
   // onInit() async {
   //   await setup();
   //   super.onInit();
   // }
 
-  Function(List<TrialData> value)? processData;
+  late Function(List<TrialData> value)? processData;
 
-  MDigits({
-    required List<String> stimList,
-    required this.participantID,
-    randomizeDigits = false,
-    this.processData,
-  }) {
-    if (randomizeDigits) {
-      this.stimList = randomizeDigitsInSets(stimList);
-    } else {
-      this.stimList = stimList;
-    }
+  // MDigits({
+  //   required List<String> stimList,
+  //   required this.participantID,
+  //   randomizeDigits = false,
+  //   this.processData,
+  // }) {
+  //   if (randomizeDigits) {
+  //     this.stimList = randomizeDigitsInSets(stimList);
+  //   } else {
+  //     this.stimList = stimList;
+  //   }
+  // }
+  MDigits() {
+    stimList = randomizeDigitsInSets(['01', '234', '56789']);
+    participantID = '000';
+    processData = print;
   }
 
   void addTrialData({required String resp}) {
