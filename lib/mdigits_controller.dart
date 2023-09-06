@@ -8,8 +8,6 @@ import 'package:mdigits/models/trial_data.dart';
 import 'package:mdigits/randomize.dart';
 import 'package:mdigits/rest/rest_view.dart';
 
-import 'activity/begin_view.dart';
-
 /// Controls the task sequence
 /// The sequence includes stim presentation, response, rest, end
 class MDigitsController extends GetxController {
@@ -136,7 +134,6 @@ class MDigitsController extends GetxController {
         if (processData != null) {
           processData!(data);
         }
-        ;
         Get.back();
         return;
       default:
