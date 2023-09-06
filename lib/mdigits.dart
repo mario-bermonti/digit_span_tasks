@@ -111,7 +111,7 @@ class MDigits extends GetxController {
 
   /// Setup everything needed to start the task sequence
   Future<void> setup() async {
-    _stimuli = Get.put(StimController(stimList: stimList));
+    _stimuli = Get.put(StimController(stimList: stimList), permanent: true);
     await _stimuli.prepareStimPool();
   }
 
