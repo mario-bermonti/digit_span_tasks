@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
-import 'package:mdigits/activity/step.dart';
-import 'package:mdigits/activity/trial_stim/stim_controller.dart';
-import 'package:mdigits/activity/trial_response/trial_response_view.dart';
-import 'package:mdigits/activity/trial_stim/trial_stim_view.dart';
-import 'package:mdigits/end/end_view.dart';
-import 'package:mdigits/models/trial_data.dart';
-import 'package:mdigits/randomize.dart';
-import 'package:mdigits/rest/rest_view.dart';
+import 'package:mdigits/src/activity/step.dart';
+import 'package:mdigits/src/activity/trial_stim/stim_controller.dart';
+import 'package:mdigits/src/activity/trial_response/trial_response_view.dart';
+import 'package:mdigits/src/activity/trial_stim/trial_stim_view.dart';
+import 'package:mdigits/src/end/end_view.dart';
+import 'package:mdigits/src/models/trial_data.dart';
+import 'package:mdigits/src/randomize.dart';
+import 'package:mdigits/src/rest/rest_view.dart';
 
 /// Controls the task sequence
 /// The sequence includes stim presentation, response, rest, end

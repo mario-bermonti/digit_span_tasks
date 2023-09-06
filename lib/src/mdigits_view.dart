@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/mdigits_controller.dart';
+import 'package:mdigits/src/mdigits_controller.dart';
 
 class MDigitsView extends StatelessWidget {
   MDigitsView({super.key});

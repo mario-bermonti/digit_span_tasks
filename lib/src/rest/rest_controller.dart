@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:mdigits/mdigits_controller.dart';
+import 'package:mdigits/src/mdigits_controller.dart';
 
 class RestController extends GetxController {
   MDigitsController mDigits = Get.find();
