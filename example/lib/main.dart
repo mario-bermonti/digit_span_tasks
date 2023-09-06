@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/mdigits.dart';
+import 'package:mdigits/mdigits_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +32,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final MDigits mDigits = Get.put(MDigits());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,9 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () async {
-                await mDigits.setup();
-                mDigits.run();
+              onPressed: () {
+                Get.to(MDigitsView());
               },
               child: Text(
                 'mDigits',
