@@ -20,7 +20,7 @@ class MDigitsView extends StatelessWidget {
                 mDigits.run();
               },
               child: Text(
-                'mDigits',
+                'Comenzar',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
