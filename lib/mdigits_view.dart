@@ -5,7 +5,7 @@ import 'package:mdigits/mdigits.dart';
 class MDigitsView extends StatelessWidget {
   MDigitsView({super.key});
 
-  final MDigits mDigits = Get.put(MDigits());
+  final MDigits mDigits = Get.put(MDigits(), permanent: true);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
