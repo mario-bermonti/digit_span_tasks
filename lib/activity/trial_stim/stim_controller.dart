@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:mdigits/mdigits.dart';
+import 'package:mdigits/mdigits_controller.dart';
 import 'package:mdigits/errors/errors.dart';
 import 'package:stimuli/errors.dart';
 import 'package:stimuli/stimuli.dart';
@@ -34,7 +34,7 @@ class StimController extends GetxController {
     await presentISI();
     await presentIndividualStim(stim.currentStim);
 
-    MDigits mdigits = Get.find();
+    MDigitsController mdigits = Get.find();
     mdigits.run();
   }
   //  /

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/mdigits.dart';
+import 'package:mdigits/mdigits_controller.dart';
 
 class MDigitsView extends StatelessWidget {
   MDigitsView({super.key});
 
-  final MDigits mDigits = Get.put(MDigits(), permanent: true);
+  final MDigitsController mDigits =
+      Get.put(MDigitsController(), permanent: true);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

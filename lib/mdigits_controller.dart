@@ -12,7 +12,7 @@ import 'activity/begin_view.dart';
 
 /// Controls the task sequence
 /// The sequence includes stim presentation, response, rest, end
-class MDigits extends GetxController {
+class MDigitsController extends GetxController {
   /// Provides access and manages the stimuli
   late final StimController _stimuli;
 
@@ -53,7 +53,7 @@ class MDigits extends GetxController {
   //     this.stimList = stimList;
   //   }
   // }
-  MDigits() {
+  MDigitsController() {
     stimList = randomizeDigitsInSets(['01', '234', '56789']);
     participantID = '000';
     processData = print;

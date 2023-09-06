@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/mdigits.dart';
+import 'package:mdigits/mdigits_controller.dart';
 
 /// Manage responses
 class TrialResponseController extends GetxController {
   TextEditingController textController = TextEditingController();
-  final MDigits _mDigits = Get.find();
+  final MDigitsController _mDigits = Get.find();
 
   @override
   void dispose() {
