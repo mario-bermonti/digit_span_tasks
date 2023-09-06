@@ -40,13 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
-                List<String> stimList = ['01', '234', '56789'];
-                MDigits mDigits = Get.put(MDigits(
-                  stimList: stimList,
-                  participantID: '000',
-                  randomizeDigits: true,
-                  processData: print,
-                ));
+                Get.to(MDigitsView());
               },
               child: Text(
                 'mDigits',

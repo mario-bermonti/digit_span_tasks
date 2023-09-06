@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mdigits/common/centeredbox.dart';
-import 'package:mdigits/common/default_appbar.dart';
-import 'package:mdigits/common/default_text.dart';
-import 'package:mdigits/errors/errors.dart';
+import 'package:mdigits/src/common/centeredbox.dart';
+import 'package:mdigits/src/common/default_appbar.dart';
+import 'package:mdigits/src/common/default_text.dart';
+import 'package:mdigits/src/errors/errors.dart';
 
 /// Present error screen to participant
 /// Show specific error message

@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:mdigits/mdigits.dart';
+import 'package:mdigits/src/mdigits_controller.dart';
 
 class RestController extends GetxController {
-  MDigits mDigits = Get.find();
+  MDigitsController mDigits = Get.find();
 
   /// Goes to next screen after 500ms ISI
   void toNextScreen() {

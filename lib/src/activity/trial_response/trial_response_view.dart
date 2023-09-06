@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/activity/trial_response/response_widget.dart';
-import 'package:mdigits/common/default_appbar.dart';
-import 'package:mdigits/activity/trial_response/trial_response_controller.dart';
+import 'package:mdigits/src/activity/trial_response/response_widget.dart';
+import 'package:mdigits/src/common/default_appbar.dart';
+import 'package:mdigits/src/activity/trial_response/trial_response_controller.dart';
 
 /// Screen for collecting response from participant
 class TrialResponseView extends StatelessWidget {
