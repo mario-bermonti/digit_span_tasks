@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/mdigits_view.dart';
+import 'package:mdigits/mdigits.dart';
 
 void main() {
   runApp(const MyApp());
