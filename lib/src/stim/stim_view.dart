@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/src/common/default_appbar.dart';
 import 'package:mdigits/src/common/centeredbox.dart';
-import 'package:mdigits/src/trial_stim/stim_controller.dart';
+import 'package:mdigits/src/stim/stim_controller.dart';
 
 /// Screen to present stim to participants
-class TrialStimView extends StatelessWidget {
-  TrialStimView({
+class StimView extends StatelessWidget {
+  StimView({
     Key? key,
   }) : super(key: key);
 
