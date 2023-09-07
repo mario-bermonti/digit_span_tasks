@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 import 'package:mdigits/src/step.dart';
-import 'package:mdigits/src/trial_stim/stim_controller.dart';
+import 'package:mdigits/src/stim/stim_controller.dart';
 import 'package:mdigits/src/response/response_view.dart';
-import 'package:mdigits/src/trial_stim/trial_stim_view.dart';
+import 'package:mdigits/src/stim/trial_stim_view.dart';
 import 'package:mdigits/src/end/end_view.dart';
 import 'package:mdigits/src/models/trial_data.dart';
 import 'package:mdigits/src/randomize.dart';
