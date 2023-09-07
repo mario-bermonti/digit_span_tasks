@@ -9,11 +9,11 @@ import 'package:mdigits/src/common/styles.dart';
 class ResponseWidget extends StatelessWidget {
   const ResponseWidget({
     Key? key,
-    required TrialResponseController trialResponseController,
-  })  : _trialResponseController = trialResponseController,
+    required ResponseController responseController,
+  })  : _responseController = responseController,
         super(key: key);
 
-  final TrialResponseController _trialResponseController;
+  final ResponseController _responseController;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class ResponseWidget extends StatelessWidget {
           ),
           const BetweenWidgetsSpace(),
           TextField(
-            controller: _trialResponseController.textController,
+            controller: _responseController.textController,
             keyboardType: TextInputType.number,
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             decoration: textFieldStyle,
@@ -49,7 +49,7 @@ class ResponseWidget extends StatelessWidget {
   }
 
   void submitResponse() {
-    _trialResponseController.submit();
-    _trialResponseController.toNextScreen();
+    _responseController.submit();
+    _responseController.toNextScreen();
   }
 }

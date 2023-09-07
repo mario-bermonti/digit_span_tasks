@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:mdigits/src/mdigits_controller.dart';
 
 /// Manage responses
-class TrialResponseController extends GetxController {
+class ResponseController extends GetxController {
   TextEditingController textController = TextEditingController();
   final MDigitsController _mDigits = Get.find();
 

@@ -5,11 +5,10 @@ import 'package:mdigits/src/common/default_appbar.dart';
 import 'package:mdigits/src/response/response_controller.dart';
 
 /// Screen for collecting response from participant
-class TrialResponseView extends StatelessWidget {
-  final TrialResponseController _trialResponseController =
-      Get.put(TrialResponseController());
+class ResponseView extends StatelessWidget {
+  final ResponseController _responseController = Get.put(ResponseController());
 
-  TrialResponseView({super.key});
+  ResponseView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class TrialResponseView extends StatelessWidget {
       },
       child: Scaffold(
         appBar: createAppBar(context: context),
-        body: ResponseWidget(trialResponseController: _trialResponseController),
+        body: ResponseWidget(responseController: _responseController),
       ),
     );
   }

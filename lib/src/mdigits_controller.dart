@@ -121,7 +121,7 @@ class MDigitsController extends GetxController {
         _updateStep();
         break;
       case Step.response:
-        Get.off(TrialResponseView());
+        Get.off(ResponseView());
         _updateStep();
         break;
       case Step.rest:
