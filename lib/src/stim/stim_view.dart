@@ -5,8 +5,8 @@ import 'package:mdigits/src/common/centeredbox.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
 
 /// Screen to present stim to participants
-class TrialStimView extends StatelessWidget {
-  TrialStimView({
+class StimView extends StatelessWidget {
+  StimView({
     Key? key,
   }) : super(key: key);
 
