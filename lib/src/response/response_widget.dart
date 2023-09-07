@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mdigits/src/response/trial_response_controller.dart';
+import 'package:mdigits/src/response/response_controller.dart';
 import 'package:mdigits/src/common/centeredbox.dart';
 import 'package:mdigits/src/common/default_text.dart';
 import 'package:mdigits/src/common/spacing_holder.dart';
