@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:mdigits/src/step.dart';
+import 'package:mdigits/src/task_step.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
 import 'package:mdigits/src/response/response_view.dart';
 import 'package:mdigits/src/stim/stim_view.dart';
@@ -27,7 +27,7 @@ class MDigitsController extends GetxController {
   // late final int _sessionNumber;
 
   /// Identifies the step the task currently is in
-  Step _status = Step.stim;
+  TaskStep status = TaskStep.stim;
 
   late final List<String> stimList;
   late final String participantID;
@@ -72,20 +72,20 @@ class MDigitsController extends GetxController {
   /// Update the current task step so the [run()] can continue the sequence
   void _updateStep() {
     if (_responseStatusFollows()) {
-      _status = Step.response;
+      status = TaskStep.response;
     } else if (_completedStatusFollows()) {
-      _status = Step.completed;
+      status = TaskStep.completed;
     } else if (_stimStatusFollows()) {
-      _status = Step.stim;
+      status = TaskStep.stim;
     } else if (_restStatusFollows()) {
-      _status = Step.rest;
+      status = TaskStep.rest;
     } else {
-      _status = Step.stim;
+      status = TaskStep.stim;
     }
   }
 
-  bool _responseStatusFollows() => _status == Step.stim;
-  bool _stimStatusFollows() => _status == Step.rest;
+  bool _responseStatusFollows() => status == TaskStep.stim;
+  bool _stimStatusFollows() => status == TaskStep.rest;
   bool _restStatusFollows() =>
       _stimuli.stim.stimCountUsed != 0 && _stimuli.stim.stimCountUsed % 2 == 0;
   bool _completedStatusFollows() => _stimuli.stim.stimCountRemaining == 0;
@@ -115,20 +115,20 @@ class MDigitsController extends GetxController {
 
   /// Controls the task sequence based on the curren step
   void run() {
-    switch (_status) {
-      case Step.stim:
+    switch (status) {
+      case TaskStep.stim:
         Get.off(() => StimView());
         _updateStep();
         break;
-      case Step.response:
+      case TaskStep.response:
         Get.off(ResponseView());
         _updateStep();
         break;
-      case Step.rest:
+      case TaskStep.rest:
         Get.off(RestView());
         _updateStep();
         break;
-      case Step.completed:
+      case TaskStep.completed:
         // _saveData();
         Get.off(const EndView());
         if (processData != null) {
