@@ -31,11 +31,12 @@ class MDigitsController extends GetxController {
 
   late final List<String> stimList;
   late final String participantID;
-  // @override
-  // onInit() async {
-  //   await setup();
-  //   super.onInit();
-  // }
+
+  @override
+  onInit() async {
+    await setup();
+    super.onInit();
+  }
 
   late Function(List<TrialData> value)? processData;
 
