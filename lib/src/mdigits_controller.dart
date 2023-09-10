@@ -115,30 +115,30 @@ class MDigitsController extends GetxController {
   }
 
   /// Controls the task sequence based on the curren step
-  void run() {
-    switch (status) {
-      case TaskStep.stim:
-        Get.off(() => StimView());
-        _updateStep();
-        break;
-      case TaskStep.response:
-        Get.off(ResponseView());
-        _updateStep();
-        break;
-      case TaskStep.rest:
-        Get.off(RestView());
-        _updateStep();
-        break;
-      case TaskStep.completed:
-        // _saveData();
-        Get.off(const EndView());
-        if (processData != null) {
-          processData!(data);
-        }
-        Get.back();
-        return;
-      default:
-        run();
-    }
-  }
+  // void run() {
+  //   switch (status) {
+  //     case TaskStep.stim:
+  //       Get.off(() => StimView());
+  //       _updateStep();
+  //       break;
+  //     case TaskStep.response:
+  //       Get.off(ResponseView());
+  //       _updateStep();
+  //       break;
+  //     case TaskStep.rest:
+  //       Get.off(RestView());
+  //       _updateStep();
+  //       break;
+  //     case TaskStep.completed:
+  //       // _saveData();
+  //       Get.off(const EndView());
+  //       if (processData != null) {
+  //         processData!(data);
+  //       }
+  //       Get.back();
+  //       return;
+  //     default:
+  //       run();
+  //   }
+  // }
 }
