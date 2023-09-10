@@ -34,8 +34,7 @@ class StimController extends GetxController {
     await presentISI();
     await presentIndividualStim(stim.currentStim);
 
-    MDigitsController mdigits = Get.find();
-    mdigits.run();
+    Get.back();
   }
   //  /
 

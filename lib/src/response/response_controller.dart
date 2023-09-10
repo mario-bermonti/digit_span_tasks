@@ -20,6 +20,6 @@ class ResponseController extends GetxController {
   }
 
   void toNextScreen() {
-    _mDigits.run();
+    Get.back();
   }
 }
