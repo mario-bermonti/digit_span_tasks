@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/src/end/end_view.dart';
+import 'package:mdigits/src/instructions/instructions_view.dart';
 import 'package:mdigits/src/mdigits_controller.dart';
 import 'package:mdigits/src/response/response_view.dart';
 import 'package:mdigits/src/rest/rest_view.dart';
@@ -18,6 +19,8 @@ class MDigitsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() {
       switch (mDigits.status) {
+        case TaskStep.instruction:
+          return InstructionsView();
         case TaskStep.stim:
           return StimView();
         case TaskStep.response:
