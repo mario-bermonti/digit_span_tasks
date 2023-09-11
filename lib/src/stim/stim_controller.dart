@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:mdigits/src/mdigits_controller.dart';
 import 'package:mdigits/src/errors/errors.dart';
+import 'package:mdigits/src/task_step.dart';
 import 'package:stimuli/errors.dart';
 import 'package:stimuli/stimuli.dart';
 
@@ -33,10 +34,13 @@ class StimController extends GetxController {
   Future<void> presentStim() async {
     await presentISI();
     await presentIndividualStim(stim.currentStim);
-
-    Get.back();
+    toNextScreen();
   }
-  //  /
+
+  void toNextScreen() {
+    MDigitsController mDigitsController = Get.find();
+    mDigitsController.status(TaskStep.response);
+  }
 
   /// Present individual digits to participant
   Future<void> presentIndividualStim(String stimSet) async {
