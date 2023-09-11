@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/src/mdigits_controller.dart';
+import 'package:mdigits/src/task_step.dart';
 
 /// Manage responses
 class ResponseController extends GetxController {
@@ -20,6 +21,7 @@ class ResponseController extends GetxController {
   }
 
   void toNextScreen() {
-    Get.back();
+    MDigitsController mDigitsController = Get.find();
+    mDigitsController.status(TaskStep.stim);
   }
 }
