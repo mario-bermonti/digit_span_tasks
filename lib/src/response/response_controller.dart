@@ -22,6 +22,10 @@ class ResponseController extends GetxController {
 
   void toNextScreen() {
     MDigitsController mDigitsController = Get.find();
-    mDigitsController.status(TaskStep.stim);
+    if (mDigitsController.restStatusFollows()) {
+      mDigitsController.status(TaskStep.rest);
+    } else {
+      mDigitsController.status(TaskStep.stim);
+    }
   }
 }
