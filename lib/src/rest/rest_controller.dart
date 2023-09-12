@@ -7,7 +7,7 @@ class RestController extends GetxController {
   void toNextScreen() {
     MDigitsController mDigitsController = Get.find();
     Future.delayed(const Duration(milliseconds: 500), () {
-      mDigitsController.status(TaskStep.stim);
+      mDigitsController.updateStep();
     });
   }
 }
