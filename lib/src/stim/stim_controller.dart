@@ -39,7 +39,7 @@ class StimController extends GetxController {
 
   void toNextScreen() {
     MDigitsController mDigitsController = Get.find();
-    mDigitsController.status(TaskStep.response);
+    mDigitsController.updateStep();
   }
 
   /// Present individual digits to participant
