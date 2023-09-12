@@ -73,15 +73,15 @@ class MDigitsController extends GetxController {
   ///  Update the current task step so the [run()] can continue the sequence
   void _updateStep() {
     if (_responseStatusFollows()) {
-      status = TaskStep.response;
+      status(TaskStep.response);
     } else if (completedStatusFollows()) {
-      status = TaskStep.completed;
+      status(TaskStep.completed);
     } else if (_stimStatusFollows()) {
-      status = TaskStep.stim;
+      status(TaskStep.stim);
     } else if (restStatusFollows()) {
-      status = TaskStep.rest;
+      status(TaskStep.rest);
     } else {
-      status = TaskStep.stim;
+      status(TaskStep.stim);
     }
   }
 
