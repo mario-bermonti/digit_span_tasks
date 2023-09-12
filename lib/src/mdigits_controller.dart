@@ -71,7 +71,7 @@ class MDigitsController extends GetxController {
   /// TODO can presenting stim next be improved? Current implementation seems
   /// weird
   ///  Update the current task step so the [run()] can continue the sequence
-  void _updateStep() {
+  void updateStep() {
     if (_responseStatusFollows()) {
       status(TaskStep.response);
     } else if (_completedStatusFollows()) {
