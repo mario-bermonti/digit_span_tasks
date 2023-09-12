@@ -24,6 +24,8 @@ class ResponseController extends GetxController {
     MDigitsController mDigitsController = Get.find();
     if (mDigitsController.restStatusFollows()) {
       mDigitsController.status(TaskStep.rest);
+    } else if (mDigitsController.completedStatusFollows()) {
+      mDigitsController.status(TaskStep.completed);
     } else {
       mDigitsController.status(TaskStep.stim);
     }
