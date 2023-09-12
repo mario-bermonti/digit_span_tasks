@@ -70,20 +70,20 @@ class MDigitsController extends GetxController {
   // TODO improve name of conditions checks?
   /// TODO can presenting stim next be improved? Current implementation seems
   /// weird
-  /// Update the current task step so the [run()] can continue the sequence
-  // void _updateStep() {
-  //   if (_responseStatusFollows()) {
-  //     status = TaskStep.response;
-  //   } else if (_completedStatusFollows()) {
-  //     status = TaskStep.completed;
-  //   } else if (_stimStatusFollows()) {
-  //     status = TaskStep.stim;
-  //   } else if (_restStatusFollows()) {
-  //     status = TaskStep.rest;
-  //   } else {
-  //     status = TaskStep.stim;
-  //   }
-  // }
+  ///  Update the current task step so the [run()] can continue the sequence
+  void _updateStep() {
+    if (_responseStatusFollows()) {
+      status = TaskStep.response;
+    } else if (completedStatusFollows()) {
+      status = TaskStep.completed;
+    } else if (_stimStatusFollows()) {
+      status = TaskStep.stim;
+    } else if (restStatusFollows()) {
+      status = TaskStep.rest;
+    } else {
+      status = TaskStep.stim;
+    }
+  }
 
   bool _responseStatusFollows() => status == TaskStep.stim;
   bool _stimStatusFollows() => status == TaskStep.rest;
