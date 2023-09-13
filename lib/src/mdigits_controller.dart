@@ -74,7 +74,7 @@ class MDigitsController extends GetxController {
   void _updateStep() {
     if (_responseStatusFollows()) {
       status(TaskStep.response);
-    } else if (completedStatusFollows()) {
+    } else if (_completedStatusFollows()) {
       status(TaskStep.completed);
     } else if (_stimStatusFollows()) {
       status(TaskStep.stim);
