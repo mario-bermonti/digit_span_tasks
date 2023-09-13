@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:mdigits/src/task_step.dart';
+import 'package:mdigits/src/mdigits/task_step.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
 import 'package:mdigits/src/response/response_view.dart';
 import 'package:mdigits/src/stim/stim_view.dart';

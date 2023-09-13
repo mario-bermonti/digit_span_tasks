@@ -6,7 +6,7 @@ import 'package:mdigits/src/mdigits_controller.dart';
 import 'package:mdigits/src/response/response_view.dart';
 import 'package:mdigits/src/rest/rest_view.dart';
 import 'package:mdigits/src/stim/stim_view.dart';
-import 'package:mdigits/src/task_step.dart';
+import 'package:mdigits/src/mdigits/task_step.dart';
 
 /// Controls the task sequence based on the curren step
 class MDigitsView extends StatelessWidget {
