@@ -1,12 +1,8 @@
 import 'package:get/get.dart';
-import 'package:mdigits/src/step.dart';
+import 'package:mdigits/src/mdigits/task_step.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
-import 'package:mdigits/src/response/response_view.dart';
-import 'package:mdigits/src/stim/stim_view.dart';
-import 'package:mdigits/src/end/end_view.dart';
 import 'package:mdigits/src/models/trial_data.dart';
 import 'package:mdigits/src/randomize.dart';
-import 'package:mdigits/src/rest/rest_view.dart';
 
 /// Controls the task sequence
 /// The sequence includes stim presentation, response, rest, end
@@ -27,15 +23,16 @@ class MDigitsController extends GetxController {
   // late final int _sessionNumber;
 
   /// Identifies the step the task currently is in
-  Step _status = Step.stim;
+  Rx<TaskStep> status = TaskStep.instruction.obs;
 
   late final List<String> stimList;
   late final String participantID;
-  // @override
-  // onInit() async {
-  //   await setup();
-  //   super.onInit();
-  // }
+
+  @override
+  onInit() async {
+    await setup();
+    super.onInit();
+  }
 
   late Function(List<TrialData> value)? processData;
 
@@ -69,24 +66,24 @@ class MDigitsController extends GetxController {
   // TODO improve name of conditions checks?
   /// TODO can presenting stim next be improved? Current implementation seems
   /// weird
-  /// Update the current task step so the [run()] can continue the sequence
-  void _updateStep() {
+  ///  Update the current task step so the [run()] can continue the sequence
+  void updateStep() {
     if (_responseStatusFollows()) {
-      _status = Step.response;
+      status(TaskStep.response);
     } else if (_completedStatusFollows()) {
-      _status = Step.completed;
+      status(TaskStep.completed);
     } else if (_stimStatusFollows()) {
-      _status = Step.stim;
-    } else if (_restStatusFollows()) {
-      _status = Step.rest;
+      status(TaskStep.stim);
+    } else if (restStatusFollows()) {
+      status(TaskStep.rest);
     } else {
-      _status = Step.stim;
+      status(TaskStep.stim);
     }
   }
 
-  bool _responseStatusFollows() => _status == Step.stim;
-  bool _stimStatusFollows() => _status == Step.rest;
-  bool _restStatusFollows() =>
+  bool _responseStatusFollows() => status.value == TaskStep.stim;
+  bool _stimStatusFollows() => status.value == TaskStep.rest;
+  bool restStatusFollows() =>
       _stimuli.stim.stimCountUsed != 0 && _stimuli.stim.stimCountUsed % 2 == 0;
   bool _completedStatusFollows() => _stimuli.stim.stimCountRemaining == 0;
 
@@ -114,30 +111,30 @@ class MDigitsController extends GetxController {
   }
 
   /// Controls the task sequence based on the curren step
-  void run() {
-    switch (_status) {
-      case Step.stim:
-        Get.off(() => StimView());
-        _updateStep();
-        break;
-      case Step.response:
-        Get.off(ResponseView());
-        _updateStep();
-        break;
-      case Step.rest:
-        Get.off(RestView());
-        _updateStep();
-        break;
-      case Step.completed:
-        // _saveData();
-        Get.off(const EndView());
-        if (processData != null) {
-          processData!(data);
-        }
-        Get.back();
-        return;
-      default:
-        run();
-    }
-  }
+  // void run() {
+  //   switch (status) {
+  //     case TaskStep.stim:
+  //       Get.off(() => StimView());
+  //       _updateStep();
+  //       break;
+  //     case TaskStep.response:
+  //       Get.off(ResponseView());
+  //       _updateStep();
+  //       break;
+  //     case TaskStep.rest:
+  //       Get.off(RestView());
+  //       _updateStep();
+  //       break;
+  //     case TaskStep.completed:
+  //       // _saveData();
+  //       Get.off(const EndView());
+  //       if (processData != null) {
+  //         processData!(data);
+  //       }
+  //       Get.back();
+  //       return;
+  //     default:
+  //       run();
+  //   }
+  // }
 }

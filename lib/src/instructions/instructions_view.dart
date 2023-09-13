@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/mdigits_controller.dart';
+import 'package:mdigits/src/instructions/instructions_controller.dart';
 
-class MDigitsView extends StatelessWidget {
-  MDigitsView({super.key});
+class InstructionsView extends StatelessWidget {
+  InstructionsView({super.key});
 
-  final MDigitsController mDigits =
-      Get.put(MDigitsController(), permanent: true);
+  final InstructionsController instructionsController =
+      Get.put(InstructionsController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,9 +16,8 @@ class MDigitsView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () async {
-                await mDigits.setup();
-                mDigits.run();
+              onPressed: () {
+                instructionsController.toNextScreen();
               },
               child: Text(
                 'Comenzar',

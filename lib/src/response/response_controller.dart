@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/mdigits_controller.dart';
+import 'package:mdigits/src/mdigits/mdigits_controller.dart';
 
 /// Manage responses
 class ResponseController extends GetxController {
@@ -20,6 +20,7 @@ class ResponseController extends GetxController {
   }
 
   void toNextScreen() {
-    _mDigits.run();
+    MDigitsController mDigitsController = Get.find();
+    mDigitsController.updateStep();
   }
 }
