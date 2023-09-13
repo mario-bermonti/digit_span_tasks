@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/src/mdigits/mdigits_controller.dart';
-import 'package:mdigits/src/mdigits/task_step.dart';
 
 /// Manage responses
 class ResponseController extends GetxController {

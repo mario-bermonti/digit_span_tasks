@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:mdigits/src/mdigits/mdigits_controller.dart';
 import 'package:mdigits/src/errors/errors.dart';
-import 'package:mdigits/src/mdigits/task_step.dart';
 import 'package:stimuli/errors.dart';
 import 'package:stimuli/stimuli.dart';
 
