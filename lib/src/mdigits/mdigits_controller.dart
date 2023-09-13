@@ -23,7 +23,7 @@ class MDigitsController extends GetxController {
   // late final int _sessionNumber;
 
   /// Identifies the step the task currently is in
-  Rx<TaskStep> status = TaskStep.instruction.obs;
+  Rx<TaskStep> taskStep = TaskStep.instruction.obs;
 
   late final List<String> stimList;
   late final String participantID;
@@ -69,20 +69,20 @@ class MDigitsController extends GetxController {
   ///  Update the current task step so the [run()] can continue the sequence
   void updateStep() {
     if (_responseStatusFollows()) {
-      status(TaskStep.response);
+      taskStep(TaskStep.response);
     } else if (_completedStatusFollows()) {
-      status(TaskStep.completed);
+      taskStep(TaskStep.completed);
     } else if (_stimStatusFollows()) {
-      status(TaskStep.stim);
+      taskStep(TaskStep.stim);
     } else if (restStatusFollows()) {
-      status(TaskStep.rest);
+      taskStep(TaskStep.rest);
     } else {
-      status(TaskStep.stim);
+      taskStep(TaskStep.stim);
     }
   }
 
-  bool _responseStatusFollows() => status.value == TaskStep.stim;
-  bool _stimStatusFollows() => status.value == TaskStep.rest;
+  bool _responseStatusFollows() => taskStep.value == TaskStep.stim;
+  bool _stimStatusFollows() => taskStep.value == TaskStep.rest;
   bool restStatusFollows() =>
       _stimuli.stim.stimCountUsed != 0 && _stimuli.stim.stimCountUsed % 2 == 0;
   bool _completedStatusFollows() => _stimuli.stim.stimCountRemaining == 0;
