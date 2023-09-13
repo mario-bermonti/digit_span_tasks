@@ -32,8 +32,7 @@ class MDigitsView extends StatelessWidget {
           if (mDigits.processData != null) {
             mDigits.processData!(mDigits.data);
           }
-          return const EndView();
-        // Get.back();
+          return EndView();
       }
     });
   }
