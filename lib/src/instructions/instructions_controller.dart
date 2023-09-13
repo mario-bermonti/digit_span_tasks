@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:mdigits/src/mdigits_controller.dart';
-import 'package:mdigits/src/task_step.dart';
+import 'package:mdigits/src/mdigits/mdigits_controller.dart';
+import 'package:mdigits/src/mdigits/task_step.dart';
 
 class InstructionsController extends GetxController {
   MDigitsController mDigitsController = Get.find();

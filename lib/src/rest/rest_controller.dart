@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:mdigits/src/mdigits_controller.dart';
-import 'package:mdigits/src/task_step.dart';
+import 'package:mdigits/src/mdigits/mdigits_controller.dart';
+import 'package:mdigits/src/mdigits/task_step.dart';
 
 class RestController extends GetxController {
   /// Goes to next screen after 500ms ISI
