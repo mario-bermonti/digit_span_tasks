@@ -17,7 +17,10 @@ class MDigitsController extends GetxController {
   /// Identifies the step the task currently is in
   Rx<TaskStep> taskStep = TaskStep.instructions.obs;
 
+  /// List of stim to present to the user
   late final List<String> stimList;
+
+  /// Unique id to identify all the participant's data
   late final String participantID;
 
   @override
