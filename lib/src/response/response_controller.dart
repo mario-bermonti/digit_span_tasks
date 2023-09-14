@@ -13,6 +13,7 @@ class ResponseController extends GetxController {
     super.dispose();
   }
 
+  /// Submit participant's response and reset the text input
   void submit() {
     String response = textController.text.trim();
     _mDigits.addTrialData(resp: response);
