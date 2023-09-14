@@ -8,7 +8,7 @@ import 'package:mdigits/src/rest/rest_view.dart';
 import 'package:mdigits/src/stim/stim_view.dart';
 import 'package:mdigits/src/mdigits/task_step.dart';
 
-/// Controls the task sequence based on the curren step
+/// Present the appropriate screen based on the curren step
 class MDigitsView extends StatelessWidget {
   MDigitsView({super.key});
 
@@ -19,7 +19,7 @@ class MDigitsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() {
       switch (mDigits.taskStep.value) {
-        case TaskStep.instruction:
+        case TaskStep.instructions:
           return InstructionsView();
         case TaskStep.stim:
           return StimView();
@@ -28,7 +28,6 @@ class MDigitsView extends StatelessWidget {
         case TaskStep.rest:
           return RestView();
         case TaskStep.completed:
-          // TODO should data be processed here
           if (mDigits.processData != null) {
             mDigits.processData!(mDigits.data);
           }

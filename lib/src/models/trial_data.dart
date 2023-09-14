@@ -1,3 +1,4 @@
+/// Model for the data of a single trial
 class TrialData {
   final String participantID;
   final String stim;

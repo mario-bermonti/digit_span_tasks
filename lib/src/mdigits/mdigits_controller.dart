@@ -5,7 +5,7 @@ import 'package:mdigits/src/models/trial_data.dart';
 import 'package:mdigits/src/randomize.dart';
 
 /// Controls the task sequence
-/// The sequence includes stim presentation, response, rest, end
+/// The task sequence which includes stim, response, rest, end
 class MDigitsController extends GetxController {
   /// Provides access and manages the stimuli
   late final StimController _stimuli;
@@ -14,18 +14,13 @@ class MDigitsController extends GetxController {
   /// Used to provide data to app
   final List<TrialData> data = <TrialData>[];
 
-  /// Global task start time
-  final DateTime _timeStart = DateTime.now();
-
-  // late final DataBase _database;
-
-  /// Session  number for current participant
-  // late final int _sessionNumber;
-
   /// Identifies the step the task currently is in
-  Rx<TaskStep> taskStep = TaskStep.instruction.obs;
+  Rx<TaskStep> taskStep = TaskStep.instructions.obs;
 
+  /// List of stim to present to the user
   late final List<String> stimList;
+
+  /// Unique id to identify all the participant's data
   late final String participantID;
 
   @override
@@ -87,56 +82,11 @@ class MDigitsController extends GetxController {
       _stimuli.stim.stimCountUsed != 0 && _stimuli.stim.stimCountUsed % 2 == 0;
   bool _completedStatusFollows() => _stimuli.stim.stimCountRemaining == 0;
 
-  /// Save session and device data
-  // void _saveData() {
-  //   /// Global session end time
-  //   final DateTime timeEnd = DateTime.now();
-
-  //   _database.addSessionData(
-  //       sessionNumber: _sessionNumber,
-  //       participantId: _participantId,
-  //       timeStart: _timeStart,
-  //       timeEnd: timeEnd);
-  //   _database.addDeviceData(
-  //     participantId: _participantId,
-  //     sessionNumber: _sessionNumber,
-  //   );
-  //   _database.saveData();
-  // }
-
   /// Setup everything needed to start the task sequence
   Future<void> setup() async {
     _stimuli = Get.put(StimController(stimList: stimList), permanent: true);
     await _stimuli.prepareStimPool();
   }
-
-  /// Controls the task sequence based on the curren step
-  // void run() {
-  //   switch (status) {
-  //     case TaskStep.stim:
-  //       Get.off(() => StimView());
-  //       _updateStep();
-  //       break;
-  //     case TaskStep.response:
-  //       Get.off(ResponseView());
-  //       _updateStep();
-  //       break;
-  //     case TaskStep.rest:
-  //       Get.off(RestView());
-  //       _updateStep();
-  //       break;
-  //     case TaskStep.completed:
-  //       // _saveData();
-  //       Get.off(const EndView());
-  //       if (processData != null) {
-  //         processData!(data);
-  //       }
-  //       Get.back();
-  //       return;
-  //     default:
-  //       run();
-  //   }
-  // }
 
   void endSession() {
     Get.back();
