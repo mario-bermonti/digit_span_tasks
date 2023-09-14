@@ -14,14 +14,6 @@ class MDigitsController extends GetxController {
   /// Used to provide data to app
   final List<TrialData> data = <TrialData>[];
 
-  /// Global task start time
-  final DateTime _timeStart = DateTime.now();
-
-  // late final DataBase _database;
-
-  /// Session  number for current participant
-  // late final int _sessionNumber;
-
   /// Identifies the step the task currently is in
   Rx<TaskStep> taskStep = TaskStep.instructions.obs;
 
