@@ -82,23 +82,6 @@ class MDigitsController extends GetxController {
       _stimuli.stim.stimCountUsed != 0 && _stimuli.stim.stimCountUsed % 2 == 0;
   bool _completedStatusFollows() => _stimuli.stim.stimCountRemaining == 0;
 
-  /// Save session and device data
-  // void _saveData() {
-  //   /// Global session end time
-  //   final DateTime timeEnd = DateTime.now();
-
-  //   _database.addSessionData(
-  //       sessionNumber: _sessionNumber,
-  //       participantId: _participantId,
-  //       timeStart: _timeStart,
-  //       timeEnd: timeEnd);
-  //   _database.addDeviceData(
-  //     participantId: _participantId,
-  //     sessionNumber: _sessionNumber,
-  //   );
-  //   _database.saveData();
-  // }
-
   /// Setup everything needed to start the task sequence
   Future<void> setup() async {
     _stimuli = Get.put(StimController(stimList: stimList), permanent: true);
