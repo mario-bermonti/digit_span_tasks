@@ -8,7 +8,7 @@ import 'package:mdigits/src/rest/rest_view.dart';
 import 'package:mdigits/src/stim/stim_view.dart';
 import 'package:mdigits/src/mdigits/task_step.dart';
 
-/// Controls the task sequence based on the curren step
+/// Present the appropriate screen based on the curren step
 class MDigitsView extends StatelessWidget {
   MDigitsView({super.key});
 
