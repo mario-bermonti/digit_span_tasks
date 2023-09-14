@@ -19,7 +19,7 @@ class MDigitsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() {
       switch (mDigits.taskStep.value) {
-        case TaskStep.instruction:
+        case TaskStep.instructions:
           return InstructionsView();
         case TaskStep.stim:
           return StimView();

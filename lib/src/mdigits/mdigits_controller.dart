@@ -23,7 +23,7 @@ class MDigitsController extends GetxController {
   // late final int _sessionNumber;
 
   /// Identifies the step the task currently is in
-  Rx<TaskStep> taskStep = TaskStep.instruction.obs;
+  Rx<TaskStep> taskStep = TaskStep.instructions.obs;
 
   late final List<String> stimList;
   late final String participantID;
