@@ -5,7 +5,7 @@ import 'package:mdigits/src/models/trial_data.dart';
 import 'package:mdigits/src/randomize.dart';
 
 /// Controls the task sequence
-/// The sequence includes stim presentation, response, rest, end
+/// The task sequence which includes stim, response, rest, end
 class MDigitsController extends GetxController {
   /// Provides access and manages the stimuli
   late final StimController _stimuli;
