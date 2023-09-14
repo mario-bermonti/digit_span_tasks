@@ -137,4 +137,8 @@ class MDigitsController extends GetxController {
   //       run();
   //   }
   // }
+
+  void endSession() {
+    Get.back();
+  }
 }
