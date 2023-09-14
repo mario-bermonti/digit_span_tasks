@@ -28,7 +28,6 @@ class MDigitsView extends StatelessWidget {
         case TaskStep.rest:
           return RestView();
         case TaskStep.completed:
-          // TODO should data be processed here
           if (mDigits.processData != null) {
             mDigits.processData!(mDigits.data);
           }
