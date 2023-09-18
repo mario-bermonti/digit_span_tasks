@@ -77,7 +77,9 @@ class MDigitsController extends GetxController {
   }
 
   bool _responseStatusFollows() => taskStep.value == TaskStep.stim;
-  bool _stimStatusFollows() => taskStep.value == TaskStep.rest;
+  bool _stimStatusFollows() =>
+      (taskStep.value == TaskStep.rest) ||
+      (taskStep.value == TaskStep.instructions);
   bool restStatusFollows() =>
       _stimuli.stim.stimCountUsed != 0 && _stimuli.stim.stimCountUsed % 2 == 0;
   bool _completedStatusFollows() => _stimuli.stim.stimCountRemaining == 0;
