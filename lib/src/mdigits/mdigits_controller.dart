@@ -8,7 +8,7 @@ import 'package:mdigits/src/randomize.dart';
 /// The task sequence which includes stim, response, rest, end
 class MDigitsController extends GetxController {
   /// Provides access and manages the stimuli
-  late final StimController _stimuli;
+  late StimController _stimuli;
 
   /// Data for all trials
   /// Used to provide data to app
