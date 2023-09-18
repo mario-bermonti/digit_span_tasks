@@ -88,7 +88,8 @@ class MDigitsController extends GetxController {
     await _stimuli.prepareStimPool();
   }
 
-  void endSession() {
+  Future<void> endSession() async {
+    await reset();
     Get.back();
   }
 
