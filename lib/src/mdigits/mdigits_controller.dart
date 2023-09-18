@@ -91,4 +91,10 @@ class MDigitsController extends GetxController {
   void endSession() {
     Get.back();
   }
+
+  /// Reset mDigits so it can be used again repeatedly
+  Future<void> reset() async {
+    await setup();
+    taskStep(TaskStep.instructions);
+  }
 }
