@@ -14,7 +14,7 @@ void main() async {
 stimFromFileTest() async {
   testWidgets('Assets folder', (tester) async {
     final s = await createStimFromFile('assets/stimuli_tests.txt');
-    expect(s.stimuli, ['del', 'dos']);
+    expect(s._stimuli, ['del', 'dos']);
   });
 }
 
@@ -70,11 +70,11 @@ randomizeTest() async {
     stimuli5.randomize();
 
     final firstStimulusEachStimuli = <String>[
-      stimuli1.stimuli.first,
-      stimuli2.stimuli.first,
-      stimuli3.stimuli.first,
-      stimuli4.stimuli.first,
-      stimuli5.stimuli.first,
+      stimuli1._stimuli.first,
+      stimuli2._stimuli.first,
+      stimuli3._stimuli.first,
+      stimuli4._stimuli.first,
+      stimuli5._stimuli.first,
     ];
 
     bool obs = firstStimulusEachStimuli.every(((element) => element == 'a'));
