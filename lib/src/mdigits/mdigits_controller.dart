@@ -8,7 +8,7 @@ import 'package:mdigits/src/randomize.dart';
 /// The task sequence which includes stim, response, rest, end
 class MDigitsController extends GetxController {
   /// Provides access and manages the stimuli
-  late final StimController _stimuli;
+  late StimController _stimuli;
 
   /// Data for all trials
   /// Used to provide data to app
@@ -77,7 +77,9 @@ class MDigitsController extends GetxController {
   }
 
   bool _responseStatusFollows() => taskStep.value == TaskStep.stim;
-  bool _stimStatusFollows() => taskStep.value == TaskStep.rest;
+  bool _stimStatusFollows() =>
+      (taskStep.value == TaskStep.rest) ||
+      (taskStep.value == TaskStep.instructions);
   bool restStatusFollows() =>
       _stimuli.stim.stimCountUsed != 0 && _stimuli.stim.stimCountUsed % 2 == 0;
   bool _completedStatusFollows() => _stimuli.stim.stimCountRemaining == 0;
@@ -88,7 +90,16 @@ class MDigitsController extends GetxController {
     await _stimuli.prepareStimPool();
   }
 
-  void endSession() {
-    Get.back();
+  Future<void> endSession() async {
+    List<TrialData> datatoReturn = List<TrialData>.from(data);
+    await reset();
+    Get.back(result: datatoReturn);
+  }
+
+  /// Reset mDigits so it can be used again repeatedly
+  Future<void> reset() async {
+    data.clear();
+    await setup();
+    taskStep(TaskStep.instructions);
   }
 }
