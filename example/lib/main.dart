@@ -39,8 +39,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () {
-                Get.to(MDigitsView());
+              onPressed: () async {
+                List data = await Get.to(MDigitsView());
+                print('main $data');
               },
               child: Text(
                 'mDigits',
