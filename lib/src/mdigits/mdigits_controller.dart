@@ -91,8 +91,9 @@ class MDigitsController extends GetxController {
   }
 
   Future<void> endSession() async {
+    List<TrialData> datatoReturn = List<TrialData>.from(data);
     await reset();
-    Get.back();
+    Get.back(result: datatoReturn);
   }
 
   /// Reset mDigits so it can be used again repeatedly
