@@ -18,7 +18,6 @@ class StimController extends GetxController {
     try {
       // Stimuli stimuli = await createStimFromFile(path);
       Stimuli stimuli = Stimuli(stimuli: stimList);
-      stimuli.randomize();
       stim = stimuli;
     } on StimFileAccessException catch (e) {
       throw GenericmdigitsException(e.toString());
