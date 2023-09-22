@@ -11,6 +11,6 @@ class Settings {
   final void Function(List<TrialData> data)? processData;
 
   Settings({required stimList, required this.participantID, this.processData}) {
-    stimList = randomizeDigitsInSets(stimList);
+    this.stimList = randomizeDigitsInSets(stimList);
   }
 }
