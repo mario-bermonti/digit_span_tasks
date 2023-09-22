@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:mdigits/src/end/end_view.dart';
 import 'package:mdigits/src/instructions/instructions_view.dart';
 import 'package:mdigits/src/mdigits/mdigits_controller.dart';
+import 'package:mdigits/src/models/settings.dart';
 import 'package:mdigits/src/response/response_view.dart';
 import 'package:mdigits/src/rest/rest_view.dart';
 import 'package:mdigits/src/stim/stim_view.dart';
@@ -10,10 +11,12 @@ import 'package:mdigits/src/mdigits/task_step.dart';
 
 /// Present the appropriate screen based on the curren step
 class MDigitsView extends StatelessWidget {
-  MDigitsView({super.key});
+  final Settings settings;
+  final MDigitsController mDigits;
 
-  final MDigitsController mDigits =
-      Get.put(MDigitsController(), permanent: true);
+  MDigitsView({super.key, required this.settings, required this.mDigits}) {
+    Get.put(MDigitsController(settings), permanent: true);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +31,8 @@ class MDigitsView extends StatelessWidget {
         case TaskStep.rest:
           return RestView();
         case TaskStep.completed:
-          if (mDigits.processData != null) {
-            mDigits.processData!(mDigits.data);
+          if (mDigits.settings.processData != null) {
+            mDigits.settings.processData!(mDigits.data);
           }
           return EndView();
       }
