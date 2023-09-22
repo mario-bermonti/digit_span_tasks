@@ -4,5 +4,5 @@ class Settings {
   final String participantID;
   final void Function(List<TrialData> data)? processData;
 
-  Settings(this.stimList, this.participantID, this.processData);
+    stimList = randomizeDigitsInSets(stimList);
 }
