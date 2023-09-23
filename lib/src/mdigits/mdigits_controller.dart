@@ -71,6 +71,9 @@ class MDigitsController extends GetxController {
 
   Future<void> endSession() async {
     List<TrialData> datatoReturn = List<TrialData>.from(data);
+    if (config.processData != null) {
+      config.processData!(datatoReturn);
+    }
     await reset();
     Get.back(result: datatoReturn);
   }
