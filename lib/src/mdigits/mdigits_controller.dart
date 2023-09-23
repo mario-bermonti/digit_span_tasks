@@ -7,7 +7,7 @@ import 'package:mdigits/src/models/trial_data.dart';
 /// Controls the task sequence
 /// The task sequence which includes stim, response, rest, end
 class MDigitsController extends GetxController {
-  Settings settings;
+  Config config;
 
   /// Provides access and manages the stimuli
   late StimController _stimuli;
@@ -25,11 +25,11 @@ class MDigitsController extends GetxController {
     super.onInit();
   }
 
-  MDigitsController(this.settings);
+  MDigitsController(this.config);
 
   void addTrialData({required String resp}) {
     TrialData trialData = TrialData(
-      participantID: settings.participantID,
+      participantID: config.participantID,
       stim: _stimuli.stim.currentStim,
       response: resp,
     );
@@ -65,7 +65,7 @@ class MDigitsController extends GetxController {
   /// Setup everything needed to start the task sequence
   Future<void> setup() async {
     _stimuli =
-        Get.put(StimController(stimList: settings.stimList), permanent: true);
+        Get.put(StimController(stimList: config.stimList), permanent: true);
     await _stimuli.prepareStimPool();
   }
 

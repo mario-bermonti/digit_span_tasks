@@ -40,13 +40,13 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             ElevatedButton(
               onPressed: () async {
-                Settings setting = Settings(
+                Config config = Config(
                   stimList: ['01', '234', '56789'],
                   participantID: '000',
                   processData: print,
                 );
                 List data = await Get.to(MDigitsView(
-                  settings: setting,
+                  config: config,
                 ));
                 print('main $data');
               },
