@@ -1,12 +1,14 @@
 import 'package:get/get.dart';
 import 'package:mdigits/src/mdigits/task_step.dart';
+import 'package:mdigits/src/models/settings.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
 import 'package:mdigits/src/models/trial_data.dart';
-import 'package:mdigits/src/randomize.dart';
 
 /// Controls the task sequence
 /// The task sequence which includes stim, response, rest, end
 class MDigitsController extends GetxController {
+  Config config;
+
   /// Provides access and manages the stimuli
   late StimController _stimuli;
 
@@ -17,41 +19,17 @@ class MDigitsController extends GetxController {
   /// Identifies the step the task currently is in
   Rx<TaskStep> taskStep = TaskStep.instructions.obs;
 
-  /// List of stim to present to the user
-  late final List<String> stimList;
-
-  /// Unique id to identify all the participant's data
-  late final String participantID;
-
   @override
   onInit() async {
     await setup();
     super.onInit();
   }
 
-  late Function(List<TrialData> value)? processData;
-
-  // MDigits({
-  //   required List<String> stimList,
-  //   required this.participantID,
-  //   randomizeDigits = false,
-  //   this.processData,
-  // }) {
-  //   if (randomizeDigits) {
-  //     this.stimList = randomizeDigitsInSets(stimList);
-  //   } else {
-  //     this.stimList = stimList;
-  //   }
-  // }
-  MDigitsController() {
-    stimList = randomizeDigitsInSets(['01', '234', '56789']);
-    participantID = '000';
-    processData = print;
-  }
+  MDigitsController(this.config);
 
   void addTrialData({required String resp}) {
     TrialData trialData = TrialData(
-      participantID: participantID,
+      participantID: config.participantID,
       stim: _stimuli.stim.currentStim,
       response: resp,
     );
@@ -86,7 +64,8 @@ class MDigitsController extends GetxController {
 
   /// Setup everything needed to start the task sequence
   Future<void> setup() async {
-    _stimuli = Get.put(StimController(stimList: stimList), permanent: true);
+    _stimuli =
+        Get.put(StimController(stimList: config.stimList), permanent: true);
     await _stimuli.prepareStimPool();
   }
 
