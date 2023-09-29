@@ -45,9 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   participantID: '000',
                   processData: print,
                 );
-                List data = await Get.to(MDigitsView(
-                  config: config,
-                ));
+                List data = await Get.to(() => MDigitsView(
+                      config: config,
+                    ));
                 print('main $data');
               },
               child: Text(
