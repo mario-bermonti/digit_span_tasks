@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/mdigits/task_step.dart';
 import 'package:mdigits/src/models/settings.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
@@ -14,7 +15,7 @@ class MDigitsController extends GetxController {
 
   /// Data for all trials
   /// Used to provide data to app
-  final List<TrialData> data = <TrialData>[];
+  final Data data = Data();
 
   /// Identifies the step the task currently is in
   Rx<TaskStep> taskStep = TaskStep.instructions.obs;
