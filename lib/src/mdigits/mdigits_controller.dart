@@ -64,8 +64,7 @@ class MDigitsController extends GetxController {
 
   /// Setup everything needed to start the task sequence
   Future<void> setup() async {
-    _stimuli =
-        Get.put(StimController(stimList: config.stimList), permanent: true);
+    _stimuli = Get.put(StimController(stimList: config.stimList));
     await _stimuli.prepareStimPool();
   }
 
@@ -74,14 +73,14 @@ class MDigitsController extends GetxController {
     if (config.processData != null) {
       config.processData!(datatoReturn);
     }
-    await reset();
+    // await reset();
     Get.back(result: datatoReturn);
   }
 
   /// Reset mDigits so it can be used again repeatedly
   Future<void> reset() async {
-    data.clear();
-    await setup();
+    // data.clear();
+    // await setup();
     taskStep(TaskStep.instructions);
   }
 }
