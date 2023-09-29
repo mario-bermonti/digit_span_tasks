@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/mdigits/task_step.dart';
@@ -70,6 +71,7 @@ class MDigitsController extends GetxController {
   }
 
   Future<void> endSession() async {
+    data.endTime = TimeOfDay.now();
     MDigitsData mDigitsData = data.exportData();
     if (config.processData != null) {
       config.processData!(mDigitsData.trialData);
