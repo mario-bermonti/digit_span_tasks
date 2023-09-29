@@ -29,12 +29,11 @@ class MDigitsController extends GetxController {
   MDigitsController(this.config);
 
   void addTrialData({required String resp}) {
-    TrialData trialData = TrialData(
+    data.addTrialData(
       participantID: config.participantID,
       stim: _stimuli.stim.currentStim,
-      response: resp,
+      resp: resp,
     );
-    data.add(trialData);
   }
 
   // TODO improve name of conditions checks?
