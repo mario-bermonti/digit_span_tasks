@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/mdigits/task_step.dart';
+import 'package:mdigits/src/models/mdigits_data.dart';
 import 'package:mdigits/src/models/settings.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
 import 'package:mdigits/src/models/trial_data.dart';
@@ -69,12 +70,12 @@ class MDigitsController extends GetxController {
   }
 
   Future<void> endSession() async {
-    List<TrialData> datatoReturn = List<TrialData>.from(data);
+    MDigitsData mDigitsData = data.exportData();
     if (config.processData != null) {
-      config.processData!(datatoReturn);
+      config.processData!(mDigitsData.trialData);
     }
     // await reset();
-    Get.back(result: datatoReturn);
+    Get.back(result: mDigitsData);
   }
 
   /// Reset mDigits so it can be used again repeatedly
