@@ -5,10 +5,12 @@ import 'package:mdigits/src/models/trial_data.dart';
 /// Data manager for MDigits
 class Data {
   final List<TrialData> _trialData = <TrialData>[];
-  final TimeOfDay _startTime;
+  late final TimeOfDay _startTime;
   late final TimeOfDay _endTime;
 
-  Data(this._startTime);
+  Data() {
+    _startTime = TimeOfDay.now();
+  }
 
   /// Add data [participantID], [stim], [resp] from a single trial to
   /// the manager
