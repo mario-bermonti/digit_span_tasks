@@ -15,7 +15,7 @@ class MDigitsView extends StatelessWidget {
   late final MDigitsController mDigits;
 
   MDigitsView({super.key, required this.config}) {
-    mDigits = Get.put(MDigitsController(config), permanent: true);
+    mDigits = Get.put(MDigitsController(config));
   }
 
   @override
