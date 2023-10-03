@@ -10,10 +10,10 @@ import 'package:mdigits/src/models/trial_data.dart';
 /// Controls the task sequence
 /// The task sequence which includes stim, response, rest, end
 class MDigitsController extends GetxController {
-  Config config;
+  final Config config;
 
   /// Provides access and manages the stimuli
-  late StimController _stimuli;
+  late final StimController _stimuli;
 
   /// Data for all trials
   /// Used to provide data to app
