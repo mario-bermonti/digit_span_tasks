@@ -1,5 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/mdigits/task_step.dart';
+import 'package:mdigits/src/models/mdigits_data.dart';
 import 'package:mdigits/src/models/settings.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
 import 'package:mdigits/src/models/trial_data.dart';
@@ -14,7 +17,7 @@ class MDigitsController extends GetxController {
 
   /// Data for all trials
   /// Used to provide data to app
-  final List<TrialData> data = <TrialData>[];
+  final Data data = Data();
 
   /// Identifies the step the task currently is in
   Rx<TaskStep> taskStep = TaskStep.instructions.obs;
@@ -28,12 +31,11 @@ class MDigitsController extends GetxController {
   MDigitsController(this.config);
 
   void addTrialData({required String resp}) {
-    TrialData trialData = TrialData(
+    data.addTrialData(
       participantID: config.participantID,
       stim: _stimuli.stim.currentStim,
-      response: resp,
+      resp: resp,
     );
-    data.add(trialData);
   }
 
   // TODO improve name of conditions checks?
@@ -69,12 +71,13 @@ class MDigitsController extends GetxController {
   }
 
   Future<void> endSession() async {
-    List<TrialData> datatoReturn = List<TrialData>.from(data);
+    data.endTime = TimeOfDay.now();
+    MDigitsData mDigitsData = data.exportData();
     if (config.processData != null) {
-      config.processData!(datatoReturn);
+      config.processData!(mDigitsData.trialData);
     }
     // await reset();
-    Get.back(result: datatoReturn);
+    Get.back(result: mDigitsData);
   }
 
   /// Reset mDigits so it can be used again repeatedly
