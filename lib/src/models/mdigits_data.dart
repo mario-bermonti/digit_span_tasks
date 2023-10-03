@@ -13,4 +13,13 @@ class MDigitsData {
       {required this.trialData,
       required this.startTime,
       required this.endTime});
+
+  @override
+  String toString() {
+    return '''
+    start time: $startTime,
+    end time: $endTime,
+    trial data: \n ${trialData.toString()}
+    ''';
+  }
 }
