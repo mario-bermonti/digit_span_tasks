@@ -82,8 +82,6 @@ class MDigitsController extends GetxController {
 
   /// Reset mDigits so it can be used again repeatedly
   Future<void> reset() async {
-    // data.clear();
-    // await setup();
     taskStep(TaskStep.instructions);
   }
 }
