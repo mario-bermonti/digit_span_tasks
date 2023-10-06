@@ -8,9 +8,7 @@ class Config {
   /// Unique id to identify all the participant's data
   final String participantID;
 
-  final void Function(List<TrialData> data)? processData;
-
-  Config({required stimList, required this.participantID, this.processData}) {
+  Config({required stimList, required this.participantID}) {
     this.stimList = randomizeDigitsInSets(stimList);
   }
 }
