@@ -73,9 +73,6 @@ class MDigitsController extends GetxController {
   Future<void> endSession() async {
     data.endTime = TimeOfDay.now();
     MDigitsData mDigitsData = data.exportData();
-    if (config.processData != null) {
-      config.processData!(mDigitsData.trialData);
-    }
     // await reset();
     Get.back(result: mDigitsData);
   }
