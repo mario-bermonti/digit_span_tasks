@@ -43,7 +43,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 Config config = Config(
                   stimList: ['01', '234', '56789'],
                   participantID: '000',
-                  processData: print,
                 );
                 MDigitsData data = await Get.to(() => MDigitsView(
                       config: config,
