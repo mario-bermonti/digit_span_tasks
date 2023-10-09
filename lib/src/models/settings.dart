@@ -1,4 +1,3 @@
-import 'package:mdigits/src/models/trial_data.dart';
 import 'package:mdigits/src/randomize.dart';
 
 class Config {

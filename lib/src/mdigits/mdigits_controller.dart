@@ -5,7 +5,6 @@ import 'package:mdigits/src/mdigits/task_step.dart';
 import 'package:mdigits/src/models/mdigits_data.dart';
 import 'package:mdigits/src/models/settings.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
-import 'package:mdigits/src/models/trial_data.dart';
 
 /// Controls the task sequence
 /// The task sequence which includes stim, response, rest, end
