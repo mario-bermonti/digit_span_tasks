@@ -37,9 +37,6 @@ class MDigitsController extends GetxController {
     );
   }
 
-  // TODO improve name of conditions checks?
-  /// TODO can presenting stim next be improved? Current implementation seems
-  /// weird
   ///  Update the current task step so the [run()] can continue the sequence
   void updateStep() {
     if (_responseStatusFollows()) {
