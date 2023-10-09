@@ -8,8 +8,6 @@ import 'package:mdigits/src/mdigits/mdigits_view_practice.dart';
 class MDigitsView extends StatelessWidget {
   MDigitsView({super.key, required config}) {
     Get.put(config);
-
-    /// Data manager
     Get.put(Data());
   }
 
