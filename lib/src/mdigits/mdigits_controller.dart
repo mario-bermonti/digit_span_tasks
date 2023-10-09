@@ -11,6 +11,9 @@ import 'package:mdigits/src/stim/stim_controller.dart';
 class MDigitsController extends GetxController {
   final Config config = Get.find();
 
+  /// Data Manager
+  final Data data = Get.find();
+
   /// Provides access and manages the stimuli
   late final StimController _stimuli;
 

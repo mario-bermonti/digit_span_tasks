@@ -13,6 +13,8 @@ import 'package:mdigits/src/mdigits/task_step.dart';
 /// Present the appropriate screen based on the curren step
 class MDigitsView extends StatelessWidget {
   late final MDigitsController mDigits;
+
+  /// Data manager
   final Data data = Get.put(Data());
 
   MDigitsView({super.key, required Config config}) {
