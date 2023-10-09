@@ -11,11 +11,11 @@ import 'package:mdigits/src/mdigits/task_step.dart';
 
 /// Present the appropriate screen based on the curren step
 class MDigitsView extends StatelessWidget {
-  final Config config;
   late final MDigitsController mDigits;
 
-  MDigitsView({super.key, required this.config}) {
-    mDigits = Get.put(MDigitsController(config));
+  MDigitsView({super.key, required Config config}) {
+    Get.put(config);
+    mDigits = Get.put(MDigitsController());
   }
 
   @override
