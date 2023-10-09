@@ -11,12 +11,11 @@ import 'package:mdigits/src/stim/stim_controller.dart';
 class MDigitsController extends GetxController {
   final Config config = Get.find();
 
+  /// Data Manager
+  final Data data = Get.find();
+
   /// Provides access and manages the stimuli
   late final StimController _stimuli;
-
-  /// Data for all trials
-  /// Used to provide data to app
-  final Data data = Data();
 
   /// Identifies the step the task currently is in
   Rx<TaskStep> taskStep = TaskStep.instructions.obs;
