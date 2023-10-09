@@ -14,12 +14,7 @@ class MDigitsView extends StatelessWidget {
   late final MDigitsController mDigits;
 
   MDigitsView({super.key, required Config config}) {
-    Get.put(
-      Config(
-        participantID: config.participantID,
-        stimList: config.stimList,
-      ),
-    );
+    Get.put(config);
     mDigits = Get.put(MDigitsController());
   }
 
