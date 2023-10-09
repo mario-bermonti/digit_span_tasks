@@ -9,7 +9,7 @@ import 'package:mdigits/src/stim/stim_controller.dart';
 /// Controls the task sequence
 /// The task sequence which includes stim, response, rest, end
 class MDigitsController extends GetxController {
-  final Config config;
+  final Config config = Get.find();
 
   /// Provides access and manages the stimuli
   late final StimController _stimuli;
@@ -27,7 +27,7 @@ class MDigitsController extends GetxController {
     super.onInit();
   }
 
-  MDigitsController(this.config);
+  MDigitsController();
 
   void addTrialData({required String resp}) {
     data.addTrialData(
