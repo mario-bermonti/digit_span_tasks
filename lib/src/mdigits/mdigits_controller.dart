@@ -72,12 +72,6 @@ class MDigitsController extends GetxController {
   Future<void> endSession() async {
     data.endTime = TimeOfDay.now();
     MDigitsData mDigitsData = data.exportData();
-    // await reset();
     Get.back(result: mDigitsData);
-  }
-
-  /// Reset mDigits so it can be used again repeatedly
-  Future<void> reset() async {
-    taskStep(TaskStep.instructions);
   }
 }
