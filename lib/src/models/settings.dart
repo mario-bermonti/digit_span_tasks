@@ -1,6 +1,7 @@
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:mdigits/src/randomize.dart';
 
-class Config {
+class Config extends GetxController {
   /// List of stim to present to the user
   late final List<String> stimList;
 
