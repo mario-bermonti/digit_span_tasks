@@ -33,7 +33,7 @@ class Data {
 
   /// Exports the data collected during the session using a custom object named
   /// [MDigitsData]
-  MDigitsData exportData() {
+  MDigitsData export() {
     MDigitsData data = MDigitsData(
       trialData: _trialData,
       startTime: _startTime,
