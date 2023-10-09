@@ -5,7 +5,6 @@ import 'package:mdigits/src/mdigits/task_step.dart';
 import 'package:mdigits/src/models/mdigits_data.dart';
 import 'package:mdigits/src/models/settings.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
-import 'package:mdigits/src/models/trial_data.dart';
 
 /// Controls the task sequence
 /// The task sequence which includes stim, response, rest, end
@@ -73,12 +72,6 @@ class MDigitsController extends GetxController {
   Future<void> endSession() async {
     data.endTime = TimeOfDay.now();
     MDigitsData mDigitsData = data.exportData();
-    // await reset();
     Get.back(result: mDigitsData);
-  }
-
-  /// Reset mDigits so it can be used again repeatedly
-  Future<void> reset() async {
-    taskStep(TaskStep.instructions);
   }
 }
