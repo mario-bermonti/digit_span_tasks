@@ -68,7 +68,7 @@ class MDigitsController extends GetxController {
 
   Future<void> endSession() async {
     data.endTime = TimeOfDay.now();
-    MDigitsData mDigitsData = data.exportData();
+    MDigitsData mDigitsData = data.export();
     Get.back(result: mDigitsData);
   }
 }
