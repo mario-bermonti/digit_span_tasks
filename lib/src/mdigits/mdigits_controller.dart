@@ -29,19 +29,20 @@ class MDigitsController extends GetxController {
         (taskStep.value == TaskStep.instructions) ||
         (taskStep.value == TaskStep.response);
 
+    bool restStepFollows = (_stimuli.stim.stimCountUsed != 0) &&
+        (_stimuli.stim.stimCountUsed % 2 == 0);
+
     if (taskStep.value == TaskStep.stim) {
       taskStep(TaskStep.response);
     } else if (_completedStatusFollows()) {
       taskStep(TaskStep.completed);
     } else if (stimStepFollows) {
       taskStep(TaskStep.stim);
-    } else if (restStatusFollows()) {
+    } else if (restStepFollows) {
       taskStep(TaskStep.rest);
     }
   }
 
-  bool restStatusFollows() =>
-      _stimuli.stim.stimCountUsed != 0 && _stimuli.stim.stimCountUsed % 2 == 0;
   bool _completedStatusFollows() => _stimuli.stim.stimCountRemaining == 0;
 
   Future<void> endSession() async {
