@@ -28,14 +28,6 @@ class MDigitsController extends GetxController {
 
   MDigitsController();
 
-  void addTrialData({required String resp}) {
-    data.addTrialData(
-      participantID: config.participantID,
-      stim: _stimuli.stim.currentStim,
-      resp: resp,
-    );
-  }
-
   ///  Update the current task step so the [run()] can continue the sequence
   void updateStep() {
     if (_responseStatusFollows()) {
