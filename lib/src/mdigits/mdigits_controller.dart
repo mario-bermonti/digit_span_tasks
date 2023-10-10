@@ -22,27 +22,26 @@ class MDigitsController extends GetxController {
 
   MDigitsController();
 
-  ///  Update the current task step so the [run()] can continue the sequence
+  /// Update the current task step to control flow of MDigits.
+  /// Each step is handled explicitly and the order checks is important
   void updateStep() {
-    if (_responseStatusFollows()) {
+    bool stimStepFollows = (taskStep.value == TaskStep.rest) ||
+        (taskStep.value == TaskStep.instructions) ||
+        (taskStep.value == TaskStep.response);
+
+    bool restStepFollows = (_stimuli.stim.stimCountUsed != 0) &&
+        (_stimuli.stim.stimCountUsed % 2 == 0);
+
+    if (taskStep.value == TaskStep.stim) {
       taskStep(TaskStep.response);
-    } else if (_completedStatusFollows()) {
+    } else if (_stimuli.stim.stimCountRemaining == 0) {
       taskStep(TaskStep.completed);
-    } else if (_stimStatusFollows()) {
+    } else if (stimStepFollows) {
       taskStep(TaskStep.stim);
-    } else if (restStatusFollows()) {
+    } else if (restStepFollows) {
       taskStep(TaskStep.rest);
     }
   }
-
-  bool _responseStatusFollows() => taskStep.value == TaskStep.stim;
-  bool _stimStatusFollows() =>
-      (taskStep.value == TaskStep.rest) ||
-      (taskStep.value == TaskStep.instructions) ||
-      (taskStep.value == TaskStep.response);
-  bool restStatusFollows() =>
-      _stimuli.stim.stimCountUsed != 0 && _stimuli.stim.stimCountUsed % 2 == 0;
-  bool _completedStatusFollows() => _stimuli.stim.stimCountRemaining == 0;
 
   Future<void> endSession() async {
     data.endTime = TimeOfDay.now();
