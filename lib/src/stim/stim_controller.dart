@@ -11,6 +11,11 @@ class StimController extends GetxController {
   RxString currentDigit = ''.obs;
   final Config config = Get.find();
 
+  @override
+  onInit() async {
+    await prepareStimPool();
+    super.onInit();
+  }
 
   /// Prepare stim to be used
   /// Includes building from file, create object, and randomize stim
