@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:mdigits/mdigits.dart';
 import 'package:mdigits/src/mdigits/mdigits_controller.dart';
 import 'package:mdigits/src/errors/errors.dart';
 import 'package:stimuli/errors.dart';
@@ -7,16 +8,20 @@ import 'package:stimuli/stimuli.dart';
 /// Manage the stim
 class StimController extends GetxController {
   late final Stimuli stim;
-  final List<String> stimList;
   RxString currentDigit = ''.obs;
+  final Config config = Get.find();
 
-  StimController({required this.stimList});
+  @override
+  onInit() async {
+    await prepareStimPool();
+    super.onInit();
+  }
 
   /// Prepare stim to be used
   /// Includes building from file, create object, and randomize stim
   Future<void> prepareStimPool() async {
     try {
-      Stimuli stimuli = Stimuli(stimuli: stimList);
+      Stimuli stimuli = Stimuli(stimuli: config.stimList);
       stim = stimuli;
     } on StimFileAccessException catch (e) {
       throw GenericmdigitsException(e.toString());
