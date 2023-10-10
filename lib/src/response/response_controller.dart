@@ -22,12 +22,14 @@ class ResponseController extends GetxController {
   /// Submit participant's response and reset the text input
   void submit() {
     String response = textController.text.trim();
-    textController.clear();
+
     data.addTrialData(
       participantID: config.participantID,
       stim: stim.stim.currentStim,
       resp: response,
     );
+
+    textController.clear();
   }
 
   void toNextScreen() {
