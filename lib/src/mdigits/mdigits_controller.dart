@@ -20,12 +20,6 @@ class MDigitsController extends GetxController {
   /// Identifies the step the task currently is in
   Rx<TaskStep> taskStep = TaskStep.instructions.obs;
 
-  @override
-  onInit() async {
-    await setup();
-    super.onInit();
-  }
-
   MDigitsController();
 
   ///  Update the current task step so the [run()] can continue the sequence
@@ -50,12 +44,6 @@ class MDigitsController extends GetxController {
   bool restStatusFollows() =>
       _stimuli.stim.stimCountUsed != 0 && _stimuli.stim.stimCountUsed % 2 == 0;
   bool _completedStatusFollows() => _stimuli.stim.stimCountRemaining == 0;
-
-  /// Setup everything needed to start the task sequence
-  Future<void> setup() async {
-    _stimuli = Get.put(StimController(stimList: config.stimList));
-    await _stimuli.prepareStimPool();
-  }
 
   Future<void> endSession() async {
     data.endTime = TimeOfDay.now();
