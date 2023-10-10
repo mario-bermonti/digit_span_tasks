@@ -22,7 +22,8 @@ class MDigitsController extends GetxController {
 
   MDigitsController();
 
-  ///  Update the current task step so the [run()] can continue the sequence
+  /// Update the current task step to control flow of MDigits.
+  /// Each step is handled explicitly and the order checks is important
   void updateStep() {
     if (_responseStatusFollows()) {
       taskStep(TaskStep.response);
