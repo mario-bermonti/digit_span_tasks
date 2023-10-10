@@ -25,7 +25,7 @@ class MDigitsController extends GetxController {
   /// Update the current task step to control flow of MDigits.
   /// Each step is handled explicitly and the order checks is important
   void updateStep() {
-    if (_responseStatusFollows()) {
+    if (taskStep.value == TaskStep.stim) {
       taskStep(TaskStep.response);
     } else if (_completedStatusFollows()) {
       taskStep(TaskStep.completed);
@@ -36,7 +36,6 @@ class MDigitsController extends GetxController {
     }
   }
 
-  bool _responseStatusFollows() => taskStep.value == TaskStep.stim;
   bool _stimStatusFollows() =>
       (taskStep.value == TaskStep.rest) ||
       (taskStep.value == TaskStep.instructions) ||
