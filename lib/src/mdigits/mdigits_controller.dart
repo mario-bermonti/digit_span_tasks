@@ -34,7 +34,7 @@ class MDigitsController extends GetxController {
 
     if (taskStep.value == TaskStep.stim) {
       taskStep(TaskStep.response);
-    } else if (_completedStatusFollows()) {
+    } else if (_stimuli.stim.stimCountRemaining == 0) {
       taskStep(TaskStep.completed);
     } else if (stimStepFollows) {
       taskStep(TaskStep.stim);
@@ -42,8 +42,6 @@ class MDigitsController extends GetxController {
       taskStep(TaskStep.rest);
     }
   }
-
-  bool _completedStatusFollows() => _stimuli.stim.stimCountRemaining == 0;
 
   Future<void> endSession() async {
     data.endTime = TimeOfDay.now();
