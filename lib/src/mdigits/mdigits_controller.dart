@@ -15,12 +15,18 @@ class MDigitsController extends GetxController {
   final Data data = Get.find();
 
   /// Provides access and manages the stimuli
-  final StimController _stimuli = Get.put(StimController());
+  late final StimController _stimuli;
 
   /// Identifies the step the task currently is in
   Rx<TaskStep> taskStep = TaskStep.instructions.obs;
 
   MDigitsController();
+
+  @override
+  void onInit() {
+    super.onInit();
+    _stimuli = Get.put(StimController());
+  }
 
   /// Update the current task step to control flow of MDigits.
   /// Each step is handled explicitly and the order checks is important

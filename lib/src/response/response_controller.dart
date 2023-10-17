@@ -33,7 +33,6 @@ class ResponseController extends GetxController {
   }
 
   void toNextScreen() {
-    MDigitsController mDigitsController = Get.find();
-    mDigitsController.updateStep();
+    _mDigits.updateStep();
   }
 }
