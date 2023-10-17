@@ -10,11 +10,13 @@ class StimController extends GetxController {
   late final Stimuli stim;
   RxString currentDigit = ''.obs;
   final Config config = Get.find();
+  late MDigitsController mDigitsController;
 
   @override
   onInit() async {
     await prepareStimPool();
     super.onInit();
+    mDigitsController = Get.find();
   }
 
   /// Prepare stim to be used
@@ -40,7 +42,6 @@ class StimController extends GetxController {
   }
 
   void toNextScreen() {
-    MDigitsController mDigitsController = Get.find();
     mDigitsController.updateStep();
   }
 
