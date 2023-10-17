@@ -6,8 +6,8 @@ class EndController extends GetxController {
   MDigitsController mDigitsController = Get.find();
 
   /// Ends the session after 2s and returns to MDigits caller
-  Future<void> toNextScreen() async {
-    await Future.delayed(
+  void toNextScreen() {
+    Future.delayed(
       waitTime,
       () => mDigitsController.endSession(),
     );
