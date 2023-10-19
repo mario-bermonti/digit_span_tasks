@@ -32,8 +32,7 @@ class MDigitsController extends GetxController {
   /// Each step is handled explicitly and the order checks is important
   void updateStep() {
     bool stimStepFollows = (taskStep.value == TaskStep.rest) ||
-        (taskStep.value == TaskStep.instructions) ||
-        (taskStep.value == TaskStep.response);
+        (taskStep.value == TaskStep.instructions);
 
     bool restStepFollows = (_stimuli.stim.stimCountUsed != 0) &&
         (_stimuli.stim.stimCountUsed % 2 == 0);
