@@ -45,6 +45,8 @@ class MDigitsController extends GetxController {
       taskStep(TaskStep.stim);
     } else if (restStepFollows) {
       taskStep(TaskStep.rest);
+    } else {
+      taskStep(TaskStep.stim);
     }
   }
 
