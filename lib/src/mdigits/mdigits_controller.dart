@@ -3,14 +3,11 @@ import 'package:get/get.dart';
 import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/mdigits/task_step.dart';
 import 'package:mdigits/src/models/mdigits_data.dart';
-import 'package:mdigits/src/models/settings.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
 
 /// Controls the task sequence
 /// The task sequence which includes stim, response, rest, end
 class MDigitsController extends GetxController {
-  final Config config = Get.find();
-
   /// Data Manager
   final Data data = Get.find();
 
