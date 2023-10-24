@@ -30,14 +30,14 @@ class MDigitsController extends GetxController {
 
   /// Update the current task step to control flow of MDigits.
   void updateStep() {
+    var stim = _stimuli.stim;
     bool stimStepFollows = (taskStep.value == TaskStep.rest);
-
-    bool restStepFollows = (_stimuli.stim.stimCountUsed != 0) &&
-        (_stimuli.stim.stimCountUsed % 2 == 0);
+    bool restStepFollows =
+        (stim.stimCountUsed != 0) && (stim.stimCountUsed % 2 == 0);
 
     if (taskStep.value == TaskStep.stim) {
       taskStep(TaskStep.response);
-    } else if (_stimuli.stim.stimCountRemaining == 0) {
+    } else if (stim.stimCountRemaining == 0) {
       taskStep(TaskStep.completed);
 
       /// This check is needed to garantee that mdigits doesn't
