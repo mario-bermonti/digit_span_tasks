@@ -10,11 +10,11 @@ import 'package:mdigits/src/end/end_controller.dart';
 /// over the session.
 class EndView extends StatelessWidget {
   EndView({Key? key}) : super(key: key);
-  final EndController endController = Get.put(EndController());
+  final EndController _endController = Get.put(EndController());
 
   @override
   Widget build(BuildContext context) {
-    endController.toNextScreen();
+    _endController.toNextScreen();
     return WillPopScope(
       onWillPop: () async {
         return false;
