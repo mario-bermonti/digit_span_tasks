@@ -5,7 +5,7 @@ import 'package:mdigits/src/instructions/instructions_controller.dart';
 class InstructionsView extends StatelessWidget {
   InstructionsView({super.key});
 
-  final InstructionsController instructionsController =
+  final InstructionsController _instructionsController =
       Get.put(InstructionsController());
 
   @override
@@ -17,7 +17,7 @@ class InstructionsView extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
-                instructionsController.toNextScreen();
+                _instructionsController.toNextScreen();
               },
               child: Text(
                 'Comenzar',
