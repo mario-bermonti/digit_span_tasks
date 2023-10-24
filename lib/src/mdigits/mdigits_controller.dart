@@ -9,7 +9,7 @@ import 'package:mdigits/src/stim/stim_controller.dart';
 /// The task sequence which includes stim, response, rest, end
 class MDigitsController extends GetxController {
   /// Data Manager
-  final Data data = Get.find();
+  final Data _data = Get.find();
 
   /// Provides access and manages the stimuli
   late final StimController _stimuli;
@@ -52,8 +52,8 @@ class MDigitsController extends GetxController {
   }
 
   Future<void> endSession() async {
-    data.endTime = TimeOfDay.now();
-    MDigitsData mDigitsData = data.export();
+    _data.endTime = TimeOfDay.now();
+    MDigitsData mDigitsData = _data.export();
     Get.back(result: mDigitsData);
   }
 }
