@@ -9,9 +9,9 @@ import 'package:mdigits/src/stim/stim_controller.dart';
 class ResponseController extends GetxController {
   TextEditingController textController = TextEditingController();
   final MDigitsController _mDigits = Get.find();
-  final Data data = Get.find();
-  final Config config = Get.find();
-  final StimController stim = Get.find();
+  final Data _data = Get.find();
+  final Config _config = Get.find();
+  final StimController _stim = Get.find();
 
   @override
   void dispose() {
@@ -23,9 +23,9 @@ class ResponseController extends GetxController {
   void submit() {
     String response = textController.text.trim();
 
-    data.addTrialData(
-      participantID: config.participantID,
-      stim: stim.stim.currentStim,
+    _data.addTrialData(
+      participantID: _config.participantID,
+      stim: _stim.stim.currentStim,
       resp: response,
     );
 
