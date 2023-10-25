@@ -14,11 +14,11 @@ import 'package:mdigits/src/mdigits/task_step.dart';
 class MDigitsView extends StatelessWidget {
   late final MDigitsController _mDigitsController;
 
-  /// Data manager
-  final Data data = Get.put(Data());
-
   MDigitsView({super.key, required Config config}) {
     Get.put(config);
+
+    /// Data manager
+    Get.put(Data());
     _mDigitsController = Get.put(MDigitsController());
   }
 
