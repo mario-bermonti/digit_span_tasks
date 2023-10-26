@@ -12,20 +12,20 @@ import 'package:mdigits/src/mdigits/task_step.dart';
 
 /// Present the appropriate screen based on the curren step
 class MDigitsView extends StatelessWidget {
-  late final MDigitsController mDigits;
-
-  /// Data manager
-  final Data data = Get.put(Data());
+  late final MDigitsController _mDigitsController;
 
   MDigitsView({super.key, required Config config}) {
     Get.put(config);
-    mDigits = Get.put(MDigitsController());
+
+    /// Data manager
+    Get.put(Data());
+    _mDigitsController = Get.put(MDigitsController());
   }
 
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      switch (mDigits.taskStep.value) {
+      switch (_mDigitsController.taskStep.value) {
         case TaskStep.instructions:
           return InstructionsView();
         case TaskStep.stim:
