@@ -14,14 +14,14 @@ class StimController extends GetxController {
 
   @override
   onInit() async {
-    await prepareStimPool();
+    await _prepareStimPool();
     super.onInit();
     _mDigitsController = Get.find();
   }
 
   /// Prepare stim to be used
   /// Includes building from file, create object, and randomize stim
-  Future<void> prepareStimPool() async {
+  Future<void> _prepareStimPool() async {
     try {
       Stimuli stimuli = Stimuli(stimuli: _config.stimList);
       stim = stimuli;
@@ -36,8 +36,8 @@ class StimController extends GetxController {
 
   /// Present the stim once to the participant and go back after 1s ISI
   Future<void> presentStim() async {
-    await presentISI();
-    await presentIndividualStim(stim.currentStim);
+    await _presentISI();
+    await _presentIndividualStim(stim.currentStim);
     toNextScreen();
   }
 
@@ -46,20 +46,20 @@ class StimController extends GetxController {
   }
 
   /// Present individual digits to participant
-  Future<void> presentIndividualStim(String stimSet) async {
+  Future<void> _presentIndividualStim(String stimSet) async {
     if (stimSet.isEmpty) {
       currentDigit('');
       return;
     } else {
       currentDigit(stimSet[0]);
       stimSet = stimSet.substring(1);
-      await presentISI();
-      await presentIndividualStim(stimSet);
+      await _presentISI();
+      await _presentIndividualStim(stimSet);
     }
   }
 
   /// Present 1s ISI
-  Future<void> presentISI() async {
+  Future<void> _presentISI() async {
     await Future.delayed(const Duration(seconds: 1));
   }
 }
