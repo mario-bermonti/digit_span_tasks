@@ -30,7 +30,7 @@ class StimController extends GetxController {
     }
   }
 
-  void prepareStim() {
+  void prepareNextStim() {
     stim.next();
   }
 
