@@ -9,21 +9,21 @@ import 'package:stimuli/stimuli.dart';
 class StimController extends GetxController {
   late final Stimuli stim;
   RxString currentDigit = ''.obs;
-  final Config config = Get.find();
-  late MDigitsController mDigitsController;
+  final Config _config = Get.find();
+  late MDigitsController _mDigitsController;
 
   @override
   onInit() async {
     await prepareStimPool();
     super.onInit();
-    mDigitsController = Get.find();
+    _mDigitsController = Get.find();
   }
 
   /// Prepare stim to be used
   /// Includes building from file, create object, and randomize stim
   Future<void> prepareStimPool() async {
     try {
-      Stimuli stimuli = Stimuli(stimuli: config.stimList);
+      Stimuli stimuli = Stimuli(stimuli: _config.stimList);
       stim = stimuli;
     } on StimFileAccessException catch (e) {
       throw GenericmdigitsException(e.toString());
@@ -42,7 +42,7 @@ class StimController extends GetxController {
   }
 
   void toNextScreen() {
-    mDigitsController.updateStep();
+    _mDigitsController.updateStep();
   }
 
   /// Present individual digits to participant
