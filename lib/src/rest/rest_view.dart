@@ -18,7 +18,6 @@ class RestView extends StatelessWidget {
         return false;
       },
       child: Scaffold(
-        appBar: createAppBar(context: context),
         body: CenteredBox(
           column: Column(
             mainAxisAlignment: MainAxisAlignment.center,

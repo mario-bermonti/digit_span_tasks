@@ -17,7 +17,6 @@ class ResponseView extends StatelessWidget {
         return false;
       },
       child: Scaffold(
-        appBar: createAppBar(context: context),
         body: ResponseWidget(responseController: _responseController),
       ),
     );
