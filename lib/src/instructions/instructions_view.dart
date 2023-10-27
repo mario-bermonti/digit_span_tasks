@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mdigits/src/common/default_appbar.dart';
 import 'package:mdigits/src/instructions/instructions_controller.dart';
 
 class InstructionsView extends StatelessWidget {
@@ -11,6 +12,7 @@ class InstructionsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: createAppBar(context: context),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
