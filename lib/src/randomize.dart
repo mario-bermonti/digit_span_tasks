@@ -2,7 +2,7 @@
 /// [stim] list of sets to randomize
 /// Returns a list of the same length as the original
 List<String> randomizeDigitsInSets(List<String> stim) {
-  List<String> stimRandomized = <String>[];
+  final List<String> stimRandomized = <String>[];
   for (String set in stim) {
     String setRandomized = _randomizeSet(set);
     stimRandomized.add(setRandomized);
@@ -14,7 +14,7 @@ List<String> randomizeDigitsInSets(List<String> stim) {
 /// [set] Digit set to randomize
 /// Returns a String of the same length as the original [set]
 String _randomizeSet(String set) {
-  List<String> setList = set.split('');
+  final List<String> setList = set.split('');
   setList.shuffle();
   String setString = setList.join();
   return setString;
