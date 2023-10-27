@@ -27,7 +27,6 @@ class MDigitsView extends StatelessWidget {
                 print('exp');
                 await Get.to(
                   () => MDigitsViewExperimental(),
-                );
               },
               child: Text(
                 'General instructions',
