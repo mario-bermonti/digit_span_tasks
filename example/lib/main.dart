@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       config: config,
                     ));
                 // ignore: avoid_print
-                print('main $data');
+                print('$data');
               },
               child: Text(
                 'mDigits',
