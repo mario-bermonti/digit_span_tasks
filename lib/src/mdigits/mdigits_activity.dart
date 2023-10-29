@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/src/data.dart';
+import 'package:mdigits/src/mdigits/mdigits_controller.dart';
 import 'package:mdigits/src/mdigits/mdigits_view.dart';
 import 'package:mdigits/src/models/config.dart';
 
@@ -9,6 +10,7 @@ class MDigitsActivity extends StatelessWidget {
   MDigitsActivity({super.key, required config}) {
     final Config _config = Get.put(config);
     final Data _data = Get.put(Data());
+    final MDigitsController mDigitsController = Get.put(MDigitsController());
   }
 
   @override
