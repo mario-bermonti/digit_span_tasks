@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/src/data.dart';
-import 'package:mdigits/src/mdigits/mdigits_view_experimental.dart';
-import 'package:mdigits/src/mdigits/mdigits_view_practice.dart';
+import 'package:mdigits/src/mdigits/mdigits_view.dart';
 import 'package:mdigits/src/models/config.dart';
 
 /// Present the appropriate screen based on the curren step
@@ -21,8 +20,8 @@ class MDigitsActivity extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: () async {
-                await Get.to(() => MDigitsViewPractice());
-                await Get.to(() => MDigitsViewExperimental());
+                await Get.to(() => MDigitsView());
+                await Get.to(() => MDigitsView());
               },
               child: Text(
                 'General instructions',
