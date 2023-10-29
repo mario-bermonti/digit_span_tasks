@@ -4,6 +4,7 @@ import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/mdigits/mdigits_controller.dart';
 import 'package:mdigits/src/mdigits/mdigits_view.dart';
 import 'package:mdigits/src/models/config.dart';
+import 'package:mdigits/src/models/mdigits_data.dart';
 
 /// Present the appropriate screen based on the curren step
 class MDigitsActivity extends StatelessWidget {
@@ -27,6 +28,8 @@ class MDigitsActivity extends StatelessWidget {
                 await Get.to(() => MDigitsView());
                 _mDigitsController.isPractice = false;
                 await Get.to(() => MDigitsView());
+                MDigitsData mDigitsData = _data.export();
+                Get.back(result: mDigitsData);
               },
               child: Text(
                 'General instructions',
