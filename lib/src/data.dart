@@ -14,13 +14,15 @@ class Data extends GetxController {
     required String participantID,
     required String stim,
     required String resp,
+    required bool isPractice,
   }) {
     TrialData trialData = TrialData(
       participantID: participantID,
       stim: stim,
       response: resp,
     );
-    _trialData.add(trialData);
+    DataModel data = getDataForPhase(isPractice);
+    data.trialData.add(trialData);
   }
 
   /// Exports the data collected during the session using a custom object named
