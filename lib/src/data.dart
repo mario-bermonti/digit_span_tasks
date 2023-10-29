@@ -9,7 +9,7 @@ class Data extends GetxController {
   DataModel experimentalData = DataModel();
 
   /// Add data [participantID], [stim], [resp] from a single trial to
-  /// the manager
+  /// the manager. Use [isPractice] to get the data for the current phase.
   void addTrialData({
     required String participantID,
     required String stim,
