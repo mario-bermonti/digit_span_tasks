@@ -55,7 +55,7 @@ class MDigitsController extends GetxController {
   }
 
   Future<void> endSession() async {
-    _data.endTime = TimeOfDay.now();
+    _data.addEndTime(isPractice);
     MDigitsData mDigitsData = _data.export();
     Get.back(result: mDigitsData);
   }
