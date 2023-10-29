@@ -29,6 +29,12 @@ class Data extends GetxController {
     DataModel data = getDataForPhase(isPractice);
     data.startTime = DateTime.now();
   }
+
+  void addEndTime(bool isPractice) {
+    DataModel data = getDataForPhase(isPractice);
+    data.endTime = DateTime.now();
+  }
+
   /// Exports the data collected during the session using a custom object named
   /// [MDigitsData]
   MDigitsData export() {
