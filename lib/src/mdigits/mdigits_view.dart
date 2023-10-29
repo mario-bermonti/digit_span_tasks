@@ -21,12 +21,9 @@ class MDigitsView extends StatelessWidget {
             ElevatedButton(
               onPressed: () async {
                 print('practice');
-                await Get.to(
-                  () => MDigitsViewPractice(),
-                );
+                await Get.to(() => MDigitsViewPractice());
                 print('exp');
-                await Get.to(
-                  () => MDigitsViewExperimental(),
+                await Get.to(() => MDigitsViewExperimental());
               },
               child: Text(
                 'General instructions',
