@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   stimList: ['01', '234', '56789'],
                   participantID: '000',
                 );
-                MDigitsData data = await Get.to(() => MDigitsView(
+                MDigitsData data = await Get.to(() => MDigitsActivity(
                       config: config,
                     ));
                 print('main $data');

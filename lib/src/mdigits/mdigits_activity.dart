@@ -6,8 +6,8 @@ import 'package:mdigits/src/mdigits/mdigits_view_practice.dart';
 import 'package:mdigits/src/models/config.dart';
 
 /// Present the appropriate screen based on the curren step
-class MDigitsView extends StatelessWidget {
-  MDigitsView({super.key, required config}) {
+class MDigitsActivity extends StatelessWidget {
+  MDigitsActivity({super.key, required config}) {
     final Config _config = Get.put(config);
     final Data _data = Get.put(Data());
   }
