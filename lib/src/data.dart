@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/src/models/mdigits_data.dart';
 import 'package:mdigits/src/models/trial_data.dart';
@@ -6,12 +5,6 @@ import 'package:mdigits/src/models/data_model.dart';
 
 /// Data manager for MDigits
 class Data extends GetxController {
-  final List<TrialData> _trialData = <TrialData>[];
-  late final TimeOfDay _startTime;
-  late final TimeOfDay _endTime;
-  Data() {
-    _startTime = TimeOfDay.now();
-  }
   DataModel practiceData = DataModel();
   DataModel experimentalData = DataModel();
 
@@ -28,10 +21,6 @@ class Data extends GetxController {
       response: resp,
     );
     _trialData.add(trialData);
-  }
-
-  set endTime(TimeOfDay time) {
-    _endTime = time;
   }
 
   /// Exports the data collected during the session using a custom object named
