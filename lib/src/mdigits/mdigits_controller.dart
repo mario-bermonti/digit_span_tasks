@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/mdigits/task_step.dart';
-import 'package:mdigits/src/models/mdigits_data.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
 
 /// Controls the task sequence
@@ -55,7 +54,6 @@ class MDigitsController extends GetxController {
 
   Future<void> endSession() async {
     _data.addEndTime(isPractice);
-    MDigitsData mDigitsData = _data.export();
-    Get.back(result: mDigitsData);
+    Get.back();
   }
 }
