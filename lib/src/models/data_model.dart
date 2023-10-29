@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 /// Used to provide data nicely formatted to the user
 class DataModel {
   final List<TrialData> trialData = <TrialData>[];
-  late final TimeOfDay startTime;
-  late final TimeOfDay endTime;
+  late final DateTime startTime;
+  late final DateTime endTime;
 
   @override
   String toString() {
