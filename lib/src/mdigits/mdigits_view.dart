@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/end/end_view.dart';
 import 'package:mdigits/src/instructions/instructions_view.dart';
 import 'package:mdigits/src/mdigits/mdigits_controller.dart';
@@ -11,11 +12,13 @@ import 'package:mdigits/src/mdigits/task_step.dart';
 /// Present the appropriate screen based on the curren step
 class MDigitsView extends StatelessWidget {
   final MDigitsController mDigits = Get.find();
+  final Data data = Get.find();
 
   MDigitsView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    data.addStartTime(mDigits.isPractice);
     return Obx(() {
       switch (mDigits.taskStep.value) {
         case TaskStep.instructions:
