@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:mdigits/src/models/mdigits_data.dart';
+import 'package:mdigits/src/models/mdigits_data_phase.dart';
 import 'package:mdigits/src/models/trial_data.dart';
 import 'package:mdigits/src/models/data_model.dart';
 
@@ -38,10 +39,21 @@ class Data extends GetxController {
   /// Exports the data collected during the session using a custom object named
   /// [MDigitsData]
   MDigitsData export() {
+    MDigitsDataPhase practiceDataSharing = MDigitsDataPhase(
+      trialData: practiceData.trialData,
+      startTime: practiceData.startTime,
+      endTime: practiceData.endTime,
+    );
+
+    MDigitsDataPhase experimentalDataSharing = MDigitsDataPhase(
+      trialData: experimentalData.trialData,
+      startTime: experimentalData.startTime,
+      endTime: experimentalData.endTime,
+    );
+
     MDigitsData data = MDigitsData(
-      trialData: _trialData,
-      startTime: _startTime,
-      endTime: _endTime,
+      practiceData: practiceDataSharing,
+      experimentalData: experimentalDataSharing,
     );
 
     return data;
