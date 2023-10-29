@@ -25,6 +25,7 @@ class MDigitsActivity extends StatelessWidget {
             ElevatedButton(
               onPressed: () async {
                 await Get.to(() => MDigitsView());
+                _mDigitsController.isPractice = false;
                 await Get.to(() => MDigitsView());
               },
               child: Text(
