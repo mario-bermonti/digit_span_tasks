@@ -34,4 +34,11 @@ class Data extends GetxController {
 
     return data;
   }
+
+  /// Get the data for the current phase (practice or experimental) based on
+  /// the [isPractice] flag.
+  DataModel getDataForPhase(bool isPractice) {
+    DataModel data = isPractice == true ? practiceData : experimentalData;
+    return data;
+  }
 }
