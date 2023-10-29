@@ -9,10 +9,10 @@ import 'package:mdigits/src/stim/stim_view.dart';
 import 'package:mdigits/src/mdigits/task_step.dart';
 
 /// Present the appropriate screen based on the curren step
-class MDigitsViewPractice extends StatelessWidget {
+class MDigitsView extends StatelessWidget {
   late final MDigitsController mDigits;
 
-  MDigitsViewPractice({super.key}) {
+  MDigitsView({super.key}) {
     mDigits = Get.put(MDigitsController());
   }
 
