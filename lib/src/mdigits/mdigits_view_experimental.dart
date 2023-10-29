@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:mdigits/src/end/end_view.dart';
 import 'package:mdigits/src/instructions/instructions_view.dart';
 import 'package:mdigits/src/mdigits/mdigits_controller.dart';
-import 'package:mdigits/src/models/settings.dart';
 import 'package:mdigits/src/response/response_view.dart';
 import 'package:mdigits/src/rest/rest_view.dart';
 import 'package:mdigits/src/stim/stim_view.dart';
@@ -11,11 +10,10 @@ import 'package:mdigits/src/mdigits/task_step.dart';
 
 /// Present the appropriate screen based on the curren step
 class MDigitsViewExperimental extends StatelessWidget {
-  final Config config;
   late final MDigitsController mDigits;
 
-  MDigitsViewExperimental({super.key, required this.config}) {
-    mDigits = Get.put(MDigitsController(config));
+  MDigitsViewExperimental({super.key}) {
+    mDigits = Get.put(MDigitsController());
   }
 
   @override
