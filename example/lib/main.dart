@@ -47,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 MDigitsData data = await Get.to(() => MDigitsActivity(
                       config: config,
                     ));
+                // ignore: avoid_print
                 print('main $data');
               },
               child: Text(
