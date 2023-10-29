@@ -7,10 +7,12 @@ import 'package:mdigits/src/models/config.dart';
 
 /// Present the appropriate screen based on the curren step
 class MDigitsActivity extends StatelessWidget {
+  final Data _data = Get.put(Data());
+  late final MDigitsController _mDigitsController;
+
   MDigitsActivity({super.key, required config}) {
     final Config _config = Get.put(config);
-    final Data _data = Get.put(Data());
-    final MDigitsController mDigitsController = Get.put(MDigitsController());
+    _mDigitsController = Get.put(MDigitsController());
   }
 
   @override
