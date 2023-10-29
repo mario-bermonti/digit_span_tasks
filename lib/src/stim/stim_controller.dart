@@ -9,8 +9,8 @@ import 'package:stimuli/stimuli.dart';
 class StimController extends GetxController {
   late final Stimuli stim;
   RxString currentDigit = ''.obs;
-  final Config _config = Get.find();
   late final MDigitsController _mDigitsController;
+  final Config _config = Get.find();
 
   @override
   onInit() async {
