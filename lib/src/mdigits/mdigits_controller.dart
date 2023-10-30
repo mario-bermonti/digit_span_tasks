@@ -28,8 +28,6 @@ class MDigitsController extends GetxController {
   /// Update the current task step to control flow of MDigits.
   void updateStep() {
     var stim = _stimuli.stim;
-    bool restStepFollows =
-        (stim.stimCountUsed != 0) && (stim.stimCountUsed % 2 == 0);
 
     if (stim.stimCountRemaining == 0) {
       taskStep(TaskStep.completed);
@@ -38,7 +36,7 @@ class MDigitsController extends GetxController {
       /// get stuck in rest
     } else if (taskStep.value == TaskStep.rest) {
       taskStep(TaskStep.stim);
-    } else if (restStepFollows) {
+    } else if ((stim.stimCountUsed != 0) && (stim.stimCountUsed % 2 == 0)) {
       taskStep(TaskStep.rest);
 
       /// This catch all is needed because not all conditions to update to stim
