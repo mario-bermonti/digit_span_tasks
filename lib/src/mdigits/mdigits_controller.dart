@@ -54,8 +54,10 @@ class MDigitsController extends GetxController {
 
   Future<void> endSession() async {
     _data.addEndTime(isPractice);
+    await reset();
     Get.back();
   }
+
   Future<void> reset() async {
     taskStep(TaskStep.instructions);
     isPractice = true;
