@@ -7,7 +7,7 @@ class RestController extends GetxController {
   /// Goes to next screen after 500ms ISI
   void toNextScreen() {
     Future.delayed(const Duration(milliseconds: 500), () {
-      _mDigitsController.updateStep();
+      _mDigitsController.endRestOrContinueTask();
     });
   }
 }

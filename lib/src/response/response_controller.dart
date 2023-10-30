@@ -33,6 +33,6 @@ class ResponseController extends GetxController {
   }
 
   void toNextScreen() {
-    _mDigits.updateStep();
+    _mDigits.endRestOrContinueTask();
   }
 }

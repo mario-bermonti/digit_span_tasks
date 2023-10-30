@@ -25,23 +25,20 @@ class MDigitsController extends GetxController {
     _stimuli = Get.put(StimController());
   }
 
-  /// Update the current task step to control flow of MDigits.
-  void updateStep() {
+  /// End the task [TaskStep.completed], present the rest period [TaskStep.rest]
+  /// or continue with trials [TaskStep.stim] depending on the current
+  /// state of [_stimuli].
+  void endRestOrContinueTask() {
     var stim = _stimuli.stim;
-    bool stimStepFollows = (taskStep.value == TaskStep.rest);
-    bool restStepFollows =
-        (stim.stimCountUsed != 0) && (stim.stimCountUsed % 2 == 0);
 
-    if (taskStep.value == TaskStep.stim) {
-      taskStep(TaskStep.response);
-    } else if (stim.stimCountRemaining == 0) {
+    if (stim.stimCountRemaining == 0) {
       taskStep(TaskStep.completed);
 
       /// This check is needed to garantee that mdigits doesn't
       /// get stuck in rest
-    } else if (stimStepFollows) {
+    } else if (taskStep.value == TaskStep.rest) {
       taskStep(TaskStep.stim);
-    } else if (restStepFollows) {
+    } else if ((stim.stimCountUsed != 0) && (stim.stimCountUsed % 2 == 0)) {
       taskStep(TaskStep.rest);
 
       /// This catch all is needed because not all conditions to update to stim
