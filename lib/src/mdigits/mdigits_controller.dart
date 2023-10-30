@@ -25,7 +25,9 @@ class MDigitsController extends GetxController {
     _stimuli = Get.put(StimController());
   }
 
-  /// Update the current task step to control flow of MDigits.
+  /// End the task [TaskStep.completed], present the rest period [TaskStep.rest]
+  /// or continue with trials [TaskStep.stim] depending on the current
+  /// state of [_stimuli].
   void endRestOrContinueTask() {
     var stim = _stimuli.stim;
 
