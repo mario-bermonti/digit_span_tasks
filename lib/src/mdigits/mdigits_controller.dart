@@ -28,7 +28,6 @@ class MDigitsController extends GetxController {
   /// Update the current task step to control flow of MDigits.
   void updateStep() {
     var stim = _stimuli.stim;
-    bool stimStepFollows = (taskStep.value == TaskStep.rest);
     bool restStepFollows =
         (stim.stimCountUsed != 0) && (stim.stimCountUsed % 2 == 0);
 
@@ -37,7 +36,7 @@ class MDigitsController extends GetxController {
 
       /// This check is needed to garantee that mdigits doesn't
       /// get stuck in rest
-    } else if (stimStepFollows) {
+    } else if (taskStep.value == TaskStep.rest) {
       taskStep(TaskStep.stim);
     } else if (restStepFollows) {
       taskStep(TaskStep.rest);
