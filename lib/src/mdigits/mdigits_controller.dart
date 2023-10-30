@@ -56,4 +56,9 @@ class MDigitsController extends GetxController {
     _data.addEndTime(isPractice);
     Get.back();
   }
+  Future<void> reset() async {
+    taskStep(TaskStep.instructions);
+    isPractice = true;
+    await _stimuli.prepareStimPool();
+  }
 }
