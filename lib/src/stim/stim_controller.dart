@@ -7,7 +7,7 @@ import 'package:stimuli/stimuli.dart';
 
 /// Manage the stim
 class StimController extends GetxController {
-  late final Stimuli stim;
+  late Stimuli stim;
   RxString currentDigit = ''.obs;
   late final MDigitsController _mDigitsController;
   final Config _config = Get.find();
