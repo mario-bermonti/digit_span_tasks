@@ -14,14 +14,14 @@ class StimController extends GetxController {
 
   @override
   onInit() async {
-    await _prepareStimPool();
+    await prepareStimPool();
     super.onInit();
     _mDigitsController = Get.find();
   }
 
   /// Prepare stim to be used
   /// Includes building from file, create object, and randomize stim
-  Future<void> _prepareStimPool() async {
+  Future<void> prepareStimPool() async {
     try {
       Stimuli stimuli = Stimuli(stimuli: _config.stimList);
       stim = stimuli;
