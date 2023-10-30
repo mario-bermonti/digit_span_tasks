@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:mdigits/mdigits.dart';
 import 'package:mdigits/src/mdigits/mdigits_controller.dart';
 import 'package:mdigits/src/errors/errors.dart';
+import 'package:mdigits/src/mdigits/task_step.dart';
 import 'package:stimuli/errors.dart';
 import 'package:stimuli/stimuli.dart';
 
@@ -42,7 +43,7 @@ class StimController extends GetxController {
   }
 
   void toNextScreen() {
-    _mDigitsController.updateStep();
+    _mDigitsController.taskStep(TaskStep.response);
   }
 
   /// Present individual digits to participant
