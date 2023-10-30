@@ -32,9 +32,7 @@ class MDigitsController extends GetxController {
     bool restStepFollows =
         (stim.stimCountUsed != 0) && (stim.stimCountUsed % 2 == 0);
 
-    if (taskStep.value == TaskStep.stim) {
-      taskStep(TaskStep.response);
-    } else if (stim.stimCountRemaining == 0) {
+    if (stim.stimCountRemaining == 0) {
       taskStep(TaskStep.completed);
 
       /// This check is needed to garantee that mdigits doesn't
