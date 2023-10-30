@@ -26,7 +26,7 @@ class MDigitsController extends GetxController {
   }
 
   /// Update the current task step to control flow of MDigits.
-  void updateStep() {
+  void endRestOrContinueTask() {
     var stim = _stimuli.stim;
 
     if (stim.stimCountRemaining == 0) {
