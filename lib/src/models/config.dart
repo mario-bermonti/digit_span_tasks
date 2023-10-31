@@ -16,4 +16,10 @@ class Config extends GetxController {
     this.stimListPractice = randomizeDigitsInSets(stimListPractice);
     this.stimListExperimental = randomizeDigitsInSets(stimListExperimental);
   }
+
+  List<String> getStimListForPhase(bool isPractice) {
+    List<String> stimList =
+        isPractice == true ? stimListPractice : stimListExperimental;
+    return stimList;
+  }
 }
