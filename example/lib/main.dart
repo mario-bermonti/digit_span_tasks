@@ -41,7 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () async {
                 Config config = Config(
-                  stimList: ['01', '234', '56789'],
+                  stimListPractice: ['01', '234'],
+                  stimListExperimental: ['5678', '01567'],
                   participantID: '000',
                 );
                 MDigitsData data = await Get.to(() => MDigitsActivity(
