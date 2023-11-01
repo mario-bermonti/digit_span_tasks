@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:mdigits/src/config/config_user.dart';
+import 'package:mdigits/src/config/user_config.dart';
 import 'package:mdigits/src/randomize.dart';
 
-class ConfigApp extends GetxController {
+class AppConfig extends GetxController {
   /// List of stim to present to the user
   late final List<String> stimListPractice;
   late final List<String> stimListExperimental;
@@ -12,8 +12,8 @@ class ConfigApp extends GetxController {
   /// Unique id to identify all the participant's data
   late final String participantID;
 
-  ConfigApp({
-    required ConfigUser configUser,
+  AppConfig({
+    required UserConfig configUser,
   }) {
     stimListPractice = randomizeDigitsInSets(configUser.stimListPractice);
     stimListExperimental =
