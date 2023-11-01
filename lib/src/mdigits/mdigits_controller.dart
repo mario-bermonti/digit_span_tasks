@@ -61,6 +61,5 @@ class MDigitsController extends GetxController {
   Future<void> reset() async {
     taskStep(TaskStep.instructions);
     _config.isPractice = true;
-    await _stimuli.prepareStimPool();
   }
 }
