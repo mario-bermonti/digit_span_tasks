@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:mdigits/mdigits.dart';
 import 'package:mdigits/src/mdigits/mdigits_controller.dart';
 import 'package:mdigits/src/errors/errors.dart';
 import 'package:stimuli/errors.dart';
