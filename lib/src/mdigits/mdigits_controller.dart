@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/mdigits/task_step.dart';
-import 'package:mdigits/src/models/config.dart';
+import 'package:mdigits/src/config/config.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
 
 /// Controls the task sequence
