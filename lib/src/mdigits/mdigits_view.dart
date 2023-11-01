@@ -4,7 +4,7 @@ import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/end/end_view.dart';
 import 'package:mdigits/src/instructions/instructions_view.dart';
 import 'package:mdigits/src/mdigits/mdigits_controller.dart';
-import 'package:mdigits/src/config/config_user.dart';
+import 'package:mdigits/src/config/user_config.dart';
 import 'package:mdigits/src/response/response_view.dart';
 import 'package:mdigits/src/rest/rest_view.dart';
 import 'package:mdigits/src/stim/stim_view.dart';
@@ -14,7 +14,7 @@ import 'package:mdigits/src/mdigits/task_step.dart';
 class MDigitsView extends StatelessWidget {
   final MDigitsController mDigits = Get.find();
   final Data data = Get.find();
-  final ConfigUser _config = Get.find();
+  final UserConfig _config = Get.find();
 
   MDigitsView({super.key});
 

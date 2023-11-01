@@ -10,7 +10,7 @@ class ResponseController extends GetxController {
   TextEditingController textController = TextEditingController();
   final MDigitsController _mDigits = Get.find();
   final Data _data = Get.find();
-  final ConfigUser _config = Get.find();
+  final UserConfig _config = Get.find();
   final StimController _stim = Get.find();
 
   @override

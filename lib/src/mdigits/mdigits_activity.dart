@@ -3,14 +3,14 @@ import 'package:get/get.dart';
 import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/mdigits/mdigits_controller.dart';
 import 'package:mdigits/src/mdigits/mdigits_view.dart';
-import 'package:mdigits/src/config/config_user.dart';
+import 'package:mdigits/src/config/user_config.dart';
 import 'package:mdigits/src/models/mdigits_data.dart';
 
 /// Present the appropriate screen based on the curren step
 class MDigitsActivity extends StatelessWidget {
   final Data _data = Get.put(Data());
   late final MDigitsController _mDigitsController;
-  late final ConfigUser _config;
+  late final UserConfig _config;
 
   MDigitsActivity({super.key, required config}) {
     _config = Get.put(config);

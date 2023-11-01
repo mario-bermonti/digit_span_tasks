@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/mdigits/task_step.dart';
-import 'package:mdigits/src/config/config_user.dart';
+import 'package:mdigits/src/config/user_config.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
 
 /// Controls the task sequence
@@ -16,7 +16,7 @@ class MDigitsController extends GetxController {
   /// Identifies the step the task currently is in
   Rx<TaskStep> taskStep = TaskStep.instructions.obs;
 
-  final ConfigUser _config = Get.find();
+  final UserConfig _config = Get.find();
 
   MDigitsController();
 
