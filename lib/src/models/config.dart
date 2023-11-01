@@ -6,6 +6,8 @@ class Config extends GetxController {
   late final List<String> stimListPractice;
   late final List<String> stimListExperimental;
 
+  bool isPractice = true;
+
   /// Unique id to identify all the participant's data
   final String participantID;
 

@@ -15,8 +15,7 @@ class MDigitsController extends GetxController {
   /// Identifies the step the task currently is in
   Rx<TaskStep> taskStep = TaskStep.instructions.obs;
 
-  /// Controls how data is managed
-  bool isPractice = true;
+  final Config _config = Get.find();
 
   MDigitsController();
 
