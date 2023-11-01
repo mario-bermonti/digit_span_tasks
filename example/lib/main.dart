@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             ElevatedButton(
               onPressed: () async {
-                Config config = Config(
+                ConfigUser config = ConfigUser(
                   stimListPractice: ['01', '234'],
                   stimListExperimental: ['5678', '01567'],
                   participantID: '000',

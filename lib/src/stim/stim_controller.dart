@@ -11,7 +11,7 @@ class StimController extends GetxController {
   late Stimuli _stimExperimental;
   RxString currentDigit = ''.obs;
   late final MDigitsController _mDigitsController;
-  final Config _config = Get.find();
+  final ConfigUser _config = Get.find();
 
   @override
   onInit() async {

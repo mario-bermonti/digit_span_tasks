@@ -1,7 +1,7 @@
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:mdigits/src/randomize.dart';
 
-class Config extends GetxController {
+class ConfigUser extends GetxController {
   /// List of stim to present to the user
   late final List<String> stimListPractice;
   late final List<String> stimListExperimental;
@@ -11,7 +11,7 @@ class Config extends GetxController {
   /// Unique id to identify all the participant's data
   final String participantID;
 
-  Config(
+  ConfigUser(
       {required stimListPractice,
       required stimListExperimental,
       required this.participantID}) {
