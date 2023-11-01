@@ -10,9 +10,10 @@ import 'package:mdigits/src/models/mdigits_data.dart';
 class MDigitsActivity extends StatelessWidget {
   final Data _data = Get.put(Data());
   late final MDigitsController _mDigitsController;
+  late final Config _config;
 
   MDigitsActivity({super.key, required config}) {
-    final Config _config = Get.put(config);
+    _config = Get.put(config);
     _mDigitsController = Get.put(MDigitsController());
   }
 
