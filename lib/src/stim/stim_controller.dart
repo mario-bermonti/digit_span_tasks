@@ -7,7 +7,8 @@ import 'package:stimuli/stimuli.dart';
 
 /// Manage the stim
 class StimController extends GetxController {
-  late Stimuli stim;
+  late Stimuli _stimPractice;
+  late Stimuli _stimExperimental;
   RxString currentDigit = ''.obs;
   late final MDigitsController _mDigitsController;
   final Config _config = Get.find();
@@ -23,8 +24,8 @@ class StimController extends GetxController {
   /// Includes building from file, create object, and randomize stim
   Future<void> prepareStimPool() async {
     try {
-      Stimuli stimuli = Stimuli(stimuli: _config.stimList);
-      stim = stimuli;
+      _stimPractice = Stimuli(stimuli: _config.stimListPractice);
+      _stimExperimental = Stimuli(stimuli: _config.stimListExperimental);
     } on StimFileAccessException catch (e) {
       throw GenericmdigitsException(e.toString());
     }
