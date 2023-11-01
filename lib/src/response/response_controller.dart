@@ -4,13 +4,14 @@ import 'package:mdigits/mdigits.dart';
 import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/mdigits/mdigits_controller.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
+import 'package:mdigits/src/config/app_config.dart';
 
 /// Manage responses
 class ResponseController extends GetxController {
   TextEditingController textController = TextEditingController();
   final MDigitsController _mDigits = Get.find();
   final Data _data = Get.find();
-  final UserConfig _config = Get.find();
+  final AppConfig _config = Get.find();
   final StimController _stim = Get.find();
 
   @override

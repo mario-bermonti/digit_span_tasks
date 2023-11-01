@@ -4,6 +4,7 @@ import 'package:mdigits/src/mdigits/mdigits_controller.dart';
 import 'package:mdigits/src/errors/errors.dart';
 import 'package:stimuli/errors.dart';
 import 'package:stimuli/stimuli.dart';
+import 'package:mdigits/src/config/app_config.dart';
 
 /// Manage the stim
 class StimController extends GetxController {
@@ -11,7 +12,7 @@ class StimController extends GetxController {
   late Stimuli _stimExperimental;
   RxString currentDigit = ''.obs;
   late final MDigitsController _mDigitsController;
-  final UserConfig _config = Get.find();
+  final AppConfig _config = Get.find();
 
   @override
   onInit() async {
