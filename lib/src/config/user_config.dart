@@ -8,7 +8,7 @@ class UserConfig extends GetxController {
   final String participantID;
 
   UserConfig(
-      {required stimListPractice,
-      required stimListExperimental,
+      {required this.stimListPractice,
+      required this.stimListExperimental,
       required this.participantID});
 }
