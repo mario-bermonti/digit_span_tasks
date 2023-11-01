@@ -4,6 +4,7 @@ import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/end/end_view.dart';
 import 'package:mdigits/src/instructions/instructions_view.dart';
 import 'package:mdigits/src/mdigits/mdigits_controller.dart';
+import 'package:mdigits/src/models/config.dart';
 import 'package:mdigits/src/response/response_view.dart';
 import 'package:mdigits/src/rest/rest_view.dart';
 import 'package:mdigits/src/stim/stim_view.dart';
@@ -13,12 +14,13 @@ import 'package:mdigits/src/mdigits/task_step.dart';
 class MDigitsView extends StatelessWidget {
   final MDigitsController mDigits = Get.find();
   final Data data = Get.find();
+  final Config _config = Get.find();
 
   MDigitsView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    data.addStartTime(mDigits.isPractice);
+    data.addStartTime(_config.isPractice);
     return Obx(() {
       switch (mDigits.taskStep.value) {
         case TaskStep.instructions:

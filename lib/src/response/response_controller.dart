@@ -27,7 +27,7 @@ class ResponseController extends GetxController {
       participantID: _config.participantID,
       stim: _stim.stim.currentStim,
       resp: response,
-      isPractice: _mDigits.isPractice,
+      isPractice: _config.isPractice,
     );
 
     textController.clear();
