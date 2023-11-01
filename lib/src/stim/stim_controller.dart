@@ -63,4 +63,12 @@ class StimController extends GetxController {
   Future<void> _presentISI() async {
     await Future.delayed(const Duration(seconds: 1));
   }
+
+  /// Returns the [_stimPractice] or [_stimExperimental] depending on the
+  /// [_config.isPractice] flag
+  Stimuli get stim {
+    Stimuli stim =
+        _config.isPractice == true ? _stimPractice : _stimExperimental;
+    return stim;
+  }
 }
