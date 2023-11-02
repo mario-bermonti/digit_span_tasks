@@ -6,7 +6,9 @@ import 'package:mdigits/src/mdigits/mdigits_controller.dart';
 import 'package:mdigits/src/mdigits/mdigits_view.dart';
 import 'package:mdigits/src/models/mdigits_data.dart';
 
-/// Present the appropriate screen based on the curren step
+/// Runs all mdigits activity beginning with the practice trials and then the
+/// experimental trials. It returns the data from the session when mdigits
+/// finishes; includes data for practice and experimental trials.
 class MDigitsActivity extends StatelessWidget {
   final Data _data = Get.put(Data());
   late final MDigitsController _mDigitsController;
