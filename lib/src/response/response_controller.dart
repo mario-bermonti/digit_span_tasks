@@ -24,7 +24,7 @@ class ResponseController extends GetxController {
     String response = textController.text.trim();
 
     _data.addTrialData(
-      participantID: _config.participantID,
+      participantID: _config.userConfig.participantID,
       stim: _stim.stim.currentStim,
       resp: response,
       isPractice: _config.isPractice,
