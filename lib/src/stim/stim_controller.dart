@@ -24,8 +24,9 @@ class StimController extends GetxController {
   /// Includes building from file, create object, and randomize stim
   Future<void> prepareStimPool() async {
     try {
-      _stimPractice = Stimuli(stimuli: _config.stimListPractice);
-      _stimExperimental = Stimuli(stimuli: _config.stimListExperimental);
+      _stimPractice = Stimuli(stimuli: _config.userConfig.stimListPractice);
+      _stimExperimental =
+          Stimuli(stimuli: _config.userConfig.stimListExperimental);
     } on StimFileAccessException catch (e) {
       throw GenericmdigitsException(e.toString());
     }

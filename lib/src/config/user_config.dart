@@ -1,4 +1,5 @@
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:mdigits/src/randomize.dart';
 
 class UserConfig extends GetxController {
   late final List<String> stimListPractice;
@@ -8,7 +9,10 @@ class UserConfig extends GetxController {
   final String participantID;
 
   UserConfig(
-      {required this.stimListPractice,
-      required this.stimListExperimental,
-      required this.participantID});
+      {required stimListPractice,
+      required stimListExperimental,
+      required this.participantID}) {
+    this.stimListPractice = randomizeDigitsInSets(stimListPractice);
+    this.stimListExperimental = randomizeDigitsInSets(stimListExperimental);
+  }
 }

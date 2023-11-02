@@ -13,7 +13,7 @@ class MDigitsActivity extends StatelessWidget {
   late final AppConfig _config;
 
   MDigitsActivity({super.key, required config}) {
-    _config = Get.put(AppConfig(configUser: config));
+    _config = Get.put(AppConfig(userConfig: config));
     _mDigitsController = Get.put(MDigitsController());
   }
 
