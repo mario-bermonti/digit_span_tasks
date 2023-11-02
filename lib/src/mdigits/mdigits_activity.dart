@@ -14,6 +14,9 @@ class MDigitsActivity extends StatelessWidget {
 
   MDigitsActivity({super.key, required config}) {
     _config = Get.put(AppConfig(userConfig: config));
+
+    /// [_mdigitsController] must be inserted after config because it sets up
+    /// the stim and stim needs config
     _mDigitsController = Get.put(MDigitsController());
   }
 
