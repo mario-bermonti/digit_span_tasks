@@ -1,10 +1,16 @@
 import 'package:mdigits/src/models/trial_data.dart';
 
-/// Structured data collected by MDigits
-/// Used to provide data nicely formatted to the user
+/// Object used to structure data collected by MDigits for a single
+/// phase (practice or experimental).
+/// Used to provide data nicely formatted to the user.
 class MDigitsDataPhase {
+  /// Data for each trial of the phase.
   final List<TrialData> trialData;
+
+  /// Date and time at which the phase started
   final DateTime startTime;
+
+  /// Date and time at which the phase ended
   final DateTime endTime;
 
   MDigitsDataPhase(
