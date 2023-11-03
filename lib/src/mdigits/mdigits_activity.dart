@@ -34,6 +34,9 @@ class MDigitsActivity extends StatelessWidget {
                 await Get.to(() => MDigitsView());
                 _config.isPractice = false;
                 await Get.to(() => MDigitsView());
+
+                /// [_config.isPractice] is set to false to reset MDigits in
+                /// case the user run another session.
                 _config.isPractice = true;
                 MDigitsData mDigitsData = _data.export();
                 Get.back(result: mDigitsData);
