@@ -4,13 +4,15 @@ import 'package:mdigits/src/models/mdigits_data_phase.dart';
 import 'package:mdigits/src/models/trial_data.dart';
 import 'package:mdigits/src/models/data_model.dart';
 
-/// Data manager for MDigits
+/// Data manager for MDigits.
+/// Used for adding data, getting data for practice or experimental session,
+/// and exporting data.
 class Data extends GetxController {
   DataModel practiceData = DataModel();
   DataModel experimentalData = DataModel();
 
   /// Add data [participantID], [stim], [resp] from a single trial to
-  /// the manager. Use [isPractice] to get the data for the current phase.
+  /// the manager. Uses [isPractice] to get the data for the current phase.
   void addTrialData({
     required String participantID,
     required String stim,
@@ -26,18 +28,23 @@ class Data extends GetxController {
     data.trialData.add(trialData);
   }
 
+  /// Adds the time at which the session started for the current
+  /// phase (practice or experimental) based on the [isPractice] flag.
   void addStartTime(bool isPractice) {
     DataModel data = getDataForPhase(isPractice);
     data.startTime = DateTime.now();
   }
 
+  /// Adds the time at which the session ended for the current
+  /// phase (practice or experimental) based on the [isPractice] flag.
   void addEndTime(bool isPractice) {
     DataModel data = getDataForPhase(isPractice);
     data.endTime = DateTime.now();
   }
 
-  /// Exports the data collected during the session using a custom object named
-  /// [MDigitsData]
+  /// Exports the data collected during the session.
+  /// Returns a custom object named [MDigitsData] that includes data for the
+  /// practice and experimental phase.
   MDigitsData export() {
     MDigitsDataPhase practiceDataSharing = MDigitsDataPhase(
       trialData: practiceData.trialData,
@@ -59,7 +66,7 @@ class Data extends GetxController {
     return data;
   }
 
-  /// Get the data for the current phase (practice or experimental) based on
+  /// Returns the data for the current phase (practice or experimental) based on
   /// the [isPractice] flag.
   DataModel getDataForPhase(bool isPractice) {
     DataModel data = isPractice == true ? practiceData : experimentalData;

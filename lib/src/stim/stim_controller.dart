@@ -20,8 +20,7 @@ class StimController extends GetxController {
     _mDigitsController = Get.find();
   }
 
-  /// Prepare stim to be used
-  /// Includes building from file, create object, and randomize stim
+  /// Prepare stim pool to be used for both the practice and experimtnal phase.
   Future<void> prepareStimPool() async {
     try {
       _stimPractice = Stimuli(stimuli: _config.userConfig.stimListPractice);
@@ -36,7 +35,7 @@ class StimController extends GetxController {
     stim.next();
   }
 
-  /// Present the stim once to the participant and go back after 1s ISI
+  /// Presents the stim once to the participant and goes back after 1s ISI
   Future<void> presentStim() async {
     await _presentISI();
     await _presentIndividualStim(stim.currentStim);
@@ -47,7 +46,7 @@ class StimController extends GetxController {
     _mDigitsController.updateStep();
   }
 
-  /// Present individual digits to participant
+  /// Present digits from the set individually to the participant
   Future<void> _presentIndividualStim(String stimSet) async {
     if (stimSet.isEmpty) {
       currentDigit('');

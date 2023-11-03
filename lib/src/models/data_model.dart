@@ -1,7 +1,8 @@
 import 'package:mdigits/src/models/trial_data.dart';
 
-/// Structured data collected by MDigits
-/// Used to provide data nicely formatted to the user
+/// Object used to structure data collected by MDigits for a single
+/// phase (practice or experimental). It was designed to be used internally
+/// by mdigits.
 class DataModel {
   final List<TrialData> trialData = <TrialData>[];
   late final DateTime startTime;
