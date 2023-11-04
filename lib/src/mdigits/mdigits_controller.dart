@@ -17,8 +17,6 @@ class MDigitsController extends GetxController {
 
   final AppConfig _config = Get.find();
 
-  MDigitsController();
-
   @override
   void onInit() {
     super.onInit();
