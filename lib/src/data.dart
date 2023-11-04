@@ -24,21 +24,21 @@ class Data extends GetxController {
       stim: stim,
       response: resp,
     );
-    DataModel data = getDataForPhase(isPractice);
+    DataModel data = getData(isPractice);
     data.trialData.add(trialData);
   }
 
   /// Adds the time at which the session started for the current
   /// phase (practice or experimental) based on the [isPractice] flag.
   void addStartTime(bool isPractice) {
-    DataModel data = getDataForPhase(isPractice);
+    DataModel data = getData(isPractice);
     data.startTime = DateTime.now();
   }
 
   /// Adds the time at which the session ended for the current
   /// phase (practice or experimental) based on the [isPractice] flag.
   void addEndTime(bool isPractice) {
-    DataModel data = getDataForPhase(isPractice);
+    DataModel data = getData(isPractice);
     data.endTime = DateTime.now();
   }
 
@@ -68,7 +68,7 @@ class Data extends GetxController {
 
   /// Returns the data for the current phase (practice or experimental) based on
   /// the [isPractice] flag.
-  DataModel getDataForPhase(bool isPractice) {
+  DataModel getData(bool isPractice) {
     DataModel data = isPractice == true ? practiceData : experimentalData;
     return data;
   }
