@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/src/common/centeredbox.dart';
-import 'package:mdigits/src/common/default_appbar.dart';
 import 'package:mdigits/src/common/default_text.dart';
 import 'package:mdigits/src/common/spacing_holder.dart';
 import 'package:mdigits/src/rest/rest_controller.dart';

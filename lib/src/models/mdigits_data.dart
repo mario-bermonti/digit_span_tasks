@@ -1,25 +1,22 @@
-import 'package:mdigits/src/models/trial_data.dart';
+import 'package:mdigits/src/models/mdigits_data_phase.dart';
 
-import 'package:flutter/material.dart';
-
-/// Structured data collected by MDigits
-/// Used to provide data nicely formatted to the user
+/// Structured data collected by MDigits.
+/// Used to provide data nicely formatted to the user.
 class MDigitsData {
-  final List<TrialData> trialData;
-  final TimeOfDay startTime;
-  final TimeOfDay endTime;
+  /// Data collected during the practice phase.
+  MDigitsDataPhase practiceData;
 
-  MDigitsData(
-      {required this.trialData,
-      required this.startTime,
-      required this.endTime});
+  /// Data collected during the experimental phase.
+  MDigitsDataPhase experimentalData;
+
+  MDigitsData({required this.practiceData, required this.experimentalData});
 
   @override
   String toString() {
     return '''
-    start time: $startTime,
-    end time: $endTime,
-    trial data: \n ${trialData.toString()}
+    practice data: ${practiceData.toString()}
+    \n
+    experimental data: ${experimentalData.toString()}
     ''';
   }
 }

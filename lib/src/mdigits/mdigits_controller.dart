@@ -1,14 +1,12 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/mdigits/task_step.dart';
-import 'package:mdigits/src/models/mdigits_data.dart';
+import 'package:mdigits/src/config/app_config.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
 
-/// Controls the task sequence
-/// The task sequence which includes stim, response, rest, end
+/// Controls the task sequence.
+/// The task sequence which includes instructions, stim, response, rest, end
 class MDigitsController extends GetxController {
-  /// Data Manager
   final Data _data = Get.find();
 
   /// Provides access and manages the stimuli
@@ -17,7 +15,7 @@ class MDigitsController extends GetxController {
   /// Identifies the step the task currently is in
   Rx<TaskStep> taskStep = TaskStep.instructions.obs;
 
-  MDigitsController();
+  final AppConfig _config = Get.find();
 
   @override
   void onInit() {
@@ -49,8 +47,14 @@ class MDigitsController extends GetxController {
   }
 
   Future<void> endSession() async {
-    _data.endTime = TimeOfDay.now();
-    MDigitsData mDigitsData = _data.export();
-    Get.back(result: mDigitsData);
+    _data.addEndTime(_config.isPractice);
+    await reset();
+    Get.back();
+  }
+
+  /// Resets the important settings so another session can be run.
+  Future<void> reset() async {
+    taskStep(TaskStep.instructions);
+    _config.isPractice = true;
   }
 }

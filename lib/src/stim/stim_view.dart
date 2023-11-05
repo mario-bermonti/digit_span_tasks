@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/common/default_appbar.dart';
 import 'package:mdigits/src/common/centeredbox.dart';
 import 'package:mdigits/src/stim/stim_controller.dart';
 
