@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () async {
                 UserConfig config = UserConfig(
                   stimListPractice: ['01', '234'],
-                  stimListExperimental: ['5678', '01567'],
+                  stimListExperimental: ['5678', '01567', '987654'],
                   participantID: '000',
                 );
                 MDigitsData data = await Get.to(() => MDigitsActivity(
