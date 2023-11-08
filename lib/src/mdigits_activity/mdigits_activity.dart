@@ -4,7 +4,7 @@ import 'package:mdigits/src/config/app_config.dart';
 import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/mdigits/mdigits_controller.dart';
 import 'package:mdigits/src/mdigits/mdigits_view.dart';
-import 'package:mdigits/src/mdigits_activity/instructions_generic.dart';
+import 'package:mdigits/src/mdigits_activity/general_instructions.dart';
 import 'package:mdigits/src/models/mdigits_data.dart';
 
 /// Runs all mdigits activity beginning with the practice trials and then the
@@ -40,11 +40,11 @@ class MDigitsActivity extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () async {
-                await Get.to(() =>
-                    const InstructionGeneric(text: 'Comenzaremos practicando'));
+                await Get.to(() => const GeneralInstructions(
+                    text: 'Comenzaremos practicando'));
                 await Get.to(() => MDigitsView());
                 _config.isPractice = false;
-                await Get.to(() => const InstructionGeneric(
+                await Get.to(() => const GeneralInstructions(
                     text: 'Trabajemos en los ejercicios reales'));
                 await Get.to(() => MDigitsView());
 

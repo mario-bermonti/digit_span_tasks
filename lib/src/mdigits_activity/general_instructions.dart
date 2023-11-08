@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/src/common/spacing_holder.dart';
 
-class InstructionGeneric extends StatelessWidget {
+class GeneralInstructions extends StatelessWidget {
   final String text;
 
-  const InstructionGeneric({super.key, required this.text});
+  const GeneralInstructions({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
