@@ -26,7 +26,7 @@ class EndView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: const <Widget>[
               DefaultText(
-                '¡Terminamos!',
+                '¡Terminamos esta fase!',
               ),
             ],
           ),
