@@ -19,7 +19,7 @@ class InstructionsView extends StatelessWidget {
           children: <Widget>[
             Text(
               '''
-              Recuerda, escribe los números en el mismo orden
+              Recuerda, escribe los números en el orden en que los veas
               ''',
               style: Theme.of(context).textTheme.titleLarge,
             ),
