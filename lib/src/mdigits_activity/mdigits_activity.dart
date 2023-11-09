@@ -32,9 +32,7 @@ class MDigitsActivity extends StatelessWidget {
           children: <Widget>[
             Text(
               '''
-              Recuerda los números que veas
-
-              Luego escríbelos en el orden en que los viste
+              Recuerda los números en el orden en que los veas
               ''',
               style: Theme.of(context).textTheme.titleLarge,
             ),
@@ -46,7 +44,7 @@ class MDigitsActivity extends StatelessWidget {
                 _config.isPractice = false;
                 await Get.to(() => const GeneralInstructions(text: '''
                           Terminamos la práctica
-                          
+
                           Trabajemos en los ejercicios principales
                           '''));
                 await Get.to(() => MDigitsView());
