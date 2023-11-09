@@ -44,8 +44,11 @@ class MDigitsActivity extends StatelessWidget {
                     text: 'Comenzaremos practicando'));
                 await Get.to(() => MDigitsView());
                 _config.isPractice = false;
-                await Get.to(() => const GeneralInstructions(
-                    text: 'Trabajemos en los ejercicios reales'));
+                await Get.to(() => const GeneralInstructions(text: '''
+                          Terminamos la práctica
+                          
+                          Trabajemos en los ejercicios principales
+                          '''));
                 await Get.to(() => MDigitsView());
 
                 /// [_config.isPractice] is set to false to reset MDigits in
