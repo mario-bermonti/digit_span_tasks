@@ -17,6 +17,12 @@ class InstructionsView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text(
+              '''
+              Recuerda, escribe los números en el mismo orden
+              ''',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
             ElevatedButton(
               onPressed: () {
                 _instructionsController.toNextScreen();
