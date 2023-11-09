@@ -22,7 +22,11 @@ class RestView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const DefaultText(
-                'Descansa',
+                '''
+                Toma un descanso
+
+                Respira profundo antes de continuar
+                ''',
               ),
               const BetweenWidgetsSpace(),
               ElevatedButton(
