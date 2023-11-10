@@ -29,42 +29,39 @@ class MDigitsActivity extends StatelessWidget {
   Widget build(BuildContext context) {
     return Screen(
       appBar: createAppBar(context: context),
-      children: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              '''
+      children: Column(
+        children: <Widget>[
+          Text(
+            '''
               Recuerda los números en el orden en que los veas
               ''',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                await Get.to(() => const GeneralInstructions(
-                    text: 'Comenzaremos practicando'));
-                await Get.to(() => ActivityView());
-                _config.isPractice = false;
-                await Get.to(() => const GeneralInstructions(text: '''
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              await Get.to(() =>
+                  const GeneralInstructions(text: 'Comenzaremos practicando'));
+              await Get.to(() => ActivityView());
+              _config.isPractice = false;
+              await Get.to(() => const GeneralInstructions(text: '''
                           Terminamos la práctica
 
                           Trabajemos en los ejercicios principales
                           '''));
-                await Get.to(() => ActivityView());
+              await Get.to(() => ActivityView());
 
-                /// [_config.isPractice] is set to false to reset MDigits in
-                /// case the user run another session.
-                _config.isPractice = true;
-                MDigitsData mDigitsData = _data.export();
-                Get.back(result: mDigitsData);
-              },
-              child: Text(
-                'Comenzar',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
+              /// [_config.isPractice] is set to false to reset MDigits in
+              /// case the user run another session.
+              _config.isPractice = true;
+              MDigitsData mDigitsData = _data.export();
+              Get.back(result: mDigitsData);
+            },
+            child: Text(
+              'Comenzar',
+              style: Theme.of(context).textTheme.titleLarge,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

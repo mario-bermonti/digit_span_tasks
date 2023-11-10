@@ -11,24 +11,21 @@ class GeneralInstructions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Screen(
-      children: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              text,
+      children: Column(
+        children: [
+          Text(
+            text,
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          const BetweenWidgetsSpace(),
+          ElevatedButton(
+            onPressed: () => Get.back(),
+            child: Text(
+              'Comenzar',
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            const BetweenWidgetsSpace(),
-            ElevatedButton(
-              onPressed: () => Get.back(),
-              child: Text(
-                'Comenzar',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

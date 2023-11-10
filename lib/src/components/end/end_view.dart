@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/ui_components/centeredbox.dart';
 import 'package:mdigits/src/components/ui_components/default_text.dart';
 import 'package:mdigits/src/components/end/end_controller.dart';
 import 'package:mdigits/src/components/ui_components/screen.dart';
@@ -20,15 +19,12 @@ class EndView extends StatelessWidget {
         return false;
       },
       child: Screen(
-        children: CenteredBox(
-          column: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
-              DefaultText(
-                '¡Terminamos esta fase!',
-              ),
-            ],
-          ),
+        children: Column(
+          children: const <Widget>[
+            DefaultText(
+              '¡Terminamos esta fase!',
+            ),
+          ],
         ),
       ),
     );

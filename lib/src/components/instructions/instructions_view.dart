@@ -12,27 +12,24 @@ class InstructionsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Screen(
-      children: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              '''
-              Recuerda, escribe los números en el orden en que los veas
-              ''',
+      children: Column(
+        children: <Widget>[
+          Text(
+            '''
+            Recuerda, escribe los números en el orden en que los veas
+            ''',
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              _instructionsController.toNextScreen();
+            },
+            child: Text(
+              'Comenzar',
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            ElevatedButton(
-              onPressed: () {
-                _instructionsController.toNextScreen();
-              },
-              child: Text(
-                'Comenzar',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

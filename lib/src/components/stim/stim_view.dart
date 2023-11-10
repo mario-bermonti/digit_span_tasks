@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/ui_components/centeredbox.dart';
 import 'package:mdigits/src/components/stim/stim_controller.dart';
 import 'package:mdigits/src/components/ui_components/screen.dart';
 
@@ -21,16 +20,13 @@ class StimView extends StatelessWidget {
         return false;
       },
       child: Screen(
-        children: CenteredBox(
-          column: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Obx(() => Text(
-                    _stimController.currentDigit.value,
-                    style: Theme.of(context).textTheme.displayLarge,
-                  )),
-            ],
-          ),
+        children: Column(
+          children: <Widget>[
+            Obx(() => Text(
+                  _stimController.currentDigit.value,
+                  style: Theme.of(context).textTheme.displayLarge,
+                )),
+          ],
         ),
       ),
     );
