@@ -7,7 +7,7 @@ import 'package:mdigits/src/components/data/data_model.dart';
 /// Data manager for MDigits.
 /// Used for adding data, getting data for practice or experimental session,
 /// and exporting data.
-class Data extends GetxController {
+class DataManager extends GetxController {
   DataModel practiceData = DataModel();
   DataModel experimentalData = DataModel();
 

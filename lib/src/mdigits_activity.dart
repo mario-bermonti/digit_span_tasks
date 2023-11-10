@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/src/components/config/app_config.dart';
-import 'package:mdigits/src/components/data/data.dart';
+import 'package:mdigits/src/components/data/data_manager.dart';
 import 'package:mdigits/src/components/activity/activity_controller.dart';
 import 'package:mdigits/src/components/activity/activity_view.dart';
 import 'package:mdigits/src/components/instructions/general_instructions.dart';
@@ -11,7 +11,7 @@ import 'package:mdigits/src/components/data/mdigits_data.dart';
 /// experimental trials. It returns the data from the session when mdigits
 /// finishes; includes data for practice and experimental trials.
 class MDigitsActivity extends StatelessWidget {
-  final Data _data = Get.put(Data());
+  final DataManager _data = Get.put(DataManager());
   late final ActivityController _activityController;
   late final AppConfig _config;
 

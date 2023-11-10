@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/data/data.dart';
+import 'package:mdigits/src/components/data/data_manager.dart';
 import 'package:mdigits/src/components/end/end_view.dart';
 import 'package:mdigits/src/components/instructions/instructions_view.dart';
 import 'package:mdigits/src/components/activity/activity_controller.dart';
@@ -13,7 +13,7 @@ import 'package:mdigits/src/components/activity/task_step.dart';
 /// Present the appropriate screen based on the curren step
 class ActivityView extends StatelessWidget {
   final ActivityController mDigits = Get.find();
-  final Data data = Get.find();
+  final DataManager data = Get.find();
   final AppConfig _config = Get.find();
 
   ActivityView({super.key});
