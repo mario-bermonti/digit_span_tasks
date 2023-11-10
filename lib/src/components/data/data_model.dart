@@ -1,4 +1,4 @@
-import 'package:mdigits/src/components/models/trial_data.dart';
+import 'package:mdigits/src/components/data/trial_data.dart';
 
 /// Object used to structure data collected by MDigits for a single
 /// phase (practice or experimental). It was designed to be used internally
