@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
 import 'package:mdigits/src/data.dart';
-import 'package:mdigits/src/components/mdigits/task_step.dart';
+import 'package:mdigits/src/components/activity/task_step.dart';
 import 'package:mdigits/src/components/config/app_config.dart';
 import 'package:mdigits/src/components/stim/stim_controller.dart';
 
 /// Controls the task sequence.
 /// The task sequence which includes instructions, stim, response, rest, end
-class MDigitsController extends GetxController {
+class ActivityController extends GetxController {
   final Data _data = Get.find();
 
   /// Provides access and manages the stimuli

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/mdigits/mdigits_controller.dart';
+import 'package:mdigits/src/components/activity/activity_controller.dart';
 import 'package:mdigits/src/components/errors/errors.dart';
-import 'package:mdigits/src/components/mdigits/task_step.dart';
+import 'package:mdigits/src/components/activity/task_step.dart';
 import 'package:stimuli/errors.dart';
 import 'package:stimuli/stimuli.dart';
 import 'package:mdigits/src/components/config/app_config.dart';
@@ -11,14 +11,14 @@ class StimController extends GetxController {
   late Stimuli _stimPractice;
   late Stimuli _stimExperimental;
   RxString currentDigit = ''.obs;
-  late final MDigitsController _mDigitsController;
+  late final ActivityController _activityController;
   final AppConfig _config = Get.find();
 
   @override
   onInit() async {
     await prepareStimPool();
     super.onInit();
-    _mDigitsController = Get.find();
+    _activityController = Get.find();
   }
 
   /// Prepare stim pool to be used for both the practice and experimtnal phase.
@@ -44,7 +44,7 @@ class StimController extends GetxController {
   }
 
   void toNextScreen() {
-    _mDigitsController.taskStep(TaskStep.response);
+    _activityController.taskStep(TaskStep.response);
   }
 
   /// Present digits from the set individually to the participant

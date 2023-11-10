@@ -3,20 +3,20 @@ import 'package:get/get.dart';
 import 'package:mdigits/src/data.dart';
 import 'package:mdigits/src/components/end/end_view.dart';
 import 'package:mdigits/src/components/instructions/instructions_view.dart';
-import 'package:mdigits/src/components/mdigits/mdigits_controller.dart';
+import 'package:mdigits/src/components/activity/activity_controller.dart';
 import 'package:mdigits/src/components/config/app_config.dart';
 import 'package:mdigits/src/components/response/response_view.dart';
 import 'package:mdigits/src/components/rest/rest_view.dart';
 import 'package:mdigits/src/components/stim/stim_view.dart';
-import 'package:mdigits/src/components/mdigits/task_step.dart';
+import 'package:mdigits/src/components/activity/task_step.dart';
 
 /// Present the appropriate screen based on the curren step
-class MDigitsView extends StatelessWidget {
-  final MDigitsController mDigits = Get.find();
+class ActivityView extends StatelessWidget {
+  final ActivityController mDigits = Get.find();
   final Data data = Get.find();
   final AppConfig _config = Get.find();
 
-  MDigitsView({super.key});
+  ActivityView({super.key});
 
   @override
   Widget build(BuildContext context) {

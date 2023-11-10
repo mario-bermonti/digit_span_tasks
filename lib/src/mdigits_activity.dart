@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/src/components/config/app_config.dart';
 import 'package:mdigits/src/data.dart';
-import 'package:mdigits/src/components/mdigits/mdigits_controller.dart';
-import 'package:mdigits/src/components/mdigits/mdigits_view.dart';
-import 'package:mdigits/src/components/mdigits_activity/general_instructions.dart';
+import 'package:mdigits/src/components/activity/activity_controller.dart';
+import 'package:mdigits/src/components/activity/activity_view.dart';
+import 'package:mdigits/src/components/instructions/general_instructions.dart';
 import 'package:mdigits/src/components/models/mdigits_data.dart';
 
 /// Runs all mdigits activity beginning with the practice trials and then the
@@ -12,15 +12,15 @@ import 'package:mdigits/src/components/models/mdigits_data.dart';
 /// finishes; includes data for practice and experimental trials.
 class MDigitsActivity extends StatelessWidget {
   final Data _data = Get.put(Data());
-  late final MDigitsController _mDigitsController;
+  late final ActivityController _activityController;
   late final AppConfig _config;
 
   MDigitsActivity({super.key, required config}) {
     _config = Get.put(AppConfig(userConfig: config));
 
-    /// [_mdigitsController] must be inserted after config because it sets up
+    /// [_activityController] must be inserted after config because it sets up
     /// the stim and stim needs config
-    _mDigitsController = Get.put(MDigitsController());
+    _activityController = Get.put(ActivityController());
   }
 
   @override
@@ -40,14 +40,14 @@ class MDigitsActivity extends StatelessWidget {
               onPressed: () async {
                 await Get.to(() => const GeneralInstructions(
                     text: 'Comenzaremos practicando'));
-                await Get.to(() => MDigitsView());
+                await Get.to(() => ActivityView());
                 _config.isPractice = false;
                 await Get.to(() => const GeneralInstructions(text: '''
                           Terminamos la práctica
 
                           Trabajemos en los ejercicios principales
                           '''));
-                await Get.to(() => MDigitsView());
+                await Get.to(() => ActivityView());
 
                 /// [_config.isPractice] is set to false to reset MDigits in
                 /// case the user run another session.
