@@ -4,6 +4,7 @@ import 'package:mdigits/src/components/ui_components/centeredbox.dart';
 import 'package:mdigits/src/components/ui_components/default_appbar.dart';
 import 'package:mdigits/src/components/ui_components/default_text.dart';
 import 'package:mdigits/src/components/end/end_controller.dart';
+import 'package:mdigits/src/components/ui_components/screen.dart';
 
 /// Screen for instructing the participant the task has ended.
 /// Doesn't allow going back or restarting so the experimenter has control
@@ -19,9 +20,9 @@ class EndView extends StatelessWidget {
       onWillPop: () async {
         return false;
       },
-      child: Scaffold(
+      child: Screen(
         appBar: createAppBar(context: context),
-        body: CenteredBox(
+        children: CenteredBox(
           column: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const <Widget>[

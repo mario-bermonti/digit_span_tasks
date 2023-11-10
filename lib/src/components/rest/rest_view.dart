@@ -4,6 +4,7 @@ import 'package:mdigits/src/components/ui_components/centeredbox.dart';
 import 'package:mdigits/src/components/ui_components/default_text.dart';
 import 'package:mdigits/src/components/ui_components/spacing_holder.dart';
 import 'package:mdigits/src/components/rest/rest_controller.dart';
+import 'package:mdigits/src/components/ui_components/screen.dart';
 
 class RestView extends StatelessWidget {
   RestView({super.key});
@@ -16,8 +17,8 @@ class RestView extends StatelessWidget {
       onWillPop: () async {
         return false;
       },
-      child: Scaffold(
-        body: CenteredBox(
+      child: Screen(
+        children: CenteredBox(
           column: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
