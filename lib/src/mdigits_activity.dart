@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/config/app_config.dart';
+import 'package:mdigits/src/components/config/app_config.dart';
 import 'package:mdigits/src/data.dart';
-import 'package:mdigits/src/mdigits/mdigits_controller.dart';
-import 'package:mdigits/src/mdigits/mdigits_view.dart';
-import 'package:mdigits/src/mdigits_activity/general_instructions.dart';
-import 'package:mdigits/src/models/mdigits_data.dart';
+import 'package:mdigits/src/components/mdigits/mdigits_controller.dart';
+import 'package:mdigits/src/components/mdigits/mdigits_view.dart';
+import 'package:mdigits/src/components/mdigits_activity/general_instructions.dart';
+import 'package:mdigits/src/components/models/mdigits_data.dart';
 
 /// Runs all mdigits activity beginning with the practice trials and then the
 /// experimental trials. It returns the data from the session when mdigits

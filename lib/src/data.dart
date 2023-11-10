@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:mdigits/src/models/mdigits_data.dart';
-import 'package:mdigits/src/models/mdigits_data_phase.dart';
-import 'package:mdigits/src/models/trial_data.dart';
-import 'package:mdigits/src/models/data_model.dart';
+import 'package:mdigits/src/components/models/mdigits_data.dart';
+import 'package:mdigits/src/components/models/mdigits_data_phase.dart';
+import 'package:mdigits/src/components/models/trial_data.dart';
+import 'package:mdigits/src/components/models/data_model.dart';
 
 /// Data manager for MDigits.
 /// Used for adding data, getting data for practice or experimental session,
