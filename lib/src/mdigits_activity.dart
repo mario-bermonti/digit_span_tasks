@@ -6,6 +6,7 @@ import 'package:mdigits/src/components/activity/activity_controller.dart';
 import 'package:mdigits/src/components/activity/activity_view.dart';
 import 'package:mdigits/src/components/instructions/general_instructions.dart';
 import 'package:mdigits/src/components/data/mdigits_data.dart';
+import 'package:mdigits/src/components/ui_components/default_appbar.dart';
 import 'package:mdigits/src/components/ui_components/screen.dart';
 
 /// Runs all mdigits activity beginning with the practice trials and then the
@@ -27,6 +28,7 @@ class MDigitsActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Screen(
+      appBar: createAppBar(context: context),
       children: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

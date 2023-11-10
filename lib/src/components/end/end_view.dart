@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdigits/src/components/ui_components/centeredbox.dart';
-import 'package:mdigits/src/components/ui_components/default_appbar.dart';
 import 'package:mdigits/src/components/ui_components/default_text.dart';
 import 'package:mdigits/src/components/end/end_controller.dart';
 import 'package:mdigits/src/components/ui_components/screen.dart';
@@ -21,7 +20,6 @@ class EndView extends StatelessWidget {
         return false;
       },
       child: Screen(
-        appBar: createAppBar(context: context),
         children: CenteredBox(
           column: Column(
             mainAxisAlignment: MainAxisAlignment.center,

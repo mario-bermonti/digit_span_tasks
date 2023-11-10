@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mdigits/src/components/ui_components/centeredbox.dart';
-import 'package:mdigits/src/components/ui_components/default_appbar.dart';
 import 'package:mdigits/src/components/ui_components/default_text.dart';
 import 'package:mdigits/src/components/errors/errors.dart';
 import 'package:mdigits/src/components/ui_components/screen.dart';
@@ -19,7 +18,6 @@ class ErrorView extends StatelessWidget {
         return false;
       },
       child: Screen(
-        appBar: createAppBar(context: context),
         children: CenteredBox(
           column: Column(
             mainAxisAlignment: MainAxisAlignment.center,
