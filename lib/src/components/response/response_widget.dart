@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mdigits/src/components/response/response_controller.dart';
-import 'package:mdigits/src/components/common/centeredbox.dart';
-import 'package:mdigits/src/components/common/default_text.dart';
-import 'package:mdigits/src/components/common/spacing_holder.dart';
-import 'package:mdigits/src/components/common/styles.dart';
+import 'package:mdigits/src/components/ui_components/centeredbox.dart';
+import 'package:mdigits/src/components/ui_components/default_text.dart';
+import 'package:mdigits/src/components/ui_components/spacing_holder.dart';
+import 'package:mdigits/src/components/ui_components/styles.dart';
 
 class ResponseWidget extends StatelessWidget {
   const ResponseWidget({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/common/default_appbar.dart';
+import 'package:mdigits/src/components/ui_components/default_appbar.dart';
 import 'package:mdigits/src/components/instructions/instructions_controller.dart';
 
 class InstructionsView extends StatelessWidget {

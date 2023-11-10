@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/common/centeredbox.dart';
-import 'package:mdigits/src/components/common/default_appbar.dart';
-import 'package:mdigits/src/components/common/default_text.dart';
+import 'package:mdigits/src/components/ui_components/centeredbox.dart';
+import 'package:mdigits/src/components/ui_components/default_appbar.dart';
+import 'package:mdigits/src/components/ui_components/default_text.dart';
 import 'package:mdigits/src/components/end/end_controller.dart';
 
 /// Screen for instructing the participant the task has ended.

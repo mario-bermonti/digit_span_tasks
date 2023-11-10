@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/common/spacing_holder.dart';
+import 'package:mdigits/src/components/ui_components/spacing_holder.dart';
 
 class GeneralInstructions extends StatelessWidget {
   final String text;

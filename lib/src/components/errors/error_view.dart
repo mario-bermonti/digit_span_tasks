@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mdigits/src/components/common/centeredbox.dart';
-import 'package:mdigits/src/components/common/default_appbar.dart';
-import 'package:mdigits/src/components/common/default_text.dart';
+import 'package:mdigits/src/components/ui_components/centeredbox.dart';
+import 'package:mdigits/src/components/ui_components/default_appbar.dart';
+import 'package:mdigits/src/components/ui_components/default_text.dart';
 import 'package:mdigits/src/components/errors/errors.dart';
 
 /// Present error screen to participant
