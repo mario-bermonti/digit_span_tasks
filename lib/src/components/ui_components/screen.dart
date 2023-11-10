@@ -12,7 +12,12 @@ class Screen extends StatelessWidget {
     return Scaffold(
       appBar: appBar,
       body: Center(
-        child: children,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            children,
+          ],
+        ),
       ),
       backgroundColor: Colors.grey[300],
     );
