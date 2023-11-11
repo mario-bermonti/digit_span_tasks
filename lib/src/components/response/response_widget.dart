@@ -16,31 +16,34 @@ class ResponseWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        const DefaultText(
-          '¿Números?',
-        ),
-        const BetweenWidgetsSpace(),
-        TextField(
-          controller: _responseController.textController,
-          keyboardType: TextInputType.number,
-          inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-          decoration: textFieldStyle,
-          onSubmitted: (_) => submitResponse(),
-          autofocus: true,
-        ),
-        const BetweenWidgetsSpace(),
-        ElevatedButton(
-          onPressed: () {
-            submitResponse();
-          },
-          child: Text(
-            'Seguir',
-            style: Theme.of(context).textTheme.button,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 300),
+      child: Column(
+        children: <Widget>[
+          const DefaultText(
+            '¿Números?',
           ),
-        ),
-      ],
+          const BetweenWidgetsSpace(),
+          TextField(
+            controller: _responseController.textController,
+            keyboardType: TextInputType.number,
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            decoration: textFieldStyle,
+            onSubmitted: (_) => submitResponse(),
+            autofocus: true,
+          ),
+          const BetweenWidgetsSpace(),
+          ElevatedButton(
+            onPressed: () {
+              submitResponse();
+            },
+            child: Text(
+              'Seguir',
+              style: Theme.of(context).textTheme.button,
+            ),
+          ),
+        ],
+      ),
     );
   }
 
