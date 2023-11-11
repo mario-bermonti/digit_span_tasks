@@ -19,12 +19,14 @@ class RestView extends StatelessWidget {
       child: Screen(
         children: Column(
           children: <Widget>[
-            const DefaultText(
-              '''
-                Toma un descanso
-
-                Respira profundo antes de continuar
-                ''',
+            Text(
+              'Toma un descanso',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            const BetweenWidgetsSpace(),
+            Text(
+              'Respira profundo antes de continuar',
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             const BetweenWidgetsSpace(),
             ElevatedButton(
