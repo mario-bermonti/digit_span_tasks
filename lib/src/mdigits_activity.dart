@@ -8,7 +8,6 @@ import 'package:mdigits/src/components/instructions/general_instructions.dart';
 import 'package:mdigits/src/components/data/mdigits_data.dart';
 import 'package:mdigits/src/components/ui_components/default_appbar.dart';
 import 'package:mdigits/src/components/ui_components/screen.dart';
-import 'package:mdigits/src/components/ui_components/spacing_holder.dart';
 
 /// Runs all mdigits activity beginning with the practice trials and then the
 /// experimental trials. It returns the data from the session when mdigits

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/ui_components/default_text.dart';
-import 'package:mdigits/src/components/ui_components/spacing_holder.dart';
 import 'package:mdigits/src/components/rest/rest_controller.dart';
 import 'package:mdigits/src/components/ui_components/screen.dart';
 
