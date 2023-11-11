@@ -12,6 +12,7 @@ class GeneralInstructions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Screen(
       children: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           children,
           const BetweenWidgetsSpace(),
