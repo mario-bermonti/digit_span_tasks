@@ -8,6 +8,7 @@ import 'package:mdigits/src/components/instructions/general_instructions.dart';
 import 'package:mdigits/src/components/data/mdigits_data.dart';
 import 'package:mdigits/src/components/ui_components/default_appbar.dart';
 import 'package:mdigits/src/components/ui_components/screen.dart';
+import 'package:mdigits/src/components/ui_components/spacing_holder.dart';
 
 /// Runs all mdigits activity beginning with the practice trials and then the
 /// experimental trials. It returns the data from the session when mdigits
@@ -37,15 +38,33 @@ class MDigitsActivity extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () async {
-              await Get.to(() =>
-                  const GeneralInstructions(text: 'Comenzaremos practicando'));
+              await Get.to(
+                () => GeneralInstructions(
+                  children: Text(
+                    'Comenzaremos practicando',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                ),
+              );
               await Get.to(() => ActivityView());
               _config.isPractice = false;
-              await Get.to(() => const GeneralInstructions(text: '''
-                          Terminamos la práctica
-
-                          Trabajemos en los ejercicios principales
-                          '''));
+              await Get.to(() {
+                return GeneralInstructions(
+                  children: Column(
+                    children: [
+                      Text(
+                        'Terminamos la práctica',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      const BetweenWidgetsSpace(),
+                      Text(
+                        'Trabajemos en los ejercicios principales',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    ],
+                  ),
+                );
+              });
               await Get.to(() => ActivityView());
 
               /// [_config.isPractice] is set to false to reset MDigits in

@@ -4,19 +4,16 @@ import 'package:mdigits/src/components/ui_components/screen.dart';
 import 'package:mdigits/src/components/ui_components/spacing_holder.dart';
 
 class GeneralInstructions extends StatelessWidget {
-  final String text;
+  final Widget children;
 
-  const GeneralInstructions({super.key, required this.text});
+  const GeneralInstructions({super.key, required this.children});
 
   @override
   Widget build(BuildContext context) {
     return Screen(
       children: Column(
         children: [
-          Text(
-            text,
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
+          children,
           const BetweenWidgetsSpace(),
           ElevatedButton(
             onPressed: () => Get.back(),
