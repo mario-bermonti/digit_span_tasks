@@ -32,9 +32,7 @@ class MDigitsActivity extends StatelessWidget {
       children: Column(
         children: <Widget>[
           Text(
-            '''
-              Recuerda los números en el orden en que los veas
-              ''',
+            '''Recuerda los números en el orden en que los veas''',
             style: Theme.of(context).textTheme.titleLarge,
           ),
           ElevatedButton(
