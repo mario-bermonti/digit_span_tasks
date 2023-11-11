@@ -23,12 +23,12 @@ class RestView extends StatelessWidget {
               'Toma un descanso',
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            const BetweenWidgetsSpace(),
+            const SizedBox(height: 15),
             Text(
               'Respira profundo antes de continuar',
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            const BetweenWidgetsSpace(),
+            const SizedBox(height: 25),
             ElevatedButton(
               onPressed: () => _restController.toNextScreen(),
               child: Text(

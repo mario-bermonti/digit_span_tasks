@@ -23,7 +23,7 @@ class ResponseWidget extends StatelessWidget {
           const DefaultText(
             '¿Números?',
           ),
-          const BetweenWidgetsSpace(),
+          const SizedBox(height: 25),
           TextField(
             controller: _responseController.textController,
             keyboardType: TextInputType.number,
@@ -32,7 +32,7 @@ class ResponseWidget extends StatelessWidget {
             onSubmitted: (_) => submitResponse(),
             autofocus: true,
           ),
-          const BetweenWidgetsSpace(),
+          const SizedBox(height: 25),
           ElevatedButton(
             onPressed: () {
               submitResponse();

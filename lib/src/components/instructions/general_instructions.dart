@@ -15,7 +15,7 @@ class GeneralInstructions extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           children,
-          const BetweenWidgetsSpace(),
+          const SizedBox(height: 25),
           ElevatedButton(
             onPressed: () => Get.back(),
             child: Text(

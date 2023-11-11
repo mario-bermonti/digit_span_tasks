@@ -18,6 +18,7 @@ class InstructionsView extends StatelessWidget {
             '''Recuerda, escribe los números en el orden en que los veas''',
             style: Theme.of(context).textTheme.titleLarge,
           ),
+          const SizedBox(height: 25),
           ElevatedButton(
             onPressed: () {
               _instructionsController.toNextScreen();

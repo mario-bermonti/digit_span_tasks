@@ -36,6 +36,7 @@ class MDigitsActivity extends StatelessWidget {
             '''Recuerda los números en el orden en que los veas''',
             style: Theme.of(context).textTheme.titleLarge,
           ),
+          const SizedBox(height: 25),
           ElevatedButton(
             onPressed: () async {
               await Get.to(
@@ -56,7 +57,7 @@ class MDigitsActivity extends StatelessWidget {
                         'Terminamos la práctica',
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
-                      const BetweenWidgetsSpace(),
+                      const SizedBox(height: 15),
                       Text(
                         'Trabajemos en los ejercicios principales',
                         style: Theme.of(context).textTheme.titleLarge,
