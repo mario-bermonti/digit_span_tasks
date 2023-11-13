@@ -28,7 +28,7 @@ class StimController extends GetxController {
       _stimExperimental =
           Stimuli(stimuli: _config.userConfig.stimListExperimental);
     } on StimFileAccessException catch (e) {
-      throw GenericmdigitsException(e.toString());
+      throw GenericDigitSpanTasksException(e.toString());
     }
   }
 

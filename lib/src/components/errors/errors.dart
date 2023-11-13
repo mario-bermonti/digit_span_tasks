@@ -1,13 +1,13 @@
 /// Base exception on which to baes all other exceptions
-abstract class MDigitsExeption implements Exception {
+abstract class DigitSpanTasksExeption implements Exception {
   String userMessage();
 }
 
 /// Generic exception for handling unknown errors
-class GenericmdigitsException implements MDigitsExeption {
+class GenericDigitSpanTasksException implements DigitSpanTasksExeption {
   String exceptionMessage;
 
-  GenericmdigitsException(this.exceptionMessage);
+  GenericDigitSpanTasksException(this.exceptionMessage);
 
   @override
   String userMessage() => 'Unknown error:\n $exceptionMessage';
@@ -16,7 +16,7 @@ class GenericmdigitsException implements MDigitsExeption {
   String toString() => exceptionMessage;
 }
 
-class WorkspaceAccessException implements MDigitsExeption {
+class WorkspaceAccessException implements DigitSpanTasksExeption {
   String exceptionMessage =
       'Could not access the workspace. It is probably not set';
 
@@ -27,7 +27,7 @@ class WorkspaceAccessException implements MDigitsExeption {
   String toString() => exceptionMessage;
 }
 
-class StimFileNotFoundException implements MDigitsExeption {
+class StimFileNotFoundException implements DigitSpanTasksExeption {
   String exceptionMessage = 'Stim file not found in workspace';
 
   @override
@@ -38,7 +38,7 @@ class StimFileNotFoundException implements MDigitsExeption {
   String toString() => exceptionMessage;
 }
 
-class PermissionNotGrantedException implements MDigitsExeption {
+class PermissionNotGrantedException implements DigitSpanTasksExeption {
   String exceptionMessage =
       'Could not read or write data to file due to a permission error';
 

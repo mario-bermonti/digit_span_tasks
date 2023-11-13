@@ -6,7 +6,7 @@ import 'package:digit_span_tasks/src/components/ui_components/screen.dart';
 /// Present error screen to participant
 /// Show specific error message
 class ErrorView extends StatelessWidget {
-  final MDigitsExeption message;
+  final DigitSpanTasksExeption message;
 
   const ErrorView({Key? key, required this.message}) : super(key: key);
 

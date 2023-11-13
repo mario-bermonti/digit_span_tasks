@@ -41,9 +41,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   stimListExperimental: ['5678', '01567', '987654'],
                   participantID: '000',
                 );
-                MDigitsData data = await Get.to(() => MDigitsActivity(
-                      config: config,
-                    ));
+                DigitSpanTasksData data =
+                    await Get.to(() => DigitSpanTasksActivity(
+                          config: config,
+                        ));
                 // ignore: avoid_print
                 print('$data');
               },

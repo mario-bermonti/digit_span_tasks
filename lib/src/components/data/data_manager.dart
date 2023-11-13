@@ -45,20 +45,20 @@ class DataManager extends GetxController {
   /// Exports the data collected during the session.
   /// Returns a custom object named [MDigitsData] that includes data for the
   /// practice and experimental phase.
-  MDigitsData export() {
-    MDigitsDataPhase practiceDataSharing = MDigitsDataPhase(
+  DigitSpanTasksData export() {
+    DigitSpanTasksDataPhase practiceDataSharing = DigitSpanTasksDataPhase(
       trialData: practiceData.trialData,
       startTime: practiceData.startTime,
       endTime: practiceData.endTime,
     );
 
-    MDigitsDataPhase experimentalDataSharing = MDigitsDataPhase(
+    DigitSpanTasksDataPhase experimentalDataSharing = DigitSpanTasksDataPhase(
       trialData: experimentalData.trialData,
       startTime: experimentalData.startTime,
       endTime: experimentalData.endTime,
     );
 
-    MDigitsData data = MDigitsData(
+    DigitSpanTasksData data = DigitSpanTasksData(
       practiceData: practiceDataSharing,
       experimentalData: experimentalDataSharing,
     );
