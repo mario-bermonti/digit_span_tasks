@@ -20,7 +20,7 @@ class ResponseView extends StatelessWidget {
       },
       child: Screen(
         children: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 300),
+          padding: const EdgeInsets.symmetric(horizontal: 100),
           child: Column(
             children: <Widget>[
               const DefaultText(
