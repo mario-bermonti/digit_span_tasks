@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/common/centeredbox.dart';
-import 'package:mdigits/src/components/common/default_appbar.dart';
-import 'package:mdigits/src/components/common/default_text.dart';
+import 'package:mdigits/src/components/ui_components/default_text.dart';
 import 'package:mdigits/src/components/end/end_controller.dart';
+import 'package:mdigits/src/components/ui_components/screen.dart';
 
 /// Screen for instructing the participant the task has ended.
 /// Doesn't allow going back or restarting so the experimenter has control
@@ -19,17 +18,13 @@ class EndView extends StatelessWidget {
       onWillPop: () async {
         return false;
       },
-      child: Scaffold(
-        appBar: createAppBar(context: context),
-        body: CenteredBox(
-          column: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
-              DefaultText(
-                '¡Terminamos esta fase!',
-              ),
-            ],
-          ),
+      child: Screen(
+        children: Column(
+          children: const <Widget>[
+            DefaultText(
+              '¡Terminamos esta fase!',
+            ),
+          ],
         ),
       ),
     );

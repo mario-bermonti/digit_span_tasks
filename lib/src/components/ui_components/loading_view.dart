@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:mdigits/src/components/common/default_appbar.dart';
+import 'package:mdigits/src/components/ui_components/screen.dart';
 
 class LoadingView extends StatelessWidget {
   const LoadingView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: createAppBar(context: context),
-      body: const Center(
+    return const Screen(
+      children: Center(
         child: CircularProgressIndicator(),
       ),
     );

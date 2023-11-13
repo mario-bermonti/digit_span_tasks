@@ -6,6 +6,8 @@ import 'package:mdigits/src/components/activity/activity_controller.dart';
 import 'package:mdigits/src/components/activity/activity_view.dart';
 import 'package:mdigits/src/components/instructions/general_instructions.dart';
 import 'package:mdigits/src/components/data/mdigits_data.dart';
+import 'package:mdigits/src/components/ui_components/default_appbar.dart';
+import 'package:mdigits/src/components/ui_components/screen.dart';
 
 /// Runs all mdigits activity beginning with the practice trials and then the
 /// experimental trials. It returns the data from the session when mdigits
@@ -25,43 +27,58 @@ class MDigitsActivity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              '''
-              Recuerda los números en el orden en que los veas
-              ''',
+    return Screen(
+      appBar: createAppBar(context: context),
+      children: Column(
+        children: <Widget>[
+          Text(
+            '''Recuerda los números en el orden en que los veas''',
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          const SizedBox(height: 25),
+          ElevatedButton(
+            onPressed: () async {
+              await Get.to(
+                () => GeneralInstructions(
+                  children: Text(
+                    'Comenzaremos practicando',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                ),
+              );
+              await Get.to(() => ActivityView());
+              _config.isPractice = false;
+              await Get.to(() {
+                return GeneralInstructions(
+                  children: Column(
+                    children: [
+                      Text(
+                        'Terminamos la práctica',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      const SizedBox(height: 15),
+                      Text(
+                        'Trabajemos en los ejercicios principales',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    ],
+                  ),
+                );
+              });
+              await Get.to(() => ActivityView());
+
+              /// [_config.isPractice] is set to false to reset MDigits in
+              /// case the user run another session.
+              _config.isPractice = true;
+              MDigitsData mDigitsData = _data.export();
+              Get.back(result: mDigitsData);
+            },
+            child: Text(
+              'Comenzar',
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            ElevatedButton(
-              onPressed: () async {
-                await Get.to(() => const GeneralInstructions(
-                    text: 'Comenzaremos practicando'));
-                await Get.to(() => ActivityView());
-                _config.isPractice = false;
-                await Get.to(() => const GeneralInstructions(text: '''
-                          Terminamos la práctica
-
-                          Trabajemos en los ejercicios principales
-                          '''));
-                await Get.to(() => ActivityView());
-
-                /// [_config.isPractice] is set to false to reset MDigits in
-                /// case the user run another session.
-                _config.isPractice = true;
-                MDigitsData mDigitsData = _data.export();
-                Get.back(result: mDigitsData);
-              },
-              child: Text(
-                'Comenzar',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mdigits/src/components/response/response_controller.dart';
-import 'package:mdigits/src/components/common/centeredbox.dart';
-import 'package:mdigits/src/components/common/default_text.dart';
-import 'package:mdigits/src/components/common/spacing_holder.dart';
-import 'package:mdigits/src/components/common/styles.dart';
+import 'package:mdigits/src/components/ui_components/default_text.dart';
+import 'package:mdigits/src/components/ui_components/styles.dart';
 
 class ResponseWidget extends StatelessWidget {
   const ResponseWidget({
@@ -17,14 +15,14 @@ class ResponseWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CenteredBox(
-      column: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 300),
+      child: Column(
         children: <Widget>[
           const DefaultText(
             '¿Números?',
           ),
-          const BetweenWidgetsSpace(),
+          const SizedBox(height: 25),
           TextField(
             controller: _responseController.textController,
             keyboardType: TextInputType.number,
@@ -33,7 +31,7 @@ class ResponseWidget extends StatelessWidget {
             onSubmitted: (_) => submitResponse(),
             autofocus: true,
           ),
-          const BetweenWidgetsSpace(),
+          const SizedBox(height: 25),
           ElevatedButton(
             onPressed: () {
               submitResponse();

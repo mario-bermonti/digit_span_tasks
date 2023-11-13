@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/common/centeredbox.dart';
-import 'package:mdigits/src/components/common/default_text.dart';
-import 'package:mdigits/src/components/common/spacing_holder.dart';
 import 'package:mdigits/src/components/rest/rest_controller.dart';
+import 'package:mdigits/src/components/ui_components/screen.dart';
 
 class RestView extends StatelessWidget {
   RestView({super.key});
@@ -16,28 +14,27 @@ class RestView extends StatelessWidget {
       onWillPop: () async {
         return false;
       },
-      child: Scaffold(
-        body: CenteredBox(
-          column: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const DefaultText(
-                '''
-                Toma un descanso
-
-                Respira profundo antes de continuar
-                ''',
+      child: Screen(
+        children: Column(
+          children: <Widget>[
+            Text(
+              'Toma un descanso',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            const SizedBox(height: 15),
+            Text(
+              'Respira profundo antes de continuar',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            const SizedBox(height: 25),
+            ElevatedButton(
+              onPressed: () => _restController.toNextScreen(),
+              child: Text(
+                'Comenzar',
+                style: Theme.of(context).textTheme.button,
               ),
-              const BetweenWidgetsSpace(),
-              ElevatedButton(
-                onPressed: () => _restController.toNextScreen(),
-                child: Text(
-                  'Comenzar',
-                  style: Theme.of(context).textTheme.button,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
