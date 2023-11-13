@@ -32,7 +32,7 @@ class ActivityController extends GetxController {
     if (stim.stimCountRemaining == 0) {
       taskStep(TaskStep.completed);
 
-      /// This check is needed to garantee that mdigits doesn't
+      /// This check is needed to garantee that DigitSpanTask doesn't
       /// get stuck in rest
     } else if (taskStep.value == TaskStep.rest) {
       taskStep(TaskStep.stim);

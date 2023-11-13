@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const GetMaterialApp(
-      title: 'mDigits',
+      title: 'DigitSpanTasks',
       home: MyHomePage(),
     );
   }
@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 print('$data');
               },
               child: Text(
-                'mDigits',
+                'Digit Span Tasks',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),

@@ -10,8 +10,8 @@ import 'package:digit_span_tasks/src/components/ui_components/screen.dart';
 import 'package:digit_span_tasks/src/instructions_experimental.dart';
 import 'package:digit_span_tasks/src/instructions_practice.dart';
 
-/// Runs all mdigits activity beginning with the practice trials and then the
-/// experimental trials. It returns the data from the session when mdigits
+/// Runs all DigitSpanTask activity beginning with the practice trials and then the
+/// experimental trials. It returns the data from the session when DigitSpanTask
 /// finishes; includes data for practice and experimental trials.
 class DigitSpanTasksActivity extends StatelessWidget {
   final DataManager _data = Get.put(DataManager());
@@ -45,7 +45,7 @@ class DigitSpanTasksActivity extends StatelessWidget {
               await Get.to(() => const InstructionsExperimental());
               await Get.to(() => ActivityView());
 
-              /// [_config.isPractice] is set to false to reset MDigits in
+              /// [_config.isPractice] is set to false to reset DigitSpanTask in
               /// case the user run another session.
               _config.isPractice = true;
               DigitSpanTasksData digitSpanTasksData = _data.export();

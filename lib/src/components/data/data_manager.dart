@@ -4,7 +4,7 @@ import 'package:digit_span_tasks/src/components/data/digit_span_tasks_data_phase
 import 'package:digit_span_tasks/src/components/data/trial_data.dart';
 import 'package:digit_span_tasks/src/components/data/data_model.dart';
 
-/// Data manager for MDigits.
+/// Data manager for DigitSpanTask.
 /// Used for adding data, getting data for practice or experimental session,
 /// and exporting data.
 class DataManager extends GetxController {
@@ -43,7 +43,7 @@ class DataManager extends GetxController {
   }
 
   /// Exports the data collected during the session.
-  /// Returns a custom object named [MDigitsData] that includes data for the
+  /// Returns a custom object named [DigitSpanTasksData] that includes data for the
   /// practice and experimental phase.
   DigitSpanTasksData export() {
     DigitSpanTasksDataPhase practiceDataSharing = DigitSpanTasksDataPhase(

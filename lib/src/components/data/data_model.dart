@@ -1,8 +1,8 @@
 import 'package:digit_span_tasks/src/components/data/trial_data.dart';
 
-/// Object used to structure data collected by MDigits for a single
+/// Object used to structure data collected by DigitSpanTask for a single
 /// phase (practice or experimental). It was designed to be used internally
-/// by mdigits.
+/// by DigitSpanTask.
 class DataModel {
   final List<TrialData> trialData = <TrialData>[];
   late final DateTime startTime;

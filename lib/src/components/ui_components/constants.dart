@@ -1,1 +1,1 @@
-const String appBarTitle = "mdigits";
+const String appBarTitle = "DigitSpanTask";
