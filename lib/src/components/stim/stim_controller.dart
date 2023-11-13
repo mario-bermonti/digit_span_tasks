@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/activity/activity_controller.dart';
-import 'package:mdigits/src/components/errors/errors.dart';
-import 'package:mdigits/src/components/activity/task_step.dart';
+import 'package:digit_span_tasks/src/components/activity/activity_controller.dart';
+import 'package:digit_span_tasks/src/components/errors/errors.dart';
+import 'package:digit_span_tasks/src/components/activity/task_step.dart';
 import 'package:stimuli/errors.dart';
 import 'package:stimuli/stimuli.dart';
-import 'package:mdigits/src/components/config/app_config.dart';
+import 'package:digit_span_tasks/src/components/config/app_config.dart';
 
 /// Manage the stim
 class StimController extends GetxController {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/response/response_controller.dart';
-import 'package:mdigits/src/components/ui_components/default_text.dart';
-import 'package:mdigits/src/components/ui_components/screen.dart';
-import 'package:mdigits/src/components/ui_components/styles.dart';
+import 'package:digit_span_tasks/src/components/response/response_controller.dart';
+import 'package:digit_span_tasks/src/components/ui_components/default_text.dart';
+import 'package:digit_span_tasks/src/components/ui_components/screen.dart';
+import 'package:digit_span_tasks/src/components/ui_components/styles.dart';
 
 /// Screen for collecting response from participant
 class ResponseView extends StatelessWidget {

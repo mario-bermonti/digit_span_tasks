@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/stim/stim_controller.dart';
-import 'package:mdigits/src/components/ui_components/screen.dart';
+import 'package:digit_span_tasks/src/components/stim/stim_controller.dart';
+import 'package:digit_span_tasks/src/components/ui_components/screen.dart';
 
 /// Screen to present stim to participants
 class StimView extends StatelessWidget {

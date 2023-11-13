@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mdigits/src/components/ui_components/screen.dart';
+import 'package:digit_span_tasks/src/components/ui_components/screen.dart';
 
 class LoadingView extends StatelessWidget {
   const LoadingView({super.key});

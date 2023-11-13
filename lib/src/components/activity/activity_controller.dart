@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/data/data_manager.dart';
-import 'package:mdigits/src/components/activity/task_step.dart';
-import 'package:mdigits/src/components/config/app_config.dart';
-import 'package:mdigits/src/components/stim/stim_controller.dart';
+import 'package:digit_span_tasks/src/components/data/data_manager.dart';
+import 'package:digit_span_tasks/src/components/activity/task_step.dart';
+import 'package:digit_span_tasks/src/components/config/app_config.dart';
+import 'package:digit_span_tasks/src/components/stim/stim_controller.dart';
 
 /// Controls the task sequence.
 /// The task sequence which includes instructions, stim, response, rest, end

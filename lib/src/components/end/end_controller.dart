@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/activity/activity_controller.dart';
+import 'package:digit_span_tasks/src/components/activity/activity_controller.dart';
 
 class EndController extends GetxController {
   /// Time in seconds before ending the session

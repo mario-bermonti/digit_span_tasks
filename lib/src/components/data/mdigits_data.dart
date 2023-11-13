@@ -1,4 +1,4 @@
-import 'package:mdigits/src/components/data/mdigits_data_phase.dart';
+import 'package:digit_span_tasks/src/components/data/mdigits_data_phase.dart';
 
 /// Structured data collected by MDigits.
 /// Used to provide data nicely formatted to the user.

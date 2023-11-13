@@ -1,5 +1,5 @@
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:mdigits/src/randomize.dart';
+import 'package:digit_span_tasks/src/randomize.dart';
 
 /// The [UserConfig] contains settings the user can use to modify the behavior
 /// of the app.
