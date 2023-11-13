@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:digit_span_tasks/mdigits.dart';
+import 'package:digit_span_tasks/digit_span_tasks.dart';
 
 void main() {
   runApp(const MyApp());

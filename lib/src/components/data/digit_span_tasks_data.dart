@@ -1,15 +1,16 @@
-import 'package:digit_span_tasks/src/components/data/mdigits_data_phase.dart';
+import 'package:digit_span_tasks/src/components/data/digit_span_tasks_data_phase.dart';
 
 /// Structured data collected by MDigits.
 /// Used to provide data nicely formatted to the user.
-class MDigitsData {
+class DigitSpanTasksData {
   /// Data collected during the practice phase.
-  MDigitsDataPhase practiceData;
+  DigitSpanTasksDataPhase practiceData;
 
   /// Data collected during the experimental phase.
-  MDigitsDataPhase experimentalData;
+  DigitSpanTasksDataPhase experimentalData;
 
-  MDigitsData({required this.practiceData, required this.experimentalData});
+  DigitSpanTasksData(
+      {required this.practiceData, required this.experimentalData});
 
   @override
   String toString() {

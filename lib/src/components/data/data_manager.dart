@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:digit_span_tasks/src/components/data/mdigits_data.dart';
-import 'package:digit_span_tasks/src/components/data/mdigits_data_phase.dart';
+import 'package:digit_span_tasks/src/components/data/digit_span_tasks_data.dart';
+import 'package:digit_span_tasks/src/components/data/digit_span_tasks_data_phase.dart';
 import 'package:digit_span_tasks/src/components/data/trial_data.dart';
 import 'package:digit_span_tasks/src/components/data/data_model.dart';
 
