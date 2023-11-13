@@ -1,9 +1,9 @@
-import 'package:mdigits/src/components/data/trial_data.dart';
+import 'package:digit_span_tasks/src/components/data/trial_data.dart';
 
-/// Object used to structure data collected by MDigits for a single
+/// Object used to structure data collected by DigitSpanTask for a single
 /// phase (practice or experimental).
 /// Used to provide data nicely formatted to the user.
-class MDigitsDataPhase {
+class DigitSpanTasksDataPhase {
   /// Data for each trial of the phase.
   final List<TrialData> trialData;
 
@@ -13,7 +13,7 @@ class MDigitsDataPhase {
   /// Date and time at which the phase ended
   final DateTime endTime;
 
-  MDigitsDataPhase(
+  DigitSpanTasksDataPhase(
       {required this.trialData,
       required this.startTime,
       required this.endTime});

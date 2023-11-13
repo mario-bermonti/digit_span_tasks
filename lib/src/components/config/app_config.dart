@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/config/user_config.dart';
+import 'package:digit_span_tasks/src/components/config/user_config.dart';
 
 /// The [AppConfig] contains settings defined by the user and the app's internal
 /// settings.

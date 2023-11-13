@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/data/data_manager.dart';
-import 'package:mdigits/src/components/activity/task_step.dart';
-import 'package:mdigits/src/components/config/app_config.dart';
-import 'package:mdigits/src/components/stim/stim_controller.dart';
+import 'package:digit_span_tasks/src/components/data/data_manager.dart';
+import 'package:digit_span_tasks/src/components/activity/task_step.dart';
+import 'package:digit_span_tasks/src/components/config/app_config.dart';
+import 'package:digit_span_tasks/src/components/stim/stim_controller.dart';
 
 /// Controls the task sequence.
 /// The task sequence which includes instructions, stim, response, rest, end
@@ -32,7 +32,7 @@ class ActivityController extends GetxController {
     if (stim.stimCountRemaining == 0) {
       taskStep(TaskStep.completed);
 
-      /// This check is needed to garantee that mdigits doesn't
+      /// This check is needed to garantee that DigitSpanTask doesn't
       /// get stuck in rest
     } else if (taskStep.value == TaskStep.rest) {
       taskStep(TaskStep.stim);

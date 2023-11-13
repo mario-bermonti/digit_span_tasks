@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/data/data_manager.dart';
-import 'package:mdigits/src/components/end/end_view.dart';
-import 'package:mdigits/src/components/instructions/instructions_view.dart';
-import 'package:mdigits/src/components/activity/activity_controller.dart';
-import 'package:mdigits/src/components/config/app_config.dart';
-import 'package:mdigits/src/components/response/response_view.dart';
-import 'package:mdigits/src/components/rest/rest_view.dart';
-import 'package:mdigits/src/components/stim/stim_view.dart';
-import 'package:mdigits/src/components/activity/task_step.dart';
+import 'package:digit_span_tasks/src/components/data/data_manager.dart';
+import 'package:digit_span_tasks/src/components/end/end_view.dart';
+import 'package:digit_span_tasks/src/components/instructions/instructions_view.dart';
+import 'package:digit_span_tasks/src/components/activity/activity_controller.dart';
+import 'package:digit_span_tasks/src/components/config/app_config.dart';
+import 'package:digit_span_tasks/src/components/response/response_view.dart';
+import 'package:digit_span_tasks/src/components/rest/rest_view.dart';
+import 'package:digit_span_tasks/src/components/stim/stim_view.dart';
+import 'package:digit_span_tasks/src/components/activity/task_step.dart';
 
 /// Present the appropriate screen based on the curren step
 class ActivityView extends StatelessWidget {

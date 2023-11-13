@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/mdigits.dart';
+import 'package:digit_span_tasks/digit_span_tasks.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const GetMaterialApp(
-      title: 'mDigits',
+      title: 'DigitSpanTasks',
       home: MyHomePage(),
     );
   }
@@ -41,14 +41,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   stimListExperimental: ['5678', '01567', '987654'],
                   participantID: '000',
                 );
-                MDigitsData data = await Get.to(() => MDigitsActivity(
-                      config: config,
-                    ));
+                DigitSpanTasksData data =
+                    await Get.to(() => DigitSpanTasksActivity(
+                          config: config,
+                        ));
                 // ignore: avoid_print
                 print('$data');
               },
               child: Text(
-                'mDigits',
+                'Digit Span Tasks',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),

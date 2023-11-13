@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/data/mdigits_data.dart';
-import 'package:mdigits/src/components/data/mdigits_data_phase.dart';
-import 'package:mdigits/src/components/data/trial_data.dart';
-import 'package:mdigits/src/components/data/data_model.dart';
+import 'package:digit_span_tasks/src/components/data/digit_span_tasks_data.dart';
+import 'package:digit_span_tasks/src/components/data/digit_span_tasks_data_phase.dart';
+import 'package:digit_span_tasks/src/components/data/trial_data.dart';
+import 'package:digit_span_tasks/src/components/data/data_model.dart';
 
-/// Data manager for MDigits.
+/// Data manager for DigitSpanTask.
 /// Used for adding data, getting data for practice or experimental session,
 /// and exporting data.
 class DataManager extends GetxController {
@@ -43,22 +43,22 @@ class DataManager extends GetxController {
   }
 
   /// Exports the data collected during the session.
-  /// Returns a custom object named [MDigitsData] that includes data for the
+  /// Returns a custom object named [DigitSpanTasksData] that includes data for the
   /// practice and experimental phase.
-  MDigitsData export() {
-    MDigitsDataPhase practiceDataSharing = MDigitsDataPhase(
+  DigitSpanTasksData export() {
+    DigitSpanTasksDataPhase practiceDataSharing = DigitSpanTasksDataPhase(
       trialData: practiceData.trialData,
       startTime: practiceData.startTime,
       endTime: practiceData.endTime,
     );
 
-    MDigitsDataPhase experimentalDataSharing = MDigitsDataPhase(
+    DigitSpanTasksDataPhase experimentalDataSharing = DigitSpanTasksDataPhase(
       trialData: experimentalData.trialData,
       startTime: experimentalData.startTime,
       endTime: experimentalData.endTime,
     );
 
-    MDigitsData data = MDigitsData(
+    DigitSpanTasksData data = DigitSpanTasksData(
       practiceData: practiceDataSharing,
       experimentalData: experimentalDataSharing,
     );

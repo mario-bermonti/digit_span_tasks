@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mdigits/src/components/instructions/general_instructions.dart';
+import 'package:digit_span_tasks/src/components/instructions/general_instructions.dart';
 
 class InstructionsExperimental extends StatelessWidget {
   const InstructionsExperimental({

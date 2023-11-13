@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdigits/src/components/rest/rest_controller.dart';
-import 'package:mdigits/src/components/ui_components/screen.dart';
+import 'package:digit_span_tasks/src/components/rest/rest_controller.dart';
+import 'package:digit_span_tasks/src/components/ui_components/screen.dart';
 
 class RestView extends StatelessWidget {
   RestView({super.key});
