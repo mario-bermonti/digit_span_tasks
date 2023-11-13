@@ -48,8 +48,8 @@ class DigitSpanTasksActivity extends StatelessWidget {
               /// [_config.isPractice] is set to false to reset MDigits in
               /// case the user run another session.
               _config.isPractice = true;
-              DigitSpanTasksData mDigitsData = _data.export();
-              Get.back(result: mDigitsData);
+              DigitSpanTasksData digitSpanTasksData = _data.export();
+              Get.back(result: digitSpanTasksData);
             },
             child: Text(
               'Comenzar',
