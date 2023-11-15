@@ -1,3 +1,4 @@
+import 'package:digit_span_tasks/src/digit_span_task/components/instructions/instructions_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/config/app_config.dart';
@@ -14,6 +15,7 @@ import 'package:digit_span_tasks/src/digit_span_task/instructions_practice.dart'
 /// experimental trials. It returns the data from the session when DigitSpanTask
 /// finishes; includes data for practice and experimental trials.
 class DigitSpanTasksActivity extends StatelessWidget {
+  final InstructionsModel _instructions = Get.find();
   final DataManager _data = Get.put(DataManager());
   late final ActivityController _activityController;
   late final AppConfig _config;
