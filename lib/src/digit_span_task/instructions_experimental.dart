@@ -1,8 +1,12 @@
+import 'package:digit_span_tasks/src/digit_span_task/components/instructions/instructions_model.dart';
 import 'package:flutter/material.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/instructions/general_instructions.dart';
+import 'package:get/get.dart';
 
 class InstructionsExperimental extends StatelessWidget {
-  const InstructionsExperimental({
+  final InstructionsModel _instructions = Get.find();
+
+  InstructionsExperimental({
     Key? key,
   }) : super(key: key);
 
@@ -12,7 +16,7 @@ class InstructionsExperimental extends StatelessWidget {
       children: Column(
         children: [
           Text(
-            'Terminamos la práctica',
+            _instructions.experimental,
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(height: 15),
