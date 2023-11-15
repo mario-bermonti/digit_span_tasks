@@ -33,7 +33,7 @@ class DigitSpanTasksActivity extends StatelessWidget {
       children: Column(
         children: <Widget>[
           Text(
-            '''Recuerda los números en el orden en que los veas''',
+            _instructions.introduction,
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(height: 25),
