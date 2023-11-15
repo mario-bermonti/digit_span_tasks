@@ -39,10 +39,10 @@ class DigitSpanTasksActivity extends StatelessWidget {
           const SizedBox(height: 25),
           ElevatedButton(
             onPressed: () async {
-              await Get.to(() => const InstructionsPractice());
+              await Get.to(() => InstructionsPractice());
               await Get.to(() => ActivityView());
               _config.isPractice = false;
-              await Get.to(() => const InstructionsExperimental());
+              await Get.to(() => InstructionsExperimental());
               await Get.to(() => ActivityView());
 
               /// [_config.isPractice] is set to false to reset DigitSpanTask in
