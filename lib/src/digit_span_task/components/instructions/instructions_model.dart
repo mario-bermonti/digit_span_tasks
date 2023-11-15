@@ -1,5 +1,7 @@
+import 'package:get/get.dart';
+
 /// Model for specifying the instructions to be used in the task
-class InstructionsModel {
+class InstructionsModel extends GetxController {
   final String introduction;
   final String practice;
   final String experimental;
