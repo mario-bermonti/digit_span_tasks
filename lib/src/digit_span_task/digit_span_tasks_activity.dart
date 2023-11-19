@@ -41,7 +41,6 @@ class DigitSpanTasksActivity extends StatelessWidget {
               await Get.to(() => InstructionsExperimental());
               await Get.to(() => ActivityView());
 
-              _config.isPractice = true;
               DigitSpanTasksData digitSpanTasksData = _data.export();
               Get.back(result: digitSpanTasksData);
             },
