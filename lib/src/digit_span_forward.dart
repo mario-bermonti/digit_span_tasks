@@ -14,18 +14,30 @@ class DigitSpanForward extends StatelessWidget {
     _instructions = Get.put(InstructionsModel());
   }
 
-    instructions.introduction =
-        const Text('Recuerda los números en el orden en que los veas');
-    instructions.practice = const Text('Comenzaremos practicando');
-    instructions.experimental = Column(children: const [
-      Text('Terminamos la práctica'),
   void updateInstructions(
       InstructionsModel instructions, BuildContext context) {
+    instructions.introduction = Text(
+      'Recuerda los números en el orden en que los veas',
+      style: Theme.of(context).textTheme.titleLarge,
+    );
+    instructions.practice = Text(
+      'Comenzaremos practicando',
+      style: Theme.of(context).textTheme.titleLarge,
+    );
+    instructions.experimental = Column(children: [
       Text(
-          'Toma un breve descanso y trabajaremos en los ejercicios principales'),
+        'Terminamos la práctica',
+        style: Theme.of(context).textTheme.titleLarge,
+      ),
+      Text(
+        'Toma un breve descanso y trabajaremos en los ejercicios principales',
+        style: Theme.of(context).textTheme.titleLarge,
+      ),
     ]);
-    instructions.reminderInTask =
-        const Text('Recuerda, escribe los números en el orden en que los veas');
+    instructions.reminderInTask = Text(
+      'Recuerda, escribe los números en el orden en que los veas',
+      style: Theme.of(context).textTheme.titleLarge,
+    );
   }
 
   @override
