@@ -12,6 +12,10 @@ class DigitSpanForward extends StatelessWidget {
     _config = Get.put(AppConfig(userConfig: config));
     InstructionsModel instructions = Get.put(InstructionsModel());
 
+    updateInstructions(instructions);
+  }
+
+  void updateInstructions(InstructionsModel instructions) {
     instructions.introduction =
         const Text('Recuerda los números en el orden en que los veas');
     instructions.practice = const Text('Comenzaremos practicando');
