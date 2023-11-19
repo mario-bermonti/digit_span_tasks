@@ -17,10 +17,7 @@ class InstructionsView extends StatelessWidget {
     return Screen(
       children: Column(
         children: <Widget>[
-          Text(
-            _instructions.reminderInTask,
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
+          _instructions.reminderInTask,
           const SizedBox(height: 25),
           ElevatedButton(
             onPressed: () {
