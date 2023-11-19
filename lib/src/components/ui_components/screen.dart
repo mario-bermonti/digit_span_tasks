@@ -11,12 +11,15 @@ class Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            children,
-          ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 50),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              children,
+            ],
+          ),
         ),
       ),
       backgroundColor: Colors.grey[300],
