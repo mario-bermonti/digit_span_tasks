@@ -41,15 +41,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   stimListExperimental: ['5678', '01567', '987654'],
                   participantID: '000',
                 );
-                DigitSpanTasksData data =
-                    await Get.to(() => DigitSpanTasksActivity(
-                          config: config,
-                        ));
+                DigitSpanTasksData data = await Get.to(() => DigitSpanForward(
+                      config: config,
+                    ));
                 // ignore: avoid_print
                 print('$data');
               },
               child: Text(
-                'Digit Span Tasks',
+                'Digit Span Forward',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
