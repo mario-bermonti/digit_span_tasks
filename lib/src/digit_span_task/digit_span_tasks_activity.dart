@@ -34,10 +34,7 @@ class DigitSpanTasksActivity extends StatelessWidget {
       appBar: createAppBar(context: context),
       children: Column(
         children: <Widget>[
-          Text(
-            _instructions.introduction,
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
+          _instructions.introduction,
           const SizedBox(height: 25),
           ElevatedButton(
             onPressed: () async {
