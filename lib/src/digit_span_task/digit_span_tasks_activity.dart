@@ -22,9 +22,6 @@ class DigitSpanTasksActivity extends StatelessWidget {
 
   DigitSpanTasksActivity({super.key}) {
     _config = Get.find();
-
-    /// [_activityController] must be inserted after config because it sets up
-    /// the stim and stim needs config
     _activityController = Get.put(ActivityController());
   }
 
@@ -44,8 +41,6 @@ class DigitSpanTasksActivity extends StatelessWidget {
               await Get.to(() => InstructionsExperimental());
               await Get.to(() => ActivityView());
 
-              /// [_config.isPractice] is set to false to reset DigitSpanTask in
-              /// case the user run another session.
               _config.isPractice = true;
               DigitSpanTasksData digitSpanTasksData = _data.export();
               Get.back(result: digitSpanTasksData);
