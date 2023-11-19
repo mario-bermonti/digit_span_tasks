@@ -14,6 +14,12 @@ class DigitSpanForward extends StatelessWidget {
     _instructions = Get.put(InstructionsModel());
   }
 
+  @override
+  Widget build(BuildContext context) {
+    updateInstructions(_instructions, context);
+    return DigitSpanTasksActivity();
+  }
+
   void updateInstructions(
       InstructionsModel instructions, BuildContext context) {
     instructions.introduction = Text(
@@ -38,11 +44,5 @@ class DigitSpanForward extends StatelessWidget {
       'Recuerda, escribe los números en el orden en que los veas',
       style: Theme.of(context).textTheme.titleLarge,
     );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    updateInstructions(_instructions, context);
-    return DigitSpanTasksActivity();
   }
 }
