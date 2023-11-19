@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 class DigitSpanForward extends StatelessWidget {
   late final AppConfig _config;
-  late InstructionsModel _instructions;
+  late final InstructionsModel _instructions;
 
   DigitSpanForward({super.key, required UserConfig config}) {
     _config = Get.put(AppConfig(userConfig: config));
