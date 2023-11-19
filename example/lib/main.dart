@@ -45,10 +45,28 @@ class _MyHomePageState extends State<MyHomePage> {
                       config: config,
                     ));
                 // ignore: avoid_print
-                print('$data');
+                print('\n\n\nFORWARD data \n $data');
               },
               child: Text(
                 'Digit Span Forward',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                UserConfig config = UserConfig(
+                  stimListPractice: ['23', '567'],
+                  stimListExperimental: ['0123', '45678', '901234'],
+                  participantID: '000',
+                );
+                DigitSpanTasksData data = await Get.to(() => DigitSpanBackwards(
+                      config: config,
+                    ));
+                // ignore: avoid_print
+                print('\n\n\nBAKWARDS data \n $data');
+              },
+              child: Text(
+                'Digit Span Backwards',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
