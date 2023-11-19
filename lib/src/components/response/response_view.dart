@@ -19,34 +19,31 @@ class ResponseView extends StatelessWidget {
         return false;
       },
       child: Screen(
-        children: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 100),
-          child: Column(
-            children: <Widget>[
-              const DefaultText(
-                '¿Números?',
+        children: Column(
+          children: <Widget>[
+            const DefaultText(
+              '¿Números?',
+            ),
+            const SizedBox(height: 25),
+            TextField(
+              controller: _responseController.textController,
+              keyboardType: TextInputType.number,
+              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+              decoration: textFieldStyle,
+              onSubmitted: (_) => submitResponse(),
+              autofocus: true,
+            ),
+            const SizedBox(height: 25),
+            ElevatedButton(
+              onPressed: () {
+                submitResponse();
+              },
+              child: Text(
+                'Seguir',
+                style: Theme.of(context).textTheme.button,
               ),
-              const SizedBox(height: 25),
-              TextField(
-                controller: _responseController.textController,
-                keyboardType: TextInputType.number,
-                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                decoration: textFieldStyle,
-                onSubmitted: (_) => submitResponse(),
-                autofocus: true,
-              ),
-              const SizedBox(height: 25),
-              ElevatedButton(
-                onPressed: () {
-                  submitResponse();
-                },
-                child: Text(
-                  'Seguir',
-                  style: Theme.of(context).textTheme.button,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
