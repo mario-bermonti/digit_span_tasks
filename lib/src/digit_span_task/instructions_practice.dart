@@ -13,10 +13,7 @@ class InstructionsPractice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GeneralInstructions(
-      children: Text(
-        _instructions.practice,
-        style: Theme.of(context).textTheme.titleLarge,
-      ),
+      children: _instructions.practice,
     );
   }
 }
