@@ -7,20 +7,20 @@ import 'package:get/get.dart';
 
 class DigitSpanForward extends StatelessWidget {
   late final AppConfig _config;
+  late InstructionsModel _instructions;
 
   DigitSpanForward({super.key, required UserConfig config}) {
     _config = Get.put(AppConfig(userConfig: config));
-    InstructionsModel instructions = Get.put(InstructionsModel());
-
-    updateInstructions(instructions);
+    _instructions = Get.put(InstructionsModel());
   }
 
-  void updateInstructions(InstructionsModel instructions) {
     instructions.introduction =
         const Text('Recuerda los números en el orden en que los veas');
     instructions.practice = const Text('Comenzaremos practicando');
     instructions.experimental = Column(children: const [
       Text('Terminamos la práctica'),
+  void updateInstructions(
+      InstructionsModel instructions, BuildContext context) {
       Text(
           'Toma un breve descanso y trabajaremos en los ejercicios principales'),
     ]);
@@ -30,6 +30,7 @@ class DigitSpanForward extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    updateInstructions(_instructions, context);
     return DigitSpanTasksActivity();
   }
 }
