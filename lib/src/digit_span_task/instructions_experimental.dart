@@ -15,15 +15,7 @@ class InstructionsExperimental extends StatelessWidget {
     return GeneralInstructions(
       children: Column(
         children: [
-          Text(
-            _instructions.experimental,
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          const SizedBox(height: 15),
-          Text(
-            'Trabajemos en los ejercicios principales',
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
+          _instructions.experimental,
         ],
       ),
     );
