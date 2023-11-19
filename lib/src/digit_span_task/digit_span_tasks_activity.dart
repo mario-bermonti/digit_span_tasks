@@ -20,8 +20,8 @@ class DigitSpanTasksActivity extends StatelessWidget {
   late final ActivityController _activityController;
   late final AppConfig _config;
 
-  DigitSpanTasksActivity({super.key, required config}) {
-    _config = Get.put(AppConfig(userConfig: config));
+  DigitSpanTasksActivity({super.key}) {
+    _config = Get.find();
 
     /// [_activityController] must be inserted after config because it sets up
     /// the stim and stim needs config
