@@ -1,6 +1,7 @@
 import 'package:digit_span_tasks/digit_span_tasks.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/config/app_config.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/instructions/instructions_model.dart';
+import 'package:digit_span_tasks/src/digit_span_task/components/ui_components/instructions_text.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/ui_components/spacing.dart';
 import 'package:digit_span_tasks/src/digit_span_task/digit_span_tasks_activity.dart';
 import 'package:flutter/material.dart';
@@ -23,28 +24,24 @@ class DigitSpanBackwards extends StatelessWidget {
 
   void updateInstructions(
       InstructionsModel instructions, BuildContext context) {
-    instructions.introduction = Text(
-      'Recuerda los números al revés al orden en que los veas',
-      style: Theme.of(context).textTheme.titleLarge,
+    instructions.introduction = const TextInstructions(
+      text: 'Recuerda los números al revés al orden en que los veas',
     );
-    instructions.practice = Text(
-      'Comenzaremos practicando',
-      style: Theme.of(context).textTheme.titleLarge,
+    instructions.practice = const TextInstructions(
+      text: 'Comenzaremos practicando',
     );
-    instructions.experimental = Column(children: [
-      Text(
-        'Terminamos la práctica',
-        style: Theme.of(context).textTheme.titleLarge,
+    instructions.experimental = Column(children: const [
+      TextInstructions(
+        text: 'Terminamos la práctica',
       ),
-      const SpacingParragraph(),
-      Text(
-        'Toma un breve descanso y trabajaremos en los ejercicios principales',
-        style: Theme.of(context).textTheme.titleLarge,
+      SpacingParragraph(),
+      TextInstructions(
+        text:
+            'Toma un breve descanso y trabajaremos en los ejercicios principales',
       ),
     ]);
-    instructions.reminderInTask = Text(
-      'Recuerda, escribe los números al revés al orden en que los veas',
-      style: Theme.of(context).textTheme.titleLarge,
+    instructions.reminderInTask = const TextInstructions(
+      text: 'Recuerda, escribe los números al revés al orden en que los veas',
     );
   }
 }
