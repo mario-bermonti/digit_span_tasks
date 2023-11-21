@@ -24,9 +24,25 @@ class DigitSpanBackwards extends StatelessWidget {
 
   void updateInstructions(
       InstructionsModel instructions, BuildContext context) {
-    instructions.introduction = const TextInstructions(
-      text: 'Recuerda los números al revés al orden en que los veas',
+    instructions.introduction = Column(
+      children: const [
+        TextInstructions(
+          text:
+              'Recuerda los números al revés al orden en que los veas (de atrás para adelante)',
+        ),
+        SpacingParragraph(),
+        TextInstructions(
+          text: 'Ejemplo:',
+        ),
+        TextInstructions(
+          text: 'si ves 827,',
+        ),
+        TextInstructions(
+          text: 'escribe 728',
+        ),
+      ],
     );
+
     instructions.practice = const TextInstructions(
       text: 'Comenzaremos practicando',
     );
@@ -41,7 +57,8 @@ class DigitSpanBackwards extends StatelessWidget {
       ),
     ]);
     instructions.reminderInTask = const TextInstructions(
-      text: 'Recuerda, escribe los números al revés al orden en que los veas',
+      text:
+          'Recuerda, escribe los números al revés al orden en que los veas (de atrás para adelante)',
     );
   }
 }
