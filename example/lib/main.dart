@@ -36,18 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () async {
-                UserConfig config = UserConfig(
-                  stimListPractice: ['01', '234'],
-                  stimListExperimental: ['5678', '01567', '987654'],
-                  participantID: '000',
-                );
-                DigitSpanTasksData data = await Get.to(() => DigitSpanForward(
-                      config: config,
-                    ));
-                // ignore: avoid_print
-                print('\n\n\nFORWARD data \n $data');
-              },
+              onPressed: runDigitSpanForward,
               child: Text(
                 'Digit Span Forward',
                 style: Theme.of(context).textTheme.titleLarge,
@@ -76,5 +65,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       backgroundColor: Colors.grey[300],
     );
+  }
+
+  void runDigitSpanForward() async {
+    UserConfig config = UserConfig(
+      stimListPractice: ['01', '234'],
+      stimListExperimental: ['5678', '01567', '987654'],
+      participantID: '000',
+    );
+    DigitSpanTasksData data = await Get.to(() => DigitSpanForward(
+          config: config,
+        ));
+    // ignore: avoid_print
+    print('\n\n\nFORWARD data \n $data');
   }
 }
