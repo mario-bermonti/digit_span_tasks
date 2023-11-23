@@ -43,18 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             ElevatedButton(
-              onPressed: () async {
-                UserConfig config = UserConfig(
-                  stimListPractice: ['23', '567'],
-                  stimListExperimental: ['0123', '45678', '901234'],
-                  participantID: '000',
-                );
-                DigitSpanTasksData data = await Get.to(() => DigitSpanBackwards(
-                      config: config,
-                    ));
-                // ignore: avoid_print
-                print('\n\n\nBAKWARDS data \n $data');
-              },
+              onPressed: runDigitSpanBackwards,
               child: Text(
                 'Digit Span Backwards',
                 style: Theme.of(context).textTheme.titleLarge,
@@ -78,5 +67,18 @@ class _MyHomePageState extends State<MyHomePage> {
         ));
     // ignore: avoid_print
     print('\n\n\nFORWARD data \n $data');
+  }
+
+  void runDigitSpanBackwards() async {
+    UserConfig config = UserConfig(
+      stimListPractice: ['23', '567'],
+      stimListExperimental: ['0123', '45678', '901234'],
+      participantID: '000',
+    );
+    DigitSpanTasksData data = await Get.to(() => DigitSpanBackwards(
+          config: config,
+        ));
+    // ignore: avoid_print
+    print('\n\n\nBAKWARDS data \n $data');
   }
 }
