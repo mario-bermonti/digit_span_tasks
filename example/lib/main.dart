@@ -36,36 +36,14 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () async {
-                UserConfig config = UserConfig(
-                  stimListPractice: ['01', '234'],
-                  stimListExperimental: ['5678', '01567', '987654'],
-                  participantID: '000',
-                );
-                DigitSpanTasksData data = await Get.to(() => DigitSpanForward(
-                      config: config,
-                    ));
-                // ignore: avoid_print
-                print('\n\n\nFORWARD data \n $data');
-              },
+              onPressed: runDigitSpanForward,
               child: Text(
                 'Digit Span Forward',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
             ElevatedButton(
-              onPressed: () async {
-                UserConfig config = UserConfig(
-                  stimListPractice: ['23', '567'],
-                  stimListExperimental: ['0123', '45678', '901234'],
-                  participantID: '000',
-                );
-                DigitSpanTasksData data = await Get.to(() => DigitSpanBackwards(
-                      config: config,
-                    ));
-                // ignore: avoid_print
-                print('\n\n\nBAKWARDS data \n $data');
-              },
+              onPressed: runDigitSpanBackwards,
               child: Text(
                 'Digit Span Backwards',
                 style: Theme.of(context).textTheme.titleLarge,
@@ -76,5 +54,31 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       backgroundColor: Colors.grey[300],
     );
+  }
+
+  void runDigitSpanForward() async {
+    UserConfig config = UserConfig(
+      stimListPractice: ['01', '234'],
+      stimListExperimental: ['5678', '01567', '987654'],
+      participantID: '000',
+    );
+    DigitSpanTasksData data = await Get.to(() => DigitSpanForward(
+          config: config,
+        ));
+    // ignore: avoid_print
+    print('\n\n\nFORWARD data \n $data');
+  }
+
+  void runDigitSpanBackwards() async {
+    UserConfig config = UserConfig(
+      stimListPractice: ['23', '567'],
+      stimListExperimental: ['0123', '45678', '901234'],
+      participantID: '000',
+    );
+    DigitSpanTasksData data = await Get.to(() => DigitSpanBackwards(
+          config: config,
+        ));
+    // ignore: avoid_print
+    print('\n\n\nBAKWARDS data \n $data');
   }
 }
