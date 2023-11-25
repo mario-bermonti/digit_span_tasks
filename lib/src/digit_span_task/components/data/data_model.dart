@@ -1,3 +1,4 @@
+import 'package:digit_span_tasks/src/digit_span_task/components/data/session_model.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/trial_data.dart';
 
 /// Object used to structure data collected by DigitSpanTask for a single
@@ -5,14 +6,13 @@ import 'package:digit_span_tasks/src/digit_span_task/components/data/trial_data.
 /// by DigitSpanTask.
 class DataModel {
   final List<TrialData> trialData = <TrialData>[];
-  late final DateTime startTime;
-  late final DateTime endTime;
+  final SessionModel sessionModel = SessionModel();
 
   @override
   String toString() {
     return '''
-    start time: $startTime,
-    end time: $endTime,
+    start time: $sessionModel.startTime,
+    end time: $sessionModel.endTime,
     trial data: \n ${trialData.toString()}
     ''';
   }
