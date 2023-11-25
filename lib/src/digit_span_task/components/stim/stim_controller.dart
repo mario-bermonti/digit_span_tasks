@@ -4,7 +4,7 @@ import 'package:digit_span_tasks/src/digit_span_task/components/errors/errors.da
 import 'package:digit_span_tasks/src/digit_span_task/components/activity/task_step.dart';
 import 'package:stimuli/errors.dart';
 import 'package:stimuli/stimuli.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/config/app_config.dart';
+import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config.dart';
 
 /// Manage the stim
 class StimController extends GetxController {
@@ -12,7 +12,7 @@ class StimController extends GetxController {
   late Stimuli _stimExperimental;
   RxString currentDigit = ''.obs;
   late final ActivityController _activityController;
-  final AppConfig _config = Get.find();
+  final DSConfig _config = Get.find();
 
   @override
   onInit() async {

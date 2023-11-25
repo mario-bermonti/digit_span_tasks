@@ -3,14 +3,14 @@ import 'package:get/get.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/data_manager.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/activity/activity_controller.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/stim/stim_controller.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/config/app_config.dart';
+import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config.dart';
 
 /// Manage responses
 class ResponseController extends GetxController {
   TextEditingController textController = TextEditingController();
   final ActivityController _activityController = Get.find();
   final DataManager _data = Get.find();
-  final AppConfig _config = Get.find();
+  final DSConfig _config = Get.find();
   final StimController _stim = Get.find();
 
   @override
