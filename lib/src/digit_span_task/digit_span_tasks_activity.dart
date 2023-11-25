@@ -1,7 +1,7 @@
 import 'package:digit_span_tasks/src/digit_span_task/components/instructions/instructions_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/config/app_config.dart';
+import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/data_manager.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/activity/activity_controller.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/activity/activity_view.dart';
@@ -18,7 +18,7 @@ class DigitSpanTasksActivity extends StatelessWidget {
   final InstructionsModel _instructions = Get.find();
   final DataManager _data = Get.put(DataManager());
   late final ActivityController _activityController;
-  late final AppConfig _config;
+  late final DSConfig _config;
 
   DigitSpanTasksActivity({super.key}) {
     _config = Get.find();

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/data_manager.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/activity/task_step.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/config/app_config.dart';
+import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/stim/stim_controller.dart';
 
 /// Controls the task sequence.
@@ -15,7 +15,7 @@ class ActivityController extends GetxController {
   /// Identifies the step the task currently is in
   Rx<TaskStep> taskStep = TaskStep.instructions.obs;
 
-  final AppConfig _config = Get.find();
+  final DSConfig _config = Get.find();
 
   @override
   void onInit() {
