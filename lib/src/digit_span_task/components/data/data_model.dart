@@ -6,13 +6,13 @@ import 'package:digit_span_tasks/src/digit_span_task/components/data/trial_data.
 /// by DigitSpanTask.
 class DataModel {
   final List<TrialData> trialData = <TrialData>[];
-  final SessionModel sessionModel = SessionModel();
+  final SessionModel sessionData = SessionModel();
 
   @override
   String toString() {
     return '''
-    start time: $sessionModel.startTime,
-    end time: $sessionModel.endTime,
+    start time: $sessionData.startTime,
+    end time: $sessionData.endTime,
     trial data: \n ${trialData.toString()}
     ''';
   }
