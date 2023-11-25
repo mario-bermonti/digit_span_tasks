@@ -32,14 +32,14 @@ class DataManager extends GetxController {
   /// phase (practice or experimental) based on the [isPractice] flag.
   void addStartTime(bool isPractice) {
     DataModel data = getData(isPractice);
-    data.startTime = DateTime.now();
+    data.sessionData.startTime = DateTime.now();
   }
 
   /// Adds the time at which the session ended for the current
   /// phase (practice or experimental) based on the [isPractice] flag.
   void addEndTime(bool isPractice) {
     DataModel data = getData(isPractice);
-    data.endTime = DateTime.now();
+    data.sessionData.endTime = DateTime.now();
   }
 
   /// Exports the data collected during the session.
@@ -48,14 +48,14 @@ class DataManager extends GetxController {
   DigitSpanTasksData export() {
     DigitSpanTasksDataPhase practiceDataSharing = DigitSpanTasksDataPhase(
       trialData: practiceData.trialData,
-      startTime: practiceData.startTime,
-      endTime: practiceData.endTime,
+      startTime: practiceData.sessionData.startTime,
+      endTime: practiceData.sessionData.endTime,
     );
 
     DigitSpanTasksDataPhase experimentalDataSharing = DigitSpanTasksDataPhase(
       trialData: experimentalData.trialData,
-      startTime: experimentalData.startTime,
-      endTime: experimentalData.endTime,
+      startTime: experimentalData.sessionData.startTime,
+      endTime: experimentalData.sessionData.endTime,
     );
 
     DigitSpanTasksData data = DigitSpanTasksData(
