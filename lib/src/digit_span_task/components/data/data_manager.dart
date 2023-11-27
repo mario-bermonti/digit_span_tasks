@@ -11,16 +11,14 @@ class DataManager extends GetxController {
   DataModel practiceData = DataModel();
   DataModel experimentalData = DataModel();
 
-  /// Add data [participantID], [stim], [resp] from a single trial to
+  /// Add data [stim], [resp] from a single trial to
   /// the manager. Uses [isPractice] to get the data for the current phase.
   void addTrialData({
-    required String participantID,
     required String stim,
     required String resp,
     required bool isPractice,
   }) {
     TrialData trialData = TrialData(
-      participantID: participantID,
       stim: stim,
       response: resp,
     );

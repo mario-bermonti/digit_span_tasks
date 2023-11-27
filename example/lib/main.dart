@@ -60,7 +60,6 @@ class _MyHomePageState extends State<MyHomePage> {
     UserConfig config = UserConfig(
       stimListPractice: ['01', '234'],
       stimListExperimental: ['5678', '01567', '987654'],
-      participantID: '000',
     );
     DigitSpanTasksData data = await Get.to(() => DigitSpanForward(
           config: config,
@@ -73,7 +72,6 @@ class _MyHomePageState extends State<MyHomePage> {
     UserConfig config = UserConfig(
       stimListPractice: ['23', '567'],
       stimListExperimental: ['0123', '45678', '901234'],
-      participantID: '000',
     );
     DigitSpanTasksData data = await Get.to(() => DigitSpanBackwards(
           config: config,
