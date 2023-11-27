@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_tasks_data.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_tasks_data_phase.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/trial_data.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/data_model.dart';
 
