@@ -1,13 +1,13 @@
-import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_tasks_data_phase.dart';
+import 'package:digit_span_tasks/src/digit_span_task/components/data/data_model.dart';
 
 /// Structured data collected by DigitSpanTask.
 /// Used to provide data nicely formatted to the user.
 class DigitSpanTasksData {
   /// Data collected during the practice phase.
-  DigitSpanTasksDataPhase practiceData;
+  DataModel practiceData;
 
   /// Data collected during the experimental phase.
-  DigitSpanTasksDataPhase experimentalData;
+  DataModel experimentalData;
 
   DigitSpanTasksData(
       {required this.practiceData, required this.experimentalData});

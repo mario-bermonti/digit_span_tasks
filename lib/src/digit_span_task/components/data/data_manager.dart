@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_tasks_data.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_tasks_data_phase.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/trial_data.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/data_model.dart';
 
@@ -44,21 +43,9 @@ class DataManager extends GetxController {
   /// Returns a custom object named [DigitSpanTasksData] that includes data for the
   /// practice and experimental phase.
   DigitSpanTasksData export() {
-    DigitSpanTasksDataPhase practiceDataSharing = DigitSpanTasksDataPhase(
-      trialData: practiceData.trialData,
-      startTime: practiceData.sessionData.startTime,
-      endTime: practiceData.sessionData.endTime,
-    );
-
-    DigitSpanTasksDataPhase experimentalDataSharing = DigitSpanTasksDataPhase(
-      trialData: experimentalData.trialData,
-      startTime: experimentalData.sessionData.startTime,
-      endTime: experimentalData.sessionData.endTime,
-    );
-
     DigitSpanTasksData data = DigitSpanTasksData(
-      practiceData: practiceDataSharing,
-      experimentalData: experimentalDataSharing,
+      practiceData: practiceData,
+      experimentalData: experimentalData,
     );
 
     return data;
