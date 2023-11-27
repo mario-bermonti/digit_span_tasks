@@ -44,21 +44,9 @@ class DataManager extends GetxController {
   /// Returns a custom object named [DigitSpanTasksData] that includes data for the
   /// practice and experimental phase.
   DigitSpanTasksData export() {
-    DigitSpanTasksDataPhase practiceDataSharing = DigitSpanTasksDataPhase(
-      trialData: practiceData.trialData,
-      startTime: practiceData.sessionData.startTime,
-      endTime: practiceData.sessionData.endTime,
-    );
-
-    DigitSpanTasksDataPhase experimentalDataSharing = DigitSpanTasksDataPhase(
-      trialData: experimentalData.trialData,
-      startTime: experimentalData.sessionData.startTime,
-      endTime: experimentalData.sessionData.endTime,
-    );
-
     DigitSpanTasksData data = DigitSpanTasksData(
-      practiceData: practiceDataSharing,
-      experimentalData: experimentalDataSharing,
+      practiceData: practiceData,
+      experimentalData: experimentalData,
     );
 
     return data;
