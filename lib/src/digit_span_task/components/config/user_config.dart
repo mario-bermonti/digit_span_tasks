@@ -14,13 +14,10 @@ class UserConfig extends GetxController {
   /// are randomized (e.g., "123" may be turned into "213").
   late final List<String> stimListExperimental;
 
-  /// Unique id to identify the participant's data
-  final String participantID;
-
-  UserConfig(
-      {required stimListPractice,
-      required stimListExperimental,
-      required this.participantID}) {
+  UserConfig({
+    required stimListPractice,
+    required stimListExperimental,
+  }) {
     this.stimListPractice = randomizeDigitsInSets(stimListPractice);
     this.stimListExperimental = randomizeDigitsInSets(stimListExperimental);
   }
