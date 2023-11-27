@@ -5,4 +5,9 @@ class SessionModel {
 
   /// time at which the session ended
   late final DateTime endTime;
+
+  @override
+  String toString() {
+    return 'start time: $startTime, end time: $endTime';
+  }
 }

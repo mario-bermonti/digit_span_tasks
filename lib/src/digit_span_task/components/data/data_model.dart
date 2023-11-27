@@ -13,10 +13,6 @@ class DataModel {
 
   @override
   String toString() {
-    return '''
-    start time: $sessionData.startTime,
-    end time: $sessionData.endTime,
-    trial data: \n ${trialData.toString()}
-    ''';
+    return 'session data: ${sessionData.toString()} \n trial data: \n ${trialData.toString()}';
   }
 }

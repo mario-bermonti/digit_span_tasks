@@ -14,10 +14,6 @@ class DigitSpanTasksData {
 
   @override
   String toString() {
-    return '''
-    practice data: ${practiceData.toString()}
-    \n
-    experimental data: ${experimentalData.toString()}
-    ''';
+    return 'practice data: \n ${practiceData.toString()} \n\n experimental data: \n ${experimentalData.toString()}';
   }
 }
