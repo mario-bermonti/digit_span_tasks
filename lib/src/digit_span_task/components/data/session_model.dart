@@ -8,6 +8,6 @@ class SessionModel {
 
   @override
   String toString() {
-    return 'Session info: start time: $startTime, end time: $endTime';
+    return 'start time: $startTime, end time: $endTime';
   }
 }
