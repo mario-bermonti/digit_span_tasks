@@ -42,6 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: runDigitSpanBackwards,
               child: Text(
