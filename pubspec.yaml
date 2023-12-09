@@ -12,7 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
   stimuli:
-    path: stimuli
+    git:
+      url: https://github.com/mario-bermonti/stimuli.git
   file_picker: ^5.2.4
   shared_preferences: ^2.0.15
   permission_handler: ^10.2.0
