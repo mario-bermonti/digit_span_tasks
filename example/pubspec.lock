@@ -304,9 +304,11 @@ packages:
   stimuli:
     dependency: transitive
     description:
-      path: "../stimuli"
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "9a7231c7fe6d7f80fc8fb8455e8a68cb69b40815"
+      url: "https://github.com/mario-bermonti/stimuli.git"
+    source: git
     version: "0.0.1"
   stream_channel:
     dependency: transitive
