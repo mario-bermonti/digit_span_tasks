@@ -30,7 +30,6 @@ class ResponseView extends StatelessWidget {
               keyboardType: TextInputType.number,
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
               decoration: textFieldStyle,
-              onSubmitted: (_) => submitResponse(),
               autofocus: true,
             ),
             const SizedBox(height: 25),
