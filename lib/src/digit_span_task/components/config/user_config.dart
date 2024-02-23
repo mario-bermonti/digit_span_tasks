@@ -20,10 +20,18 @@ class UserConfig extends GetxController {
   /// the [sessionID] is an unique identifier across all the sessions for this
   /// participant.
   final String sessionID;
+
+  /// ID that uniquely identifies this participant.
+  /// It will be used to pair the different data collected by [digit_span_tasks]
+  /// for the participant. So it is essential that the [participantID] is an
+  /// unique identifier across all participant.
+  final String participantID;
+
   UserConfig({
     required stimListPractice,
     required stimListExperimental,
     required this.sessionID,
+    required this.participantID,
   }) {
     this.stimListPractice = randomizeDigitsInSets(stimListPractice);
     this.stimListExperimental = randomizeDigitsInSets(stimListExperimental);
