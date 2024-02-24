@@ -10,6 +10,9 @@ class DSConfig extends GetxController {
   /// The [isPractice] flag controls whether the practice or experimental should
   /// be presented and how to store the data.
   bool isPractice = true;
+
+  /// Controls whether the practice or experimental should be presented and
+  /// how to manage the data.
   SessionType sessionType = SessionType.practice;
 
   DSConfig({required this.userConfig});
