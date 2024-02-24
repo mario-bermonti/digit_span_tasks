@@ -1,3 +1,4 @@
+import 'package:digit_span_tasks/src/digit_span_task/components/config/session_type.dart';
 import 'package:get/get.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/config/user_config.dart';
 
@@ -9,6 +10,7 @@ class DSConfig extends GetxController {
   /// The [isPractice] flag controls whether the practice or experimental should
   /// be presented and how to store the data.
   bool isPractice = true;
+  SessionType sessionType = SessionType.practice;
 
   DSConfig({required this.userConfig});
 }
