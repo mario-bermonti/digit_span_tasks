@@ -23,6 +23,8 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
+  final String participantID = '101';
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
