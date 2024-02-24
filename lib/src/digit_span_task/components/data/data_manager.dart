@@ -1,3 +1,4 @@
+import 'package:cognitive_data/databases/in_memory_db.dart';
 import 'package:get/get.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_tasks_data.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/trial_data.dart';
@@ -7,6 +8,7 @@ import 'package:digit_span_tasks/src/digit_span_task/components/data/data_model.
 /// Used for adding data, getting data for practice or experimental session,
 /// and exporting data.
 class DataManager extends GetxController {
+  final InMemoryDB db = InMemoryDB();
   DataModel practiceData = DataModel();
   DataModel experimentalData = DataModel();
 
