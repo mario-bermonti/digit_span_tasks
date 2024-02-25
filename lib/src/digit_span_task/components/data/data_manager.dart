@@ -41,6 +41,10 @@ class DataManager extends GetxController {
     }
   }
 
+  /// Sets the end time for the session, but only if this is a experimental
+  /// phase. Practice and experimental phases are considered part of the same
+  /// session so the end time for the experimental phase is considered the
+  /// end of the session.
   set endTime(DateTime time) {
     if (!_config.isPractice) {
       _endTime = DateTime.now();
