@@ -23,6 +23,9 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
+  final String participantID = '101';
+  final String sessionID = '001';
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -36,7 +39,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: runDigitSpanForward,
+              onPressed: () => runDigitSpanForward(
+                participantID: widget.participantID,
+                sessionID: widget.sessionID,
+              ),
               child: Text(
                 'Digit Span Forward',
                 style: Theme.of(context).textTheme.titleLarge,
@@ -44,7 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const SizedBox(height: 10),
             ElevatedButton(
-              onPressed: runDigitSpanBackwards,
+              onPressed: () => runDigitSpanBackwards(
+                participantID: widget.participantID,
+                sessionID: widget.sessionID,
+              ),
               child: Text(
                 'Digit Span Backwards',
                 style: Theme.of(context).textTheme.titleLarge,
@@ -57,10 +66,15 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void runDigitSpanForward() async {
+  void runDigitSpanForward({
+    required String participantID,
+    required String sessionID,
+  }) async {
     UserConfig config = UserConfig(
       stimListPractice: ['01', '234'],
       stimListExperimental: ['5678', '01567', '987654'],
+      participantID: participantID,
+      sessionID: sessionID,
     );
     DigitSpanTasksData data = await Get.to(() => DigitSpanForward(
           config: config,
@@ -69,10 +83,15 @@ class _MyHomePageState extends State<MyHomePage> {
     print('\n\n\nFORWARD data \n $data');
   }
 
-  void runDigitSpanBackwards() async {
+  void runDigitSpanBackwards({
+    required String participantID,
+    required String sessionID,
+  }) async {
     UserConfig config = UserConfig(
       stimListPractice: ['23', '567'],
       stimListExperimental: ['0123', '45678', '901234'],
+      participantID: participantID,
+      sessionID: sessionID,
     );
     DigitSpanTasksData data = await Get.to(() => DigitSpanBackwards(
           config: config,
