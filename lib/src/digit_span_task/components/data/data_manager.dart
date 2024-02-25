@@ -12,6 +12,7 @@ class DataManager extends GetxController {
   final InMemoryDB db = InMemoryDB();
   final DSConfig _config = Get.find();
   late final DateTime _startTime;
+  late final DateTime _endTime;
   DataModel practiceData = DataModel();
   DataModel experimentalData = DataModel();
 
