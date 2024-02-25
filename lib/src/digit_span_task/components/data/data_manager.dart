@@ -30,6 +30,10 @@ class DataManager extends GetxController {
     data.trialData.add(trialData);
   }
 
+  /// Sets the start time for the session, but only if this is a practice phase.
+  /// Practice and experimental phases are considered part of the same session
+  /// so the start time for the practice phase is considered the beginning of
+  /// the session.
   set startTime(DateTime time) {
     if (_config.isPractice) {
       _startTime = time;
