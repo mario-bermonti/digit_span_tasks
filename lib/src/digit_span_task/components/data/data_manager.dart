@@ -41,6 +41,12 @@ class DataManager extends GetxController {
     }
   }
 
+  set endTime(DateTime time) {
+    if (!_config.isPractice) {
+      _endTime = DateTime.now();
+    }
+  }
+
   /// Exports the data collected during the session.
   /// Returns a custom object named [DigitSpanTasksData] that includes data for the
   /// practice and experimental phase.
