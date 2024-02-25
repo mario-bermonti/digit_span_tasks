@@ -41,13 +41,6 @@ class DataManager extends GetxController {
     }
   }
 
-  /// Adds the time at which the session ended for the current
-  /// phase (practice or experimental) based on the [isPractice] flag.
-  void addEndTime(bool isPractice) {
-    DataModel data = getData(isPractice);
-    data.sessionData.endTime = DateTime.now();
-  }
-
   /// Exports the data collected during the session.
   /// Returns a custom object named [DigitSpanTasksData] that includes data for the
   /// practice and experimental phase.
