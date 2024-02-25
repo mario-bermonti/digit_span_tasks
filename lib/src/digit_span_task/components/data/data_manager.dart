@@ -11,6 +11,7 @@ import 'package:digit_span_tasks/src/digit_span_task/components/data/data_model.
 class DataManager extends GetxController {
   final InMemoryDB db = InMemoryDB();
   final DSConfig _config = Get.find();
+  late final DateTime _startTime;
   DataModel practiceData = DataModel();
   DataModel experimentalData = DataModel();
 
