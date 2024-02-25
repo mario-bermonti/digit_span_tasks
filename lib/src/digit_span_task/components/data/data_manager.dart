@@ -30,6 +30,12 @@ class DataManager extends GetxController {
     data.trialData.add(trialData);
   }
 
+  set startTime(DateTime time) {
+    if (_config.isPractice) {
+      _startTime = time;
+    }
+  }
+
   /// Adds the time at which the session ended for the current
   /// phase (practice or experimental) based on the [isPractice] flag.
   void addEndTime(bool isPractice) {
