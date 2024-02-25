@@ -11,6 +11,8 @@ import 'package:digit_span_tasks/src/digit_span_task/components/data/data_model.
 class DataManager extends GetxController {
   final InMemoryDB db = InMemoryDB();
   final DSConfig _config = Get.find();
+  late final DateTime _startTime;
+  late final DateTime _endTime;
   DataModel practiceData = DataModel();
   DataModel experimentalData = DataModel();
 
@@ -29,18 +31,24 @@ class DataManager extends GetxController {
     data.trialData.add(trialData);
   }
 
-  /// Adds the time at which the session started for the current
-  /// phase (practice or experimental) based on the [isPractice] flag.
-  void addStartTime(bool isPractice) {
-    DataModel data = getData(isPractice);
-    data.sessionData.startTime = DateTime.now();
+  /// Sets the start time for the session, but only if this is a practice phase.
+  /// Practice and experimental phases are considered part of the same session
+  /// so the start time for the practice phase is considered the beginning of
+  /// the session.
+  set startTime(DateTime time) {
+    if (_config.isPractice) {
+      _startTime = time;
+    }
   }
 
-  /// Adds the time at which the session ended for the current
-  /// phase (practice or experimental) based on the [isPractice] flag.
-  void addEndTime(bool isPractice) {
-    DataModel data = getData(isPractice);
-    data.sessionData.endTime = DateTime.now();
+  /// Sets the end time for the session, but only if this is a experimental
+  /// phase. Practice and experimental phases are considered part of the same
+  /// session so the end time for the experimental phase is considered the
+  /// end of the session.
+  set endTime(DateTime time) {
+    if (!_config.isPractice) {
+      _endTime = DateTime.now();
+    }
   }
 
   /// Exports the data collected during the session.

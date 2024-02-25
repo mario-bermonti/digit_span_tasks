@@ -47,7 +47,7 @@ class ActivityController extends GetxController {
   }
 
   Future<void> endSession() async {
-    _data.addEndTime(_config.isPractice);
+    _data.endTime = DateTime.now();
     await reset();
     Get.back();
   }
