@@ -24,6 +24,7 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
   final String participantID = '101';
+  final String sessionID = '001';
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
