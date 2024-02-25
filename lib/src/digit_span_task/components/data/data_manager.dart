@@ -30,13 +30,6 @@ class DataManager extends GetxController {
     data.trialData.add(trialData);
   }
 
-  /// Adds the time at which the session started for the current
-  /// phase (practice or experimental) based on the [isPractice] flag.
-  void addStartTime(bool isPractice) {
-    DataModel data = getData(isPractice);
-    data.sessionData.startTime = DateTime.now();
-  }
-
   /// Adds the time at which the session ended for the current
   /// phase (practice or experimental) based on the [isPractice] flag.
   void addEndTime(bool isPractice) {
