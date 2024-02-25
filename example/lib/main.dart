@@ -52,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () => runDigitSpanBackwards(
                 participantID: widget.participantID,
+                sessionID: widget.sessionID,
               ),
               child: Text(
                 'Digit Span Backwards',
@@ -82,11 +83,15 @@ class _MyHomePageState extends State<MyHomePage> {
     print('\n\n\nFORWARD data \n $data');
   }
 
-  void runDigitSpanBackwards({required String participantID}) async {
+  void runDigitSpanBackwards({
+    required String participantID,
+    required String sessionID,
+  }) async {
     UserConfig config = UserConfig(
       stimListPractice: ['23', '567'],
       stimListExperimental: ['0123', '45678', '901234'],
       participantID: participantID,
+      sessionID: sessionID,
     );
     DigitSpanTasksData data = await Get.to(() => DigitSpanBackwards(
           config: config,
