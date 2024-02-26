@@ -1,5 +1,6 @@
 import 'package:cognitive_data/databases/in_memory_db.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config.dart';
+import 'package:digit_span_tasks/src/digit_span_task/components/config/session_type.dart';
 import 'package:get/get.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_tasks_data.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/trial_data.dart';
@@ -35,7 +36,7 @@ class DataManager extends GetxController {
   /// so the start time for the practice phase is considered the beginning of
   /// the session.
   set startTime(DateTime time) {
-    if (_config.isPractice) {
+    if (_config.sessionType == SessionType.practice) {
       _startTime = time;
     }
   }
