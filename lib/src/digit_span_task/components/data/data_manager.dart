@@ -21,7 +21,6 @@ class DataManager extends GetxController {
   void addTrialData({
     required String stim,
     required String resp,
-    required bool isPractice,
   }) {
     TrialData trialData = TrialData(
       stim: stim,

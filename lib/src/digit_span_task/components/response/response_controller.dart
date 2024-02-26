@@ -26,7 +26,6 @@ class ResponseController extends GetxController {
     _data.addTrialData(
       stim: _stim.stim.currentStim,
       resp: response,
-      isPractice: _config.isPractice,
     );
 
     textController.clear();
