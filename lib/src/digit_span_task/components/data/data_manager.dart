@@ -62,11 +62,4 @@ class DataManager extends GetxController {
 
     return data;
   }
-
-  /// Returns the data for the current phase (practice or experimental) based on
-  /// the [isPractice] flag.
-  DataModel getData(bool isPractice) {
-    DataModel data = isPractice == true ? practiceData : experimentalData;
-    return data;
-  }
 }
