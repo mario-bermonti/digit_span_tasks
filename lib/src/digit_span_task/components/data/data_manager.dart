@@ -46,7 +46,7 @@ class DataManager extends GetxController {
   /// session so the end time for the experimental phase is considered the
   /// end of the session.
   set endTime(DateTime time) {
-    if (!_config.isPractice) {
+    if (_config.sessionType == SessionType.experimental) {
       _endTime = DateTime.now();
     }
   }
