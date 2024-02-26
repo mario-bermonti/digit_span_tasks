@@ -1,3 +1,4 @@
+import 'package:digit_span_tasks/src/digit_span_task/components/config/session_type.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/instructions/instructions_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -37,7 +38,7 @@ class DigitSpanTasksActivity extends StatelessWidget {
             onPressed: () async {
               await Get.to(() => InstructionsPractice());
               await Get.to(() => ActivityView());
-              _config.isPractice = false;
+              _config.sessionType = SessionType.experimental;
               await Get.to(() => InstructionsExperimental());
               await Get.to(() => ActivityView());
 
