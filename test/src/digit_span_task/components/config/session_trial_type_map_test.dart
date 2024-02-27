@@ -20,6 +20,19 @@ void main() {
           expect(trialType, TrialType.practice);
         },
       );
+      test(
+        "Given SessionType.experimental, returns a valid TrialType.experimental",
+        () {
+          /// arrange
+          const SessionType sessionType = SessionType.experimental;
+
+          /// act
+          final TrialType trialType = convertSessionToTrialType(sessionType);
+
+          /// assert
+          expect(trialType, TrialType.experimental);
+        },
+      );
     },
   );
 }
