@@ -20,8 +20,10 @@ class DataManager extends GetxController {
   DataModel practiceData = DataModel();
   DataModel experimentalData = DataModel();
 
-  /// Add data [stim], [resp] from a single trial to
-  /// the manager. Uses [isPractice] to get the data for the current phase.
+  /// Adds data from a single trial to the in memory db.
+  /// Given a [stim] and [resp], it defines a [Trial] and adds it to the db.
+  /// The trial data includes the participantID, sessionID, and the
+  /// [SessionType] (practice vs experimental) from the [_config].
   void addTrialData({
     required String stim,
     required String resp,
