@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/ui_components/default_text.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/errors/errors.dart';
+import 'package:digit_span_tasks/src/digit_span_task/components/exceptions/errors.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/ui_components/screen.dart';
 
 /// Present error screen to participant

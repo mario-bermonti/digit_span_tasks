@@ -7,10 +7,6 @@ import 'package:digit_span_tasks/src/digit_span_task/components/config/user_conf
 class DSConfig extends GetxController {
   final UserConfig userConfig;
 
-  /// The [isPractice] flag controls whether the practice or experimental should
-  /// be presented and how to store the data.
-  bool isPractice = true;
-
   /// Controls whether the practice or experimental should be presented and
   /// how to manage the data.
   SessionType sessionType = SessionType.practice;

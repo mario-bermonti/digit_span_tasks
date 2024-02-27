@@ -1,3 +1,4 @@
+import 'package:digit_span_tasks/src/digit_span_task/components/config/session_type.dart';
 import 'package:get/get.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/data_manager.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/activity/task_step.dart';
@@ -55,6 +56,6 @@ class ActivityController extends GetxController {
   /// Resets the important settings so another session can be run.
   Future<void> reset() async {
     taskStep(TaskStep.instructions);
-    _config.isPractice = true;
+    _config.sessionType = SessionType.practice;
   }
 }
