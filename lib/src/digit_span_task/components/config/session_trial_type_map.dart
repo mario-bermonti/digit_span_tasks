@@ -11,6 +11,12 @@ const Map<SessionType, TrialType> sessionToTrialTypeMap = {
   SessionType.experimental: TrialType.experimental,
 };
 
+/// Converts a [SessionType] to the corresponding [TrialType].
+///
+/// Given a [SessionType], this function looks up the corresponding
+/// [TrialType] using the [sessionToTrialTypeMap]. If a match is found,
+/// it returns the associated [TrialType]. If no match is found, a
+/// [DSTSessionTypeConversionException] is thrown.
 TrialType convertSessionToTrialType(SessionType sessionType) {
   final TrialType? trialType = sessionToTrialTypeMap[sessionType];
   if (trialType == null) {
