@@ -23,7 +23,7 @@ class ResponseController extends GetxController {
   void submit() {
     String response = textController.text.trim();
 
-    _data.addTrialData(
+    _data.addTrial(
       stim: _stim.stim.currentStim,
       resp: response,
     );

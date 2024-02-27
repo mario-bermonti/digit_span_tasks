@@ -24,7 +24,7 @@ class DataManager extends GetxController {
   /// Given a [stim] and [resp], it defines a [Trial] and adds it to the db.
   /// The trial data includes the participantID, sessionID, and the
   /// [SessionType] (practice vs experimental) from the [_config].
-  void addTrialData({
+  void addTrial({
     required String stim,
     required String resp,
   }) {
