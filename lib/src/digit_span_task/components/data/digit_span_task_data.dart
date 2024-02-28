@@ -1,7 +1,7 @@
 import 'package:cognitive_data/cognitive_data.dart';
 
 class DigitSpanTaskData {
-  /// Data of all the trials
+  /// Data for all trials
   late final List<Trial> trials;
 
   /// Metadata about the session
