@@ -15,4 +15,15 @@ class DigitSpanTaskData {
     required this.session,
     required this.device,
   });
+
+  @override
+  String toString() {
+    final representation = 'Session data:'
+        '\n${session.toString()}'
+        '\nDevice data:'
+        '\n${device.toString()}'
+        '\nTrials data:'
+        '\n${trials.toString()}';
+    return representation;
+  }
 }
