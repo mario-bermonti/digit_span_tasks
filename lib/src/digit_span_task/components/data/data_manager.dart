@@ -1,10 +1,12 @@
 import 'package:cognitive_data/databases/in_memory_db.dart';
+import 'package:cognitive_data/models/device.dart';
+import 'package:cognitive_data/models/session.dart';
 import 'package:cognitive_data/models/trial.dart';
 import 'package:cognitive_data/models/trial_type.dart';
+import 'package:digit_span_tasks/digit_span_tasks.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/config/session_type.dart';
 import 'package:get/get.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_tasks_data.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/data_model.dart';
 
 import '../config/session_trial_type_map.dart';
@@ -69,5 +71,23 @@ class DataManager extends GetxController {
     );
 
     return data;
+  }
+
+  void collectMetadata() {
+    final UserConfig config = _config.userConfig;
+
+    final Session session = Session(
+      participantID: config.participantID,
+      sessionID: config.sessionID,
+      startTime: _startTime,
+      endTime: _endTime,
+    );
+    db.addSession(session: session);
+
+    final Device device = Device(
+      participantID: config.participantID,
+      sessionID: config.sessionID,
+    );
+    db.addDevice(device: device);
   }
 }
