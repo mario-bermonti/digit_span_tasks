@@ -6,11 +6,29 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 
 void main() {
+  late DSConfig config;
+  late DataManager manager;
+
+  setUp(() {
+    /// insert config which contains [participantID] and [sessionID]
+    Get.put(
+      DSConfig(
+        userConfig: UserConfig(
+          stimListPractice: <String>[],
+          stimListExperimental: <String>[],
+          participantID: '101',
+          sessionID: '001',
+        ),
+      ),
+    );
+    config = Get.find();
+
+    manager = DataManager();
+  });
+
   test(
     "DataManager.collectMetadata adds Session and Device data to db.",
     () {
-      final DataManager manager = DataManager();
-
       manager.startTime = DateTime.now();
 
       /// endTime can only be set during the experimental phase
