@@ -73,6 +73,9 @@ class DataManager extends GetxController {
     return data;
   }
 
+  /// Collect metadata for the current session.
+  /// The metadata is added to the [InMemoryDB] and includes info about
+  /// the [Device] used to collect the data and the [Session].
   void collectMetadata() {
     final UserConfig config = _config.userConfig;
 
