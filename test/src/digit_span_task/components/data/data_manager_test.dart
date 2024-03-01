@@ -26,6 +26,10 @@ void main() {
     manager = DataManager();
   });
 
+  tearDown((() {
+    config.dispose();
+  }));
+
   test(
     "DataManager.collectMetadata adds Session and Device data to db.",
     () {
