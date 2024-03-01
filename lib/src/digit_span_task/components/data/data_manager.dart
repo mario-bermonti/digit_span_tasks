@@ -6,6 +6,7 @@ import 'package:cognitive_data/models/trial_type.dart';
 import 'package:digit_span_tasks/digit_span_tasks.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/config/session_type.dart';
+import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_task_data.dart';
 import 'package:get/get.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/data_model.dart';
 
@@ -64,10 +65,13 @@ class DataManager extends GetxController {
   /// Exports the data collected during the session.
   /// Includes data about the [trials] (practice and experimental)
   /// and metadata about the [session] and [device] used to collect the data.
-  DigitSpanTasksData export() {
-    DigitSpanTasksData data = DigitSpanTasksData(
-      practiceData: practiceData,
-      experimentalData: experimentalData,
+  DigitSpanTaskData export() {
+    collectMetadata();
+
+    final DigitSpanTaskData data = DigitSpanTaskData(
+      trials: db.trials,
+      device: db.device,
+      session: db.session,
     );
 
     return data;
