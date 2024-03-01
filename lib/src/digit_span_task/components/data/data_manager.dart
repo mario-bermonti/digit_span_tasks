@@ -62,8 +62,8 @@ class DataManager extends GetxController {
   }
 
   /// Exports the data collected during the session.
-  /// Returns a custom object named [DigitSpanTasksData] that includes data for the
-  /// practice and experimental phase.
+  /// Includes data about the [trials] (practice and experimental)
+  /// and metadata about the [session] and [device] used to collect the data.
   DigitSpanTasksData export() {
     DigitSpanTasksData data = DigitSpanTasksData(
       practiceData: practiceData,
