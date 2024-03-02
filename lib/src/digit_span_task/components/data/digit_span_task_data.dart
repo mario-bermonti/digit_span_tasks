@@ -5,13 +5,13 @@ import 'package:cognitive_data/cognitive_data.dart';
 /// and metadata about the [session] and [device] used to collect the data.
 class DigitSpanTaskData {
   /// Data for all trials
-  late final List<Trial> trials;
+  final List<Trial> trials;
 
   /// Metadata about the session
-  late final Session session;
+  final Session session;
 
   /// Metadata about the device on which the data was collected
-  late final Device device;
+  final Device device;
 
   DigitSpanTaskData({
     required this.trials,
