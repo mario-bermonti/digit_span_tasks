@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
       participantID: participantID,
       sessionID: sessionID,
     );
-    DigitSpanTasksData data = await Get.to(() => DigitSpanForward(
+    DigitSpanTaskData data = await Get.to(() => DigitSpanForward(
           config: config,
         ));
     // ignore: avoid_print
@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
       participantID: participantID,
       sessionID: sessionID,
     );
-    DigitSpanTasksData data = await Get.to(() => DigitSpanBackwards(
+    DigitSpanTaskData data = await Get.to(() => DigitSpanBackwards(
           config: config,
         ));
     // ignore: avoid_print
