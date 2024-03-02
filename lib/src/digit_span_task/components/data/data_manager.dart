@@ -1,60 +1,97 @@
+import 'package:cognitive_data/databases/in_memory_db.dart';
+import 'package:cognitive_data/models/device.dart';
+import 'package:cognitive_data/models/session.dart';
+import 'package:cognitive_data/models/trial.dart';
+import 'package:cognitive_data/models/trial_type.dart';
+import 'package:digit_span_tasks/digit_span_tasks.dart';
+import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config.dart';
+import 'package:digit_span_tasks/src/digit_span_task/components/config/session_type.dart';
+import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_task_data.dart';
 import 'package:get/get.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_tasks_data.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/data/trial_data.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/data/data_model.dart';
+
+import '../config/session_trial_type_map.dart';
 
 /// Data manager for DigitSpanTask.
 /// Used for adding data, getting data for practice or experimental session,
 /// and exporting data.
 class DataManager extends GetxController {
-  DataModel practiceData = DataModel();
-  DataModel experimentalData = DataModel();
+  final InMemoryDB db = InMemoryDB();
+  final DSConfig _config = Get.find();
+  late final DateTime _startTime;
+  late final DateTime _endTime;
 
-  /// Add data [stim], [resp] from a single trial to
-  /// the manager. Uses [isPractice] to get the data for the current phase.
-  void addTrialData({
+  /// Adds data from a single trial to the in memory db.
+  /// Given a [stim] and [resp], it defines a [Trial] and adds it to the db.
+  /// The trial data includes the participantID, sessionID, and the
+  /// [SessionType] (practice vs experimental) from the [_config].
+  void addTrial({
     required String stim,
     required String resp,
-    required bool isPractice,
   }) {
-    TrialData trialData = TrialData(
+    TrialType trialType = convertSessionToTrialType(_config.sessionType);
+    Trial trial = Trial(
       stim: stim,
       response: resp,
+      participantID: _config.userConfig.participantID,
+      sessionID: _config.userConfig.sessionID,
+      trialType: trialType,
     );
-    DataModel data = getData(isPractice);
-    data.trialData.add(trialData);
+    db.addTrial(trial: trial);
   }
 
-  /// Adds the time at which the session started for the current
-  /// phase (practice or experimental) based on the [isPractice] flag.
-  void addStartTime(bool isPractice) {
-    DataModel data = getData(isPractice);
-    data.sessionData.startTime = DateTime.now();
+  /// Sets the start time for the session, but only if this is a practice phase.
+  /// Practice and experimental phases are considered part of the same session
+  /// so the start time for the practice phase is considered the beginning of
+  /// the session.
+  set startTime(DateTime time) {
+    if (_config.sessionType == SessionType.practice) {
+      _startTime = time;
+    }
   }
 
-  /// Adds the time at which the session ended for the current
-  /// phase (practice or experimental) based on the [isPractice] flag.
-  void addEndTime(bool isPractice) {
-    DataModel data = getData(isPractice);
-    data.sessionData.endTime = DateTime.now();
+  /// Sets the end time for the session, but only if this is a experimental
+  /// phase. Practice and experimental phases are considered part of the same
+  /// session so the end time for the experimental phase is considered the
+  /// end of the session.
+  set endTime(DateTime time) {
+    if (_config.sessionType == SessionType.experimental) {
+      _endTime = DateTime.now();
+    }
   }
 
   /// Exports the data collected during the session.
-  /// Returns a custom object named [DigitSpanTasksData] that includes data for the
-  /// practice and experimental phase.
-  DigitSpanTasksData export() {
-    DigitSpanTasksData data = DigitSpanTasksData(
-      practiceData: practiceData,
-      experimentalData: experimentalData,
+  /// Includes data about the [trials] (practice and experimental)
+  /// and metadata about the [session] and [device] used to collect the data.
+  DigitSpanTaskData export() {
+    collectMetadata();
+
+    final DigitSpanTaskData data = DigitSpanTaskData(
+      trials: db.trials,
+      device: db.device,
+      session: db.session,
     );
 
     return data;
   }
 
-  /// Returns the data for the current phase (practice or experimental) based on
-  /// the [isPractice] flag.
-  DataModel getData(bool isPractice) {
-    DataModel data = isPractice == true ? practiceData : experimentalData;
-    return data;
+  /// Collect metadata for the current session.
+  /// The metadata is added to the [InMemoryDB] and includes info about
+  /// the [Device] used to collect the data and the [Session].
+  void collectMetadata() {
+    final UserConfig config = _config.userConfig;
+
+    final Session session = Session(
+      participantID: config.participantID,
+      sessionID: config.sessionID,
+      startTime: _startTime,
+      endTime: _endTime,
+    );
+    db.addSession(session: session);
+
+    final Device device = Device(
+      participantID: config.participantID,
+      sessionID: config.sessionID,
+    );
+    db.addDevice(device: device);
   }
 }

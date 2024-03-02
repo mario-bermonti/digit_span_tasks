@@ -1,3 +1,5 @@
+import 'package:digit_span_tasks/src/digit_span_task/components/config/session_type.dart';
+import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_task_data.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/instructions/instructions_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -5,7 +7,6 @@ import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config
 import 'package:digit_span_tasks/src/digit_span_task/components/data/data_manager.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/activity/activity_controller.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/activity/activity_view.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_tasks_data.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/ui_components/default_appbar.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/ui_components/screen.dart';
 import 'package:digit_span_tasks/src/digit_span_task/instructions_experimental.dart';
@@ -37,11 +38,11 @@ class DigitSpanTasksActivity extends StatelessWidget {
             onPressed: () async {
               await Get.to(() => InstructionsPractice());
               await Get.to(() => ActivityView());
-              _config.isPractice = false;
+              _config.sessionType = SessionType.experimental;
               await Get.to(() => InstructionsExperimental());
               await Get.to(() => ActivityView());
 
-              DigitSpanTasksData digitSpanTasksData = _data.export();
+              DigitSpanTaskData digitSpanTasksData = _data.export();
               Get.back(result: digitSpanTasksData);
             },
             child: Text(

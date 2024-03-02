@@ -1,6 +1,7 @@
+import 'package:digit_span_tasks/src/digit_span_task/components/config/session_type.dart';
 import 'package:get/get.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/activity/activity_controller.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/errors/errors.dart';
+import 'package:digit_span_tasks/src/digit_span_task/components/exceptions/errors.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/activity/task_step.dart';
 import 'package:stimuli/errors.dart';
 import 'package:stimuli/stimuli.dart';
@@ -66,10 +67,14 @@ class StimController extends GetxController {
   }
 
   /// Returns the [_stimPractice] or [_stimExperimental] depending on the
-  /// [_config.isPractice] flag
+  /// [SessionType] flag
   Stimuli get stim {
-    Stimuli stim =
-        _config.isPractice == true ? _stimPractice : _stimExperimental;
+    Stimuli stim;
+    if (_config.sessionType == SessionType.practice) {
+      stim = _stimPractice;
+    } else {
+      stim = _stimExperimental;
+    }
     return stim;
   }
 }
