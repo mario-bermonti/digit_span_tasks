@@ -8,7 +8,6 @@ import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config
 import 'package:digit_span_tasks/src/digit_span_task/components/config/session_type.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_task_data.dart';
 import 'package:get/get.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/data/data_model.dart';
 
 import '../config/session_trial_type_map.dart';
 
@@ -20,8 +19,6 @@ class DataManager extends GetxController {
   final DSConfig _config = Get.find();
   late final DateTime _startTime;
   late final DateTime _endTime;
-  DataModel practiceData = DataModel();
-  DataModel experimentalData = DataModel();
 
   /// Adds data from a single trial to the in memory db.
   /// Given a [stim] and [resp], it defines a [Trial] and adds it to the db.
