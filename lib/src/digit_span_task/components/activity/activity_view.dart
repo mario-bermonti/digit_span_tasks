@@ -20,7 +20,7 @@ class ActivityView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    data.addStartTime(_config.isPractice);
+    data.startTime = DateTime.now();
     return Obx(() {
       switch (mDigits.taskStep.value) {
         case TaskStep.instructions:
