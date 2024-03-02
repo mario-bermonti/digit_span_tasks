@@ -10,6 +10,7 @@ import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_
 void main() {
   late DSConfig config;
   late DataManager manager;
+  const String participantID = '101';
 
   setUp(() {
     Get.reset();
@@ -20,7 +21,7 @@ void main() {
         userConfig: UserConfig(
           stimListPractice: <String>[],
           stimListExperimental: <String>[],
-          participantID: '101',
+          participantID: participantID,
           sessionID: '001',
         ),
       ),
