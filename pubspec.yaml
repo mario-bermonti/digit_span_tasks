@@ -17,6 +17,7 @@ dependencies:
   cognitive_data:
     git:
       url: https://github.com/mario-bermonti/cognitive_data.git
+      ref: v0.2.0
   file_picker: ^5.2.4
   shared_preferences: ^2.0.15
   permission_handler: ^10.2.0
