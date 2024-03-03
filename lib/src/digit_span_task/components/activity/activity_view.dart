@@ -10,7 +10,7 @@ import 'package:digit_span_tasks/src/digit_span_task/components/rest/rest_view.d
 import 'package:digit_span_tasks/src/digit_span_task/components/stim/stim_view.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/activity/task_step.dart';
 
-/// Present the appropriate screen based on the curren step
+/// Present the appropriate screen based on the current step
 class ActivityView extends StatelessWidget {
   final ActivityController mDigits = Get.find();
   final DataManager data = Get.find();
