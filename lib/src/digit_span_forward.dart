@@ -34,7 +34,7 @@ class DigitSpanForward extends StatelessWidget {
       TextInstructions(
         text: 'Terminamos la práctica',
       ),
-      SpacingParragraph(),
+      SpacingParagraph(),
       TextInstructions(
         text:
             'Toma un breve descanso y trabajaremos en los ejercicios principales',

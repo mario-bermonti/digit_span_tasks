@@ -30,7 +30,7 @@ class DigitSpanBackwards extends StatelessWidget {
           text:
               'Recuerda los números al revés al orden en que los veas (de atrás para adelante)',
         ),
-        SpacingParragraph(),
+        SpacingParagraph(),
         TextInstructions(
           text: 'Ejemplo:',
         ),
@@ -50,7 +50,7 @@ class DigitSpanBackwards extends StatelessWidget {
       TextInstructions(
         text: 'Terminamos la práctica',
       ),
-      SpacingParragraph(),
+      SpacingParagraph(),
       TextInstructions(
         text:
             'Toma un breve descanso y trabajaremos en los ejercicios principales',
