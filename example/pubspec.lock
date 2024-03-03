@@ -33,11 +33,11 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: HEAD
-      resolved-ref: "1ccab9a918c15db74a7b8b35aa7bc5d0079a31ae"
+      ref: "v0.2.0"
+      resolved-ref: df46f0e182a905d3d3fb8ffa3c8ef9c7c5c08b16
       url: "https://github.com/mario-bermonti/cognitive_data.git"
     source: git
-    version: "0.0.1"
+    version: "0.2.0"
   collection:
     dependency: transitive
     description:
