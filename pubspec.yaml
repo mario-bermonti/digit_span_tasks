@@ -1,6 +1,6 @@
 name: digit_span_tasks
 description: Digit span task that can be added to flutter apps
-version: 0.2.1
+version: 0.2.2
 
 publish_to: 'none' 
 
