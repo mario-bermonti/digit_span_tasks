@@ -93,8 +93,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "v0.3.0"
-      resolved-ref: "5816e79e7be4ab5e64090168219294ec8a1c0b76"
+      ref: "4ba539786a5fd2ee74194b0c34fe03d562ef99ed"
+      resolved-ref: "4ba539786a5fd2ee74194b0c34fe03d562ef99ed"
       url: "https://github.com/mario-bermonti/cognitive_data.git"
     source: git
     version: "0.3.0"
