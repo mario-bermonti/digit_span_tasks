@@ -28,6 +28,8 @@ class ResponseController extends GetxController {
     _data.addTrial(
       stim: _stim.stim.currentStim,
       resp: response,
+      startTime: startTime,
+      endTime: endTime,
     );
 
     textController.clear();
