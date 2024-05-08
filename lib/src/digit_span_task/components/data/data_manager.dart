@@ -27,6 +27,8 @@ class DataManager extends GetxController {
   void addTrial({
     required String stim,
     required String resp,
+    required DateTime startTime,
+    required DateTime endTime,
   }) {
     TrialType trialType = convertSessionToTrialType(_config.sessionType);
     Trial trial = Trial(
