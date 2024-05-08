@@ -14,6 +14,7 @@ class ResponseView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    _responseController.startTime = DateTime.now();
     return WillPopScope(
       onWillPop: () async {
         return false;
