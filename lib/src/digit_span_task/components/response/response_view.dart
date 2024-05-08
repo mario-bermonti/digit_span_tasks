@@ -50,6 +50,7 @@ class ResponseView extends StatelessWidget {
   }
 
   void submitResponse() {
+    _responseController.endTime = DateTime.now();
     _responseController.submit();
     _responseController.toNextScreen();
   }
