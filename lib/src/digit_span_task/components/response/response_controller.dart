@@ -12,6 +12,8 @@ class ResponseController extends GetxController {
   final DataManager _data = Get.find();
   final DSConfig _config = Get.find();
   final StimController _stim = Get.find();
+  late DateTime startTime;
+  late DateTime endTime;
 
   @override
   void dispose() {
