@@ -37,6 +37,8 @@ class DataManager extends GetxController {
       participantID: _config.userConfig.participantID,
       sessionID: _config.userConfig.sessionID,
       trialType: trialType,
+      startTime: startTime,
+      endTime: endTime,
     );
     db.addTrial(trial: trial);
   }
