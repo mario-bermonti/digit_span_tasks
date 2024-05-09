@@ -5,7 +5,6 @@ import 'package:digit_span_tasks/src/digit_span_task/components/data/data_manage
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 import 'package:cognitive_data/cognitive_data.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_task_data.dart';
 
 void main() {
   late DSConfig config;
@@ -62,6 +61,8 @@ void main() {
         trialType: TrialType.practice,
         stim: '123',
         response: '321',
+        startTime: DateTime.now(),
+        endTime: DateTime.now(),
       );
       manager.db.addTrial(trial: trial);
 

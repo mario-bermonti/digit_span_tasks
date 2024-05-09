@@ -22,17 +22,23 @@ void main() {
       /// list trial
       final List<Trial> trials = <Trial>[
         Trial(
-            participantID: '101',
-            sessionID: '001',
-            trialType: TrialType.practice,
-            stim: '456',
-            response: '123'),
+          participantID: '101',
+          sessionID: '001',
+          trialType: TrialType.practice,
+          stim: '456',
+          response: '123',
+          startTime: DateTime.now(),
+          endTime: DateTime.now(),
+        ),
         Trial(
-            participantID: '102',
-            sessionID: '002',
-            trialType: TrialType.practice,
-            stim: '789',
-            response: '987'),
+          participantID: '102',
+          sessionID: '002',
+          trialType: TrialType.practice,
+          stim: '789',
+          response: '987',
+          startTime: DateTime.now(),
+          endTime: DateTime.now(),
+        ),
       ];
 
       /// DigitSpanTaskData
