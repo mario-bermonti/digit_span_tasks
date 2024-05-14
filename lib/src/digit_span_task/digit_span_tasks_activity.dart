@@ -10,11 +10,10 @@ import 'package:digit_span_tasks/src/digit_span_task/components/activity/activit
 import 'package:digit_span_tasks/src/digit_span_task/components/ui_components/default_appbar.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/ui_components/screen.dart';
 import 'package:digit_span_tasks/src/digit_span_task/instructions_experimental.dart';
-import 'package:digit_span_tasks/src/digit_span_task/instructions_practice.dart';
 
-/// Runs all DigitSpanTask activity beginning with the practice trials and then the
-/// experimental trials. It returns the data from the session when DigitSpanTask
-/// finishes; includes data for practice and experimental trials.
+/// Runs DigitSpanTasks activities.
+/// It returns the data from the session when DigitSpanTask
+/// finishes.
 class DigitSpanTasksActivity extends StatelessWidget {
   final InstructionsModel _instructions = Get.find();
   final DataManager _data = Get.put(DataManager());
@@ -36,9 +35,6 @@ class DigitSpanTasksActivity extends StatelessWidget {
           const SizedBox(height: 25),
           ElevatedButton(
             onPressed: () async {
-              await Get.to(() => InstructionsPractice());
-              await Get.to(() => ActivityView());
-              _config.sessionType = SessionType.experimental;
               await Get.to(() => InstructionsExperimental());
               await Get.to(() => ActivityView());
 
