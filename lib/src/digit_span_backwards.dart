@@ -43,9 +43,6 @@ class DigitSpanBackwards extends StatelessWidget {
       ],
     );
 
-    instructions.practice = const TextInstructions(
-      text: 'Comenzaremos practicando',
-    );
     instructions.experimental = Column(children: const [
       TextInstructions(
         text: 'Terminamos la práctica',
