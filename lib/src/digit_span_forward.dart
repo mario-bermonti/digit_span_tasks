@@ -27,9 +27,6 @@ class DigitSpanForward extends StatelessWidget {
     instructions.introduction = const TextInstructions(
       text: 'Recuerda los números en el orden en que los veas',
     );
-    instructions.practice = const TextInstructions(
-      text: 'Comenzaremos practicando',
-    );
     instructions.experimental = Column(children: const [
       TextInstructions(
         text: 'Terminamos la práctica',
