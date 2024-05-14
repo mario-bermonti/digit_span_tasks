@@ -12,8 +12,7 @@ import 'package:get/get.dart';
 import '../config/session_trial_type_map.dart';
 
 /// Data manager for DigitSpanTask.
-/// Used for adding data, getting data for practice or experimental session,
-/// and exporting data.
+/// Used for adding data, getting data, and exporting data.
 class DataManager extends GetxController {
   final InMemoryDB db = InMemoryDB();
   final DSConfig _config = Get.find();
