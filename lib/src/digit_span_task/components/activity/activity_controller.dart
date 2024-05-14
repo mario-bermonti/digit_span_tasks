@@ -49,13 +49,6 @@ class ActivityController extends GetxController {
 
   Future<void> endSession() async {
     _data.endTime = DateTime.now();
-    await reset();
     Get.back();
-  }
-
-  /// Resets the important settings so another session can be run.
-  Future<void> reset() async {
-    taskStep(TaskStep.stim);
-    _config.sessionType = SessionType.practice;
   }
 }
