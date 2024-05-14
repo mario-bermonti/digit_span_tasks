@@ -18,8 +18,7 @@ void main() {
     Get.put(
       DSConfig(
         userConfig: UserConfig(
-          stimListPractice: <String>[],
-          stimListExperimental: <String>[],
+          stimList: <String>[],
           participantID: participantID,
           sessionID: '001',
         ),

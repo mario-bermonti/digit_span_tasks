@@ -9,7 +9,7 @@ import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config
 
 /// Manage the stim
 class StimController extends GetxController {
-  late Stimuli _stimExperimental;
+  late Stimuli stim;
   RxString currentDigit = ''.obs;
   late final ActivityController _activityController;
   final DSConfig _config = Get.find();
@@ -24,8 +24,7 @@ class StimController extends GetxController {
   /// Prepare stim pool to be used.
   Future<void> prepareStimPool() async {
     try {
-      _stimExperimental =
-          Stimuli(stimuli: _config.userConfig.stimListExperimental);
+      stim = Stimuli(stimuli: _config.userConfig.stimList);
     } on StimFileAccessException catch (e) {
       throw GenericDigitSpanTasksException(e.toString());
     }
