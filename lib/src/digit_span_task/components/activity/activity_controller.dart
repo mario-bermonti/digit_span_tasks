@@ -14,7 +14,7 @@ class ActivityController extends GetxController {
   late final StimController _stimuli;
 
   /// Identifies the step the task currently is in
-  Rx<TaskStep> taskStep = TaskStep.instructions.obs;
+  Rx<TaskStep> taskStep = TaskStep.stim.obs;
 
   final DSConfig _config = Get.find();
 
@@ -55,7 +55,7 @@ class ActivityController extends GetxController {
 
   /// Resets the important settings so another session can be run.
   Future<void> reset() async {
-    taskStep(TaskStep.instructions);
+    taskStep(TaskStep.stim);
     _config.sessionType = SessionType.practice;
   }
 }

@@ -42,20 +42,5 @@ class DigitSpanBackwards extends StatelessWidget {
         ),
       ],
     );
-
-    instructions.experimental = Column(children: const [
-      TextInstructions(
-        text: 'Terminamos la práctica',
-      ),
-      SpacingParagraph(),
-      TextInstructions(
-        text:
-            'Toma un breve descanso y trabajaremos en los ejercicios principales',
-      ),
-    ]);
-    instructions.reminderInTask = const TextInstructions(
-      text:
-          'Recuerda, escribe los números al revés al orden en que los veas (de atrás para adelante)',
-    );
   }
 }
