@@ -54,8 +54,8 @@ class DataManager extends GetxController {
   }
 
   /// Exports the data collected during the session.
-  /// Includes data about the [trials] (practice and experimental)
-  /// and metadata about the [session] and [device] used to collect the data.
+  /// Includes data about the [trials] and metadata about the [session]
+  /// and [device] used to collect the data.
   DigitSpanTaskData export() {
     collectMetadata();
 
