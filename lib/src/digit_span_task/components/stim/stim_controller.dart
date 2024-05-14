@@ -9,7 +9,6 @@ import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config
 
 /// Manage the stim
 class StimController extends GetxController {
-  late Stimuli _stimPractice;
   late Stimuli _stimExperimental;
   RxString currentDigit = ''.obs;
   late final ActivityController _activityController;
@@ -22,10 +21,9 @@ class StimController extends GetxController {
     _activityController = Get.find();
   }
 
-  /// Prepare stim pool to be used for both the practice and experimtnal phase.
+  /// Prepare stim pool to be used.
   Future<void> prepareStimPool() async {
     try {
-      _stimPractice = Stimuli(stimuli: _config.userConfig.stimListPractice);
       _stimExperimental =
           Stimuli(stimuli: _config.userConfig.stimListExperimental);
     } on StimFileAccessException catch (e) {
@@ -64,17 +62,5 @@ class StimController extends GetxController {
   /// Present 1s ISI
   Future<void> _presentISI() async {
     await Future.delayed(const Duration(seconds: 1));
-  }
-
-  /// Returns the [_stimPractice] or [_stimExperimental] depending on the
-  /// [SessionType] flag
-  Stimuli get stim {
-    Stimuli stim;
-    if (_config.sessionType == SessionType.practice) {
-      stim = _stimPractice;
-    } else {
-      stim = _stimExperimental;
-    }
-    return stim;
   }
 }

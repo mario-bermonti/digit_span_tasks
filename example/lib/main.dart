@@ -71,7 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
     required String sessionID,
   }) async {
     UserConfig config = UserConfig(
-      stimListPractice: ['01', '234'],
       stimListExperimental: ['5678', '01567', '987654'],
       participantID: participantID,
       sessionID: sessionID,
@@ -88,7 +87,6 @@ class _MyHomePageState extends State<MyHomePage> {
     required String sessionID,
   }) async {
     UserConfig config = UserConfig(
-      stimListPractice: ['23', '567'],
       stimListExperimental: ['0123', '45678', '901234'],
       participantID: participantID,
       sessionID: sessionID,
