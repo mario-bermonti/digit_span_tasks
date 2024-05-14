@@ -7,8 +7,10 @@ import 'package:digit_span_tasks/src/digit_span_task/components/config/user_conf
 class DSConfig extends GetxController {
   final UserConfig userConfig;
 
-  /// Controls whether the practice or experimental should be presented and
-  /// how to manage the data.
+  /// This flag is used to identify the types of trials.
+  ///
+  /// It is needed because the [cognitive_data] package identifies trials as
+  /// either either practice or experimental.
   SessionType sessionType = SessionType.practice;
 
   DSConfig({required this.userConfig});
