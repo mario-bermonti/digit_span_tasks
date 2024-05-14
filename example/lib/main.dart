@@ -74,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
       stimList: ['5678', '01567', '987654'],
       participantID: participantID,
       sessionID: sessionID,
+      sessionType: SessionType.experimental,
     );
     DigitSpanTaskData data = await Get.to(() => DigitSpanForward(
           config: config,
@@ -90,6 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
       stimList: ['0123', '45678', '901234'],
       participantID: participantID,
       sessionID: sessionID,
+      sessionType: SessionType.practice,
     );
     DigitSpanTaskData data = await Get.to(() => DigitSpanBackwards(
           config: config,

@@ -1,6 +1,8 @@
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:digit_span_tasks/src/digit_span_task/randomize.dart';
 
+import 'session_type.dart';
+
 /// The [UserConfig] contains settings the user can use to modify the behavior
 /// of the app.
 class UserConfig extends GetxController {
@@ -22,10 +24,17 @@ class UserConfig extends GetxController {
   /// unique identifier across all participant.
   final String participantID;
 
+  /// This flag is used to identify the types of trials.
+  ///
+  /// It is needed because the [cognitive_data] package identifies trials as
+  /// either either practice or experimental.
+  final SessionType sessionType;
+
   UserConfig({
     required stimList,
     required this.sessionID,
     required this.participantID,
+    required this.sessionType,
   }) {
     this.stimList = randomizeDigitsInSets(stimList);
   }
