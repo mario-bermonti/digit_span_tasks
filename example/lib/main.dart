@@ -70,17 +70,29 @@ class _HomePageState extends State<HomePage> {
     required String participantID,
     required String sessionID,
   }) async {
-    UserConfig config = UserConfig(
-      stimList: ['5678', '01567', '987654'],
+    UserConfig practiceConfig = UserConfig(
+      stimList: ['12'],
+      participantID: participantID,
+      sessionID: sessionID,
+      sessionType: SessionType.practice,
+    );
+    DigitSpanTaskData practiceData = await DigitSpanForward(
+      config: practiceConfig,
+    ).run();
+    // ignore: avoid_print
+    print('\n\n\nFORWARD PRACTICE data \n $practiceData');
+
+    UserConfig experimentalConfig = UserConfig(
+      stimList: ['5678', '98765'],
       participantID: participantID,
       sessionID: sessionID,
       sessionType: SessionType.experimental,
     );
-    DigitSpanTaskData data = await Get.to(() => DigitSpanForward(
-          config: config,
-        ));
+    DigitSpanTaskData experimentalData = await DigitSpanForward(
+      config: experimentalConfig,
+    ).run();
     // ignore: avoid_print
-    print('\n\n\nFORWARD data \n $data');
+    print('\n\n\nFORWARD EXPERIMENTAL data \n $experimentalData');
   }
 
   void runDigitSpanBackwards({
@@ -88,15 +100,15 @@ class _HomePageState extends State<HomePage> {
     required String sessionID,
   }) async {
     UserConfig config = UserConfig(
-      stimList: ['0123', '45678', '901234'],
+      stimList: ['901234'],
       participantID: participantID,
       sessionID: sessionID,
-      sessionType: SessionType.practice,
+      sessionType: SessionType.experimental,
     );
-    DigitSpanTaskData data = await Get.to(() => DigitSpanBackwards(
-          config: config,
-        ));
+    DigitSpanTaskData data = await DigitSpanBackwards(
+      config: config,
+    ).run();
     // ignore: avoid_print
-    print('\n\n\nBAKWARDS data \n $data');
+    print('\n\n\nBACKWARDS data \n $data');
   }
 }
