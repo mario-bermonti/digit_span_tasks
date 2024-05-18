@@ -6,7 +6,7 @@ import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config
 import 'package:digit_span_tasks/src/digit_span_task/components/stim/stim_controller.dart';
 
 /// Controls the task sequence.
-/// The task sequence which includes instructions, stim, response, rest, end
+/// The task sequence which includes stim, response, rest, end
 class ActivityController extends GetxController {
   final DataManager _data = Get.find();
 
