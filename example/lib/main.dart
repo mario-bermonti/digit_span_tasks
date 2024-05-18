@@ -70,17 +70,18 @@ class _HomePageState extends State<HomePage> {
     required String participantID,
     required String sessionID,
   }) async {
+    DigitSpanForward task;
+
     UserConfig practiceConfig = UserConfig(
       stimList: ['12'],
       participantID: participantID,
       sessionID: sessionID,
       sessionType: SessionType.practice,
     );
-    DigitSpanTaskData practiceData = await DigitSpanForward(
-      config: practiceConfig,
-    ).run();
-    // ignore: avoid_print
-    print('\n\n\nFORWARD PRACTICE data \n $practiceData');
+    task = DigitSpanForward(config: practiceConfig);
+    await Get.to(StartPage(
+      task: task,
+    ));
 
     UserConfig experimentalConfig = UserConfig(
       stimList: ['5678', '98765'],
@@ -88,11 +89,10 @@ class _HomePageState extends State<HomePage> {
       sessionID: sessionID,
       sessionType: SessionType.experimental,
     );
-    DigitSpanTaskData experimentalData = await DigitSpanForward(
-      config: experimentalConfig,
-    ).run();
-    // ignore: avoid_print
-    print('\n\n\nFORWARD EXPERIMENTAL data \n $experimentalData');
+    task = DigitSpanForward(config: experimentalConfig);
+    await Get.to(StartPage(
+      task: task,
+    ));
   }
 
   void runDigitSpanBackwards({
@@ -105,10 +105,42 @@ class _HomePageState extends State<HomePage> {
       sessionID: sessionID,
       sessionType: SessionType.experimental,
     );
-    DigitSpanTaskData data = await DigitSpanBackwards(
-      config: config,
-    ).run();
-    // ignore: avoid_print
-    print('\n\n\nBACKWARDS data \n $data');
+    final task = DigitSpanBackwards(config: config);
+    await Get.to(StartPage(
+      task: task,
+    ));
+  }
+}
+
+class StartPage extends StatelessWidget {
+  final dynamic task;
+
+  const StartPage({super.key, this.task});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const SizedBox(height: 25),
+            ElevatedButton(
+              onPressed: () async {
+                final DigitSpanTaskData data = await task.run();
+
+                // ignore: avoid_print
+                print('\n\n\n Data \n $data');
+              },
+              child: Text(
+                'Comenzar',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
