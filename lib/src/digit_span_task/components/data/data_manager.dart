@@ -5,8 +5,6 @@ import 'package:cognitive_data/models/trial.dart';
 import 'package:cognitive_data/models/trial_type.dart';
 import 'package:digit_span_tasks/digit_span_tasks.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/config/session_type.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_task_data.dart';
 import 'package:get/get.dart';
 
 import '../config/session_trial_type_map.dart';
