@@ -12,10 +12,10 @@ class SimpleSpanTask {
   SimpleSpanTask({required config}) {
     final _config = Get.put(DSConfig(userConfig: config));
   }
-  Future<DigitSpanTaskData> run() async {
+  Future<SimpleSpanData> run() async {
     final DataManager dataManager = Get.put(DataManager());
     await Get.to(() => ActivityView());
-    final DigitSpanTaskData data = dataManager.export();
+    final SimpleSpanData data = dataManager.export();
     await Get.deleteAll();
     return data;
   }

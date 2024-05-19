@@ -3,7 +3,7 @@ import 'package:cognitive_data/cognitive_data.dart';
 /// Structured data collected for a single session.
 /// Includes data about the [trials] (practice and experimental),
 /// and metadata about the [session] and [device] used to collect the data.
-class DigitSpanTaskData {
+class SimpleSpanData {
   /// Data for all trials
   final List<Trial> trials;
 
@@ -13,7 +13,7 @@ class DigitSpanTaskData {
   /// Metadata about the device on which the data was collected
   final Device device;
 
-  DigitSpanTaskData({
+  SimpleSpanData({
     required this.trials,
     required this.session,
     required this.device,

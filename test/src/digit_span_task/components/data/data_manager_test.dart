@@ -63,7 +63,7 @@ void main() {
       );
       manager.db.addTrial(trial: trial);
 
-      final DigitSpanTaskData actual = manager.export();
+      final SimpleSpanData actual = manager.export();
 
       expect(actual.trials.first.participantID, participantID);
       expect(actual.device.participantID, participantID);

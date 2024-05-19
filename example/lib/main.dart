@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
     required String sessionID,
   }) async {
     SimpleSpanTask task;
-    DigitSpanTaskData data;
+    SimpleSpanData data;
 
     UserConfig practiceConfig = UserConfig(
       stimList: ['12'],
@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
     );
     final task = SimpleSpanTask(config: config);
     await Get.to(StartPage());
-    final DigitSpanTaskData data = await task.run();
+    final SimpleSpanData data = await task.run();
     print(data);
   }
 }
