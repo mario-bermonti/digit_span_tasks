@@ -30,7 +30,7 @@ class ActivityController extends GetxController {
     var stim = _stimuli.stim;
 
     if (stim.stimCountRemaining == 0) {
-      taskStep(TaskStep.completed);
+      endSession();
 
       /// This check is needed to garantee that DigitSpanTask doesn't
       /// get stuck in rest
@@ -46,7 +46,7 @@ class ActivityController extends GetxController {
     }
   }
 
-  Future<void> endSession() async {
+  void endSession() {
     _data.endTime = DateTime.now();
     Get.back();
   }
