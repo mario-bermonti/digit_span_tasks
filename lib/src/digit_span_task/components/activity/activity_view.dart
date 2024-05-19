@@ -13,7 +13,6 @@ import 'package:digit_span_tasks/src/digit_span_task/components/activity/task_st
 class ActivityView extends StatelessWidget {
   final DataManager data = Get.put(DataManager());
   final ActivityController mDigits = Get.put(ActivityController());
-  // final DataManager data = Get.find();
   final DSConfig _config = Get.find();
 
   ActivityView({super.key});

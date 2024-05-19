@@ -14,18 +14,6 @@ class DigitSpanTasksActivity {
     final _config = Get.put(DSConfig(userConfig: config));
   }
   Future<void> run() async {
-    // final ActivityController _activityController =
-    //     Get.put(ActivityController());
-    // final DataManager _dataManager = Get.put(DataManager());
     await Get.to(() => ActivityView());
-    // DigitSpanTaskData data = _dataManager.export();
-    // return data;
-  }
-
-  dynamic _config() {
-    final ActivityController _activityController =
-        Get.put(ActivityController());
-    final DataManager _dataManager = Get.put(DataManager());
-    return _dataManager;
   }
 }
