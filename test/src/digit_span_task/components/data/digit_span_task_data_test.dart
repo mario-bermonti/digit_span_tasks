@@ -1,5 +1,5 @@
 import 'package:cognitive_data/cognitive_data.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/data/simple_span_data.dart';
+import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_task_data.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -42,7 +42,7 @@ void main() {
       ];
 
       /// DigitSpanTaskData
-      SimpleSpanData data = SimpleSpanData(
+      DigitSpanTaskData data = DigitSpanTaskData(
         session: session,
         device: device,
         trials: trials,

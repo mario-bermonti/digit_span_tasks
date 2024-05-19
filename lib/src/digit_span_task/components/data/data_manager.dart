@@ -54,10 +54,10 @@ class DataManager extends GetxController {
   /// Exports the data collected during the session.
   /// Includes data about the [trials] and metadata about the [session]
   /// and [device] used to collect the data.
-  SimpleSpanData export() {
+  DigitSpanTaskData export() {
     collectMetadata();
 
-    final SimpleSpanData data = SimpleSpanData(
+    final DigitSpanTaskData data = DigitSpanTaskData(
       trials: db.trials,
       device: db.device,
       session: db.session,

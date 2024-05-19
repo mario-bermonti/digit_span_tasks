@@ -73,8 +73,8 @@ class _HomePageState extends State<HomePage> {
     required String sessionID,
   }) async {
     // Setup variables for task
-    SimpleSpanTask task;
-    SimpleSpanData data;
+    DigitSpanTask task;
+    DigitSpanTaskData data;
 
     // Define config for practice session
     UserConfig practiceConfig = UserConfig(
@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
       sessionType: SessionType.practice,
     );
     // Setup task
-    task = SimpleSpanTask(config: practiceConfig);
+    task = DigitSpanTask(config: practiceConfig);
     await Get.to(StartPage());
     // Run task
     data = await task.run();
@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> {
       sessionID: sessionID,
       sessionType: SessionType.experimental,
     );
-    task = SimpleSpanTask(config: experimentalConfig);
+    task = DigitSpanTask(config: experimentalConfig);
     await Get.to(StartPage());
     data = await task.run();
     print(data);
@@ -113,9 +113,9 @@ class _HomePageState extends State<HomePage> {
       sessionID: sessionID,
       sessionType: SessionType.experimental,
     );
-    final task = SimpleSpanTask(config: config);
+    final task = DigitSpanTask(config: config);
     await Get.to(StartPage());
-    final SimpleSpanData data = await task.run();
+    final DigitSpanTaskData data = await task.run();
     print(data);
   }
 }
