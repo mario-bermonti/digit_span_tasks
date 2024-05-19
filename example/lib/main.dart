@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
     required String participantID,
     required String sessionID,
   }) async {
-    DigitSpanForward task;
+    DigitSpanTasksActivity task;
 
     UserConfig practiceConfig = UserConfig(
       stimList: ['12'],
@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
       sessionID: sessionID,
       sessionType: SessionType.practice,
     );
-    task = DigitSpanForward(config: practiceConfig);
+    task = DigitSpanTasksActivity(config: practiceConfig);
     await Get.to(StartPage(
       task: task,
     ));
@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
       sessionID: sessionID,
       sessionType: SessionType.experimental,
     );
-    task = DigitSpanForward(config: experimentalConfig);
+    task = DigitSpanTasksActivity(config: experimentalConfig);
     await Get.to(StartPage(
       task: task,
     ));
@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> {
       sessionID: sessionID,
       sessionType: SessionType.experimental,
     );
-    final task = DigitSpanBackwards(config: config);
+    final task = DigitSpanTasksActivity(config: config);
     await Get.to(StartPage(
       task: task,
     ));
@@ -128,10 +128,12 @@ class StartPage extends StatelessWidget {
             const SizedBox(height: 25),
             ElevatedButton(
               onPressed: () async {
-                final DigitSpanTaskData data = await task.run();
+                // final DigitSpanTaskData data = await task.run();
+                await task.run();
 
-                // ignore: avoid_print
-                print('\n\n\n Data \n $data');
+                // // ignore: avoid_print
+                // print('\n\n\n Data \n $data');
+                Get.back();
               },
               child: Text(
                 'Comenzar',
