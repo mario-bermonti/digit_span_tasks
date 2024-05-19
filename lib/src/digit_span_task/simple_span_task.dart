@@ -1,3 +1,4 @@
+import 'package:digit_span_tasks/src/digit_span_task/components/data/data_manager.dart';
 import 'package:get/get.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/activity/activity_view.dart';
 
@@ -11,6 +12,7 @@ class SimpleSpanTask {
     final _config = Get.put(DSConfig(userConfig: config));
   }
   Future<void> run() async {
+    final DataManager dataManager = Get.put(DataManager());
     await Get.to(() => ActivityView());
   }
 }
