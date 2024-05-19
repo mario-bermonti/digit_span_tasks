@@ -24,6 +24,7 @@ class App extends StatelessWidget {
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  // Simulate participant info
   final String participantID = '101';
   final String sessionID = '001';
 
@@ -71,20 +72,25 @@ class _HomePageState extends State<HomePage> {
     required String participantID,
     required String sessionID,
   }) async {
+    // Setup variables for task
     SimpleSpanTask task;
     SimpleSpanData data;
 
+    // Define config for practice session
     UserConfig practiceConfig = UserConfig(
       stimList: ['12'],
       participantID: participantID,
       sessionID: sessionID,
       sessionType: SessionType.practice,
     );
+    // Setup task
     task = SimpleSpanTask(config: practiceConfig);
     await Get.to(StartPage());
+    // Run task
     data = await task.run();
     print(data);
 
+    // Define config for experimental session
     UserConfig experimentalConfig = UserConfig(
       stimList: ['5678', '98765'],
       participantID: participantID,
@@ -114,6 +120,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+/// Ask participants if they are ready
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
 
