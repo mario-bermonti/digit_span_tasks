@@ -71,6 +71,7 @@ class _HomePageState extends State<HomePage> {
     required String sessionID,
   }) async {
     SimpleSpanTask task;
+    DigitSpanTaskData data;
 
     UserConfig practiceConfig = UserConfig(
       stimList: ['12'],
@@ -80,7 +81,8 @@ class _HomePageState extends State<HomePage> {
     );
     task = SimpleSpanTask(config: practiceConfig);
     await Get.to(StartPage());
-    await task.run();
+    data = await task.run();
+    print(data);
 
     UserConfig experimentalConfig = UserConfig(
       stimList: ['5678', '98765'],
@@ -90,7 +92,8 @@ class _HomePageState extends State<HomePage> {
     );
     task = SimpleSpanTask(config: experimentalConfig);
     await Get.to(StartPage());
-    await task.run();
+    data = await task.run();
+    print(data);
   }
 
   void runDigitSpanBackwards({
@@ -105,7 +108,8 @@ class _HomePageState extends State<HomePage> {
     );
     final task = SimpleSpanTask(config: config);
     await Get.to(StartPage());
-    await task.run();
+    final DigitSpanTaskData data = await task.run();
+    print(data);
   }
 }
 

@@ -48,7 +48,6 @@ class ActivityController extends GetxController {
 
   Future<void> endSession() async {
     _data.endTime = DateTime.now();
-    await Get.deleteAll();
     Get.back();
   }
 }
