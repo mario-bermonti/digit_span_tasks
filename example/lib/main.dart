@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
     required String participantID,
     required String sessionID,
   }) async {
-    DigitSpanTasksActivity task;
+    SimpleSpanTask task;
 
     UserConfig practiceConfig = UserConfig(
       stimList: ['12'],
@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
       sessionID: sessionID,
       sessionType: SessionType.practice,
     );
-    task = DigitSpanTasksActivity(config: practiceConfig);
+    task = SimpleSpanTask(config: practiceConfig);
     await Get.to(StartPage(
       task: task,
     ));
@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
       sessionID: sessionID,
       sessionType: SessionType.experimental,
     );
-    task = DigitSpanTasksActivity(config: experimentalConfig);
+    task = SimpleSpanTask(config: experimentalConfig);
     await Get.to(StartPage(
       task: task,
     ));
@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> {
       sessionID: sessionID,
       sessionType: SessionType.experimental,
     );
-    final task = DigitSpanTasksActivity(config: config);
+    final task = SimpleSpanTask(config: config);
     await Get.to(StartPage(
       task: task,
     ));
