@@ -79,9 +79,8 @@ class _HomePageState extends State<HomePage> {
       sessionType: SessionType.practice,
     );
     task = SimpleSpanTask(config: practiceConfig);
-    await Get.to(StartPage(
-      task: task,
-    ));
+    await Get.to(StartPage());
+    await task.run();
 
     UserConfig experimentalConfig = UserConfig(
       stimList: ['5678', '98765'],
@@ -90,9 +89,8 @@ class _HomePageState extends State<HomePage> {
       sessionType: SessionType.experimental,
     );
     task = SimpleSpanTask(config: experimentalConfig);
-    await Get.to(StartPage(
-      task: task,
-    ));
+    await Get.to(StartPage());
+    await task.run();
   }
 
   void runDigitSpanBackwards({
@@ -106,16 +104,13 @@ class _HomePageState extends State<HomePage> {
       sessionType: SessionType.experimental,
     );
     final task = SimpleSpanTask(config: config);
-    await Get.to(StartPage(
-      task: task,
-    ));
+    await Get.to(StartPage());
+    await task.run();
   }
 }
 
 class StartPage extends StatelessWidget {
-  final dynamic task;
-
-  const StartPage({super.key, this.task});
+  const StartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -128,11 +123,6 @@ class StartPage extends StatelessWidget {
             const SizedBox(height: 25),
             ElevatedButton(
               onPressed: () async {
-                // final DigitSpanTaskData data = await task.run();
-                await task.run();
-
-                // // ignore: avoid_print
-                // print('\n\n\n Data \n $data');
                 Get.back();
               },
               child: Text(
