@@ -3,6 +3,7 @@ import 'package:digit_span_tasks/src/digit_span_task/components/data/data_manage
 import 'package:get/get.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/activity/activity_view.dart';
 
+import 'components/activity/activity_controller.dart';
 import 'components/config/ds_config.dart';
 
 /// Entry point for running a digit span task.
@@ -15,6 +16,7 @@ class DigitSpanTask {
   /// Run a digit span task and return the data collected during the session.
   Future<DigitSpanTaskData> run() async {
     final DataManager dataManager = Get.put(DataManager());
+    final ActivityController mDigits = Get.put(ActivityController());
     await Get.to(() => ActivityView());
     final DigitSpanTaskData data = dataManager.export();
     await Get.deleteAll();
