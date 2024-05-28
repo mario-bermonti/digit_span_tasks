@@ -1,4 +1,3 @@
-import 'package:digit_span_tasks/src/digit_span_task/components/config/session_type.dart';
 import 'package:get/get.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/data_manager.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/activity/task_step.dart';
@@ -6,7 +5,7 @@ import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config
 import 'package:digit_span_tasks/src/digit_span_task/components/stim/stim_controller.dart';
 
 /// Controls the task sequence.
-/// The task sequence which includes instructions, stim, response, rest, end
+/// The task sequence which includes stim, response, rest, end
 class ActivityController extends GetxController {
   final DataManager _data = Get.find();
 
@@ -14,7 +13,7 @@ class ActivityController extends GetxController {
   late final StimController _stimuli;
 
   /// Identifies the step the task currently is in
-  Rx<TaskStep> taskStep = TaskStep.instructions.obs;
+  Rx<TaskStep> taskStep = TaskStep.stim.obs;
 
   final DSConfig _config = Get.find();
 
@@ -31,7 +30,7 @@ class ActivityController extends GetxController {
     var stim = _stimuli.stim;
 
     if (stim.stimCountRemaining == 0) {
-      taskStep(TaskStep.completed);
+      endSession();
 
       /// This check is needed to garantee that DigitSpanTask doesn't
       /// get stuck in rest
@@ -47,15 +46,8 @@ class ActivityController extends GetxController {
     }
   }
 
-  Future<void> endSession() async {
+  void endSession() {
     _data.endTime = DateTime.now();
-    await reset();
     Get.back();
-  }
-
-  /// Resets the important settings so another session can be run.
-  Future<void> reset() async {
-    taskStep(TaskStep.instructions);
-    _config.sessionType = SessionType.practice;
   }
 }

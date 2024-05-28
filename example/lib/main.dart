@@ -1,36 +1,38 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:digit_span_tasks/digit_span_tasks.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'DigitSpanTasks',
-      home: const MyHomePage(),
+      home: const HomePage(),
       theme: ThemeData(primarySwatch: Colors.grey),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
+  // Simulate participant info
   final String participantID = '101';
   final String sessionID = '001';
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,17 +72,35 @@ class _MyHomePageState extends State<MyHomePage> {
     required String participantID,
     required String sessionID,
   }) async {
-    UserConfig config = UserConfig(
-      stimListPractice: ['01', '234'],
-      stimListExperimental: ['5678', '01567', '987654'],
+    // Setup variables for task
+    DigitSpanTask task;
+    DigitSpanTaskData data;
+
+    // Define config for practice session
+    UserConfig practiceConfig = UserConfig(
+      stimList: ['12'],
       participantID: participantID,
       sessionID: sessionID,
+      sessionType: SessionType.practice,
     );
-    DigitSpanTaskData data = await Get.to(() => DigitSpanForward(
-          config: config,
-        ));
-    // ignore: avoid_print
-    print('\n\n\nFORWARD data \n $data');
+    // Setup task
+    task = DigitSpanTask(config: practiceConfig);
+    await Get.to(StartPage());
+    // Run task
+    data = await task.run();
+    print(data);
+
+    // Define config for experimental session
+    UserConfig experimentalConfig = UserConfig(
+      stimList: ['5678', '98765'],
+      participantID: participantID,
+      sessionID: sessionID,
+      sessionType: SessionType.experimental,
+    );
+    task = DigitSpanTask(config: experimentalConfig);
+    await Get.to(StartPage());
+    data = await task.run();
+    print(data);
   }
 
   void runDigitSpanBackwards({
@@ -88,15 +108,45 @@ class _MyHomePageState extends State<MyHomePage> {
     required String sessionID,
   }) async {
     UserConfig config = UserConfig(
-      stimListPractice: ['23', '567'],
-      stimListExperimental: ['0123', '45678', '901234'],
+      stimList: ['901234'],
       participantID: participantID,
       sessionID: sessionID,
+      sessionType: SessionType.experimental,
     );
-    DigitSpanTaskData data = await Get.to(() => DigitSpanBackwards(
-          config: config,
-        ));
-    // ignore: avoid_print
-    print('\n\n\nBAKWARDS data \n $data');
+    final task = DigitSpanTask(config: config);
+    await Get.to(StartPage());
+    final DigitSpanTaskData data = await task.run();
+    print(data);
+  }
+}
+
+/// Ask participants if they are ready
+class StartPage extends StatelessWidget {
+  const StartPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const SizedBox(height: 25),
+            ElevatedButton(
+              onPressed: () async {
+                Get.back();
+              },
+              child: Text(
+                'Comenzar',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

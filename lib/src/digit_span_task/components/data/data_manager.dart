@@ -5,15 +5,12 @@ import 'package:cognitive_data/models/trial.dart';
 import 'package:cognitive_data/models/trial_type.dart';
 import 'package:digit_span_tasks/digit_span_tasks.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/config/session_type.dart';
-import 'package:digit_span_tasks/src/digit_span_task/components/data/digit_span_task_data.dart';
 import 'package:get/get.dart';
 
 import '../config/session_trial_type_map.dart';
 
 /// Data manager for DigitSpanTask.
-/// Used for adding data, getting data for practice or experimental session,
-/// and exporting data.
+/// Used for adding data, getting data, and exporting data.
 class DataManager extends GetxController {
   final InMemoryDB db = InMemoryDB();
   final DSConfig _config = Get.find();
@@ -30,7 +27,8 @@ class DataManager extends GetxController {
     required DateTime startTime,
     required DateTime endTime,
   }) {
-    TrialType trialType = convertSessionToTrialType(_config.sessionType);
+    TrialType trialType =
+        convertSessionToTrialType(_config.userConfig.sessionType);
     Trial trial = Trial(
       stim: stim,
       response: resp,
@@ -43,29 +41,19 @@ class DataManager extends GetxController {
     db.addTrial(trial: trial);
   }
 
-  /// Sets the start time for the session, but only if this is a practice phase.
-  /// Practice and experimental phases are considered part of the same session
-  /// so the start time for the practice phase is considered the beginning of
-  /// the session.
+  /// Sets the start time for the session.
   set startTime(DateTime time) {
-    if (_config.sessionType == SessionType.practice) {
-      _startTime = time;
-    }
+    _startTime = time;
   }
 
-  /// Sets the end time for the session, but only if this is a experimental
-  /// phase. Practice and experimental phases are considered part of the same
-  /// session so the end time for the experimental phase is considered the
-  /// end of the session.
+  /// Sets the end time for the session.
   set endTime(DateTime time) {
-    if (_config.sessionType == SessionType.experimental) {
-      _endTime = DateTime.now();
-    }
+    _endTime = DateTime.now();
   }
 
   /// Exports the data collected during the session.
-  /// Includes data about the [trials] (practice and experimental)
-  /// and metadata about the [session] and [device] used to collect the data.
+  /// Includes data about the [trials] and metadata about the [session]
+  /// and [device] used to collect the data.
   DigitSpanTaskData export() {
     collectMetadata();
 
