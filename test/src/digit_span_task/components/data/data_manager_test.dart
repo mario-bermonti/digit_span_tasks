@@ -1,6 +1,7 @@
 import 'package:digit_span_tasks/digit_span_tasks.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/data/data_manager.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 import 'package:cognitive_data/cognitive_data.dart';
@@ -21,6 +22,7 @@ void main() {
           participantID: participantID,
           sessionID: '001',
           sessionType: SessionType.practice,
+          restInstructions: Text(''),
         ),
       ),
     );
