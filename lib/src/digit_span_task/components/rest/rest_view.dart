@@ -30,7 +30,7 @@ class RestView extends StatelessWidget {
             ElevatedButton(
               onPressed: () => _restController.toNextScreen(),
               child: Text(
-                'Comenzar',
+                'Continuar',
                 style: Theme.of(context).textTheme.button,
               ),
             ),

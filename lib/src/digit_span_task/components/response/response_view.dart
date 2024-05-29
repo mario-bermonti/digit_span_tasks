@@ -39,7 +39,7 @@ class ResponseView extends StatelessWidget {
                 submitResponse();
               },
               child: Text(
-                'Seguir',
+                'Continuar',
                 style: Theme.of(context).textTheme.button,
               ),
             ),
