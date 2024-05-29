@@ -140,7 +140,7 @@ class StartPage extends StatelessWidget {
                 Get.back();
               },
               child: Text(
-                'Comenzar',
+                'Continuar',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
