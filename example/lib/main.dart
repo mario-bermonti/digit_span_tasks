@@ -82,6 +82,7 @@ class _HomePageState extends State<HomePage> {
       participantID: participantID,
       sessionID: sessionID,
       sessionType: SessionType.practice,
+      restInstructions: const RestInstructions(),
     );
     // Setup task
     task = DigitSpanTask(config: practiceConfig);
@@ -96,6 +97,7 @@ class _HomePageState extends State<HomePage> {
       participantID: participantID,
       sessionID: sessionID,
       sessionType: SessionType.experimental,
+      restInstructions: const RestInstructions(),
     );
     task = DigitSpanTask(config: experimentalConfig);
     await Get.to(StartPage());
@@ -111,6 +113,7 @@ class _HomePageState extends State<HomePage> {
       stimList: ['901234'],
       participantID: participantID,
       sessionID: sessionID,
+      restInstructions: const RestInstructions(),
       sessionType: SessionType.experimental,
     );
     final task = DigitSpanTask(config: config);
@@ -147,6 +150,28 @@ class StartPage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class RestInstructions extends StatelessWidget {
+  const RestInstructions({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          'Toma un descanso',
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+        const SizedBox(height: 15),
+        Text(
+          'Respira profundo antes de continuar',
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+        const SizedBox(height: 25),
+      ],
     );
   }
 }

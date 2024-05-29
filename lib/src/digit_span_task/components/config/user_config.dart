@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:digit_span_tasks/src/digit_span_task/randomize.dart';
 
@@ -30,11 +31,17 @@ class UserConfig extends GetxController {
   /// either either practice or experimental.
   final SessionType sessionType;
 
+  /// Instructions to be presented during the rest periods.
+  ///
+  /// Any [Widget] can be used.
+  final Widget restInstructions;
+
   UserConfig({
     required stimList,
     required this.sessionID,
     required this.participantID,
     required this.sessionType,
+    required this.restInstructions,
   }) {
     this.stimList = randomizeDigitsInSets(stimList);
   }
