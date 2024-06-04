@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:digit_span_tasks/src/digit_span_task/components/stim/stim_creator.dart';
 import 'package:flutter_test/flutter_test.dart';
 
