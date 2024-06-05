@@ -40,4 +40,24 @@ void main() {
       );
     },
   );
+  group(
+    "createDigitSets",
+    () {
+      test(
+        "given minSize = 2, maxSize = 4, countEachSize = 2, return 6 sets and 2 sets of each size (i.e., 2, 3, and 4)",
+        () {
+          final List<String> digitSets =
+              createDigitSets(minSize: 2, maxSize: 4, countEachSize: 2);
+
+          expect(digitSets.length, 6);
+          expect(digitSets[0].length, 2);
+          expect(digitSets[1].length, 2);
+          expect(digitSets[2].length, 3);
+          expect(digitSets[3].length, 3);
+          expect(digitSets[4].length, 4);
+          expect(digitSets[5].length, 4);
+        },
+      );
+    },
+  );
 }
