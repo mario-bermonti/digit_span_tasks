@@ -1,5 +1,12 @@
-/// create all digit sets of all sizes
-/// create all digit sets for the same size
+/// Create [setCount] number of digit sets of specific [size]
+List<String> createDigitSetOfSize({required int size, required int setCount}) {
+  final List<String> digitSets = <String>[];
+  for (int currentSetIndex = 0; currentSetIndex < setCount; currentSetIndex++) {
+    String currentSet = createDigitSet(size: size);
+    digitSets.add(currentSet);
+  }
+  return digitSets;
+}
 
 /// Create single digit set of the specified [size]
 String createDigitSet({required int size}) {
