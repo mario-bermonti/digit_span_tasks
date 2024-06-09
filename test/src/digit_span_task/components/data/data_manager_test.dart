@@ -18,11 +18,13 @@ void main() {
     Get.put(
       DSConfig(
         userConfig: UserConfig(
-          stimList: <String>[],
           participantID: participantID,
           sessionID: '001',
           sessionType: SessionType.practice,
           restInstructions: Text(''),
+          minStimSize: 1,
+          maxStimSize: 1,
+          countEachSize: 1,
         ),
       ),
     );

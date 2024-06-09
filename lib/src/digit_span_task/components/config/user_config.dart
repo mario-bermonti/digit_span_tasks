@@ -7,10 +7,14 @@ import 'session_type.dart';
 /// The [UserConfig] contains settings the user can use to modify the behavior
 /// of the app.
 class UserConfig extends GetxController {
-  /// [stimList] is the list of stimuli to be presented to participants.
-  /// The digits in the digit sets of [stimList]
-  /// are randomized (e.g., "123" may be turned into "213").
-  late final List<String> stimList;
+  /// Size of smallest digit set
+  final int minStimSize;
+
+  /// Size of largest digit set
+  final int maxStimSize;
+
+  /// Number of sets to create for each size
+  final int countEachSize;
 
   /// ID that uniquely identifies this participant's session.
   /// It will be used to pair the different data collected by [digit_span_tasks]
@@ -37,12 +41,12 @@ class UserConfig extends GetxController {
   final Widget restInstructions;
 
   UserConfig({
-    required stimList,
     required this.sessionID,
     required this.participantID,
     required this.sessionType,
     required this.restInstructions,
-  }) {
-    this.stimList = randomizeDigitsInSets(stimList);
-  }
+    required this.minStimSize,
+    required this.maxStimSize,
+    required this.countEachSize,
+  });
 }

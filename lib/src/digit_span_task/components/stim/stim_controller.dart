@@ -1,3 +1,4 @@
+import 'package:digit_span_tasks/src/digit_span_task/components/stim/stim_creator.dart';
 import 'package:get/get.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/activity/activity_controller.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/exceptions/errors.dart';
@@ -5,6 +6,8 @@ import 'package:digit_span_tasks/src/digit_span_task/components/activity/task_st
 import 'package:stimuli/errors.dart';
 import 'package:stimuli/stimuli.dart';
 import 'package:digit_span_tasks/src/digit_span_task/components/config/ds_config.dart';
+
+import '../config/user_config.dart';
 
 /// Manage the stim
 class StimController extends GetxController {
@@ -22,8 +25,14 @@ class StimController extends GetxController {
 
   /// Prepare stim pool to be used.
   Future<void> prepareStimPool() async {
+    UserConfig userConfig = _config.userConfig;
+    final List<String> stimList = createDigitSets(
+      minSize: userConfig.minStimSize,
+      maxSize: userConfig.maxStimSize,
+      countEachSize: userConfig.countEachSize,
+    );
     try {
-      stim = Stimuli(stimuli: _config.userConfig.stimList);
+      stim = Stimuli(stimuli: stimList);
     } on StimFileAccessException catch (e) {
       throw GenericDigitSpanTasksException(e.toString());
     }
