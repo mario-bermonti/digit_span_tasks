@@ -21,6 +21,15 @@ void main() {
     "createDigitSetOfSize",
     () {
       test(
+        "given size = 2 and setCount = 1, return a list with 1 string of 2 digits",
+        () {
+          final List<String> digitSets =
+              createDigitSetOfSize(size: 2, setCount: 1);
+          expect(digitSets.length, 1);
+          expect(digitSets.first.length, 2);
+        },
+      );
+      test(
         "given size = 2 and setCount = 2, return a list of 2 strings, each of 2 digits",
         () {
           final List<String> digitSets =
@@ -43,6 +52,16 @@ void main() {
   group(
     "createDigitSets",
     () {
+      test(
+        "given minSize = 3, maxSize = 3, countEachSize = 1, return 1 set of 3 digits",
+        () {
+          final List<String> digitSets =
+              createDigitSets(minSize: 3, maxSize: 3, countEachSize: 1);
+
+          expect(digitSets.length, 1);
+          expect(digitSets[0].length, 3);
+        },
+      );
       test(
         "given minSize = 2, maxSize = 4, countEachSize = 2, return 6 sets and 2 sets of each size (i.e., 2, 3, and 4)",
         () {
