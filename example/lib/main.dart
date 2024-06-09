@@ -78,7 +78,9 @@ class _HomePageState extends State<HomePage> {
 
     // Define config for practice session
     UserConfig practiceConfig = UserConfig(
-      stimList: ['12'],
+      minStimSize: 2,
+      maxStimSize: 2,
+      countEachSize: 1,
       participantID: participantID,
       sessionID: sessionID,
       sessionType: SessionType.practice,
@@ -93,7 +95,9 @@ class _HomePageState extends State<HomePage> {
 
     // Define config for experimental session
     UserConfig experimentalConfig = UserConfig(
-      stimList: ['5678', '98765'],
+      minStimSize: 4,
+      maxStimSize: 5,
+      countEachSize: 1,
       participantID: participantID,
       sessionID: sessionID,
       sessionType: SessionType.experimental,
@@ -110,7 +114,9 @@ class _HomePageState extends State<HomePage> {
     required String sessionID,
   }) async {
     UserConfig config = UserConfig(
-      stimList: ['901234'],
+      minStimSize: 6,
+      maxStimSize: 6,
+      countEachSize: 1,
       participantID: participantID,
       sessionID: sessionID,
       restInstructions: const RestInstructions(),
